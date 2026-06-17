@@ -1,0 +1,39 @@
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: salescrm
+      POSTGRES_USER: salespie
+      POSTGRES_PASSWORD: salespie123
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U salespie -d salescrm"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
+
+
+  salespie:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8001:8001"
+    environment:
+      - DB_ENGINE=postgres
+      - DB_NAME=salescrm
+      - DB_USER=salespie
+      - DB_PASSWORD=salespie123
+      - DB_HOST=db
+      - DB_PORT=5432
+    volumes:
+      - ./media:/app/media
+    restart: unless-stopped
+
+volumes:
+  postgres_data:

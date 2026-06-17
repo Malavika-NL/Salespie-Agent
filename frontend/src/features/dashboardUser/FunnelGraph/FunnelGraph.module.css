@@ -1,0 +1,81 @@
+.Container {
+  --funnel-text: #0f172a;
+  --funnel-soft: #64748b;
+  --funnel-border: #dbe5ff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.chartWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 8px 6px 2px;
+  border-radius: 16px;
+  background:
+    radial-gradient(circle at 20% -10%, rgba(99, 102, 241, 0.14), transparent 40%),
+    radial-gradient(circle at 80% 110%, rgba(59, 130, 246, 0.11), transparent 38%),
+    linear-gradient(180deg, #fbfdff 0%, #f3f7ff 100%);
+  border: 1px solid var(--funnel-border);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+}
+
+.label {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+  text-shadow: 0 1px 2px rgba(15, 23, 42, 0.18);
+}
+
+.rankLabel {
+  font-family: 'Sora', system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  white-space: nowrap;
+}
+
+.tooltipContainer {
+  min-width: 120px;
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid #dbe3ff;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.15);
+  backdrop-filter: blur(6px);
+}
+
+.tooltipTitle {
+  margin: 0;
+  font-family: 'Sora', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--funnel-text);
+}
+
+.tooltipValue {
+  margin: 4px 0 0;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #3347d9;
+}
+
+.tooltipMeta {
+  margin: 2px 0 0;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--funnel-soft);
+}
+
+.loadingText {
+  color: #94a3b8;
+  font-size: 13px;
+  padding: 32px 0;
+  margin: 0;
+}

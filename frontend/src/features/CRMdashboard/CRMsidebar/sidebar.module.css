@@ -1,0 +1,60 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 100%;
+  background: linear-gradient(to bottom, #691179, #6f1c7a);
+  color: white;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.sidebar.open {
+  width: 250px;
+}
+
+.toggleButton {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 9;
+  font-size: 24px;
+  transform: translateX(-50%);
+}
+
+.closeButton {
+  top: 20px;
+  left: 210px;
+}
+
+.menu {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.menu ul li {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+  font-size: 18px;
+}
+
+.menu ul li i {
+  margin-right: 10px;
+  font-size: 20px;
+}

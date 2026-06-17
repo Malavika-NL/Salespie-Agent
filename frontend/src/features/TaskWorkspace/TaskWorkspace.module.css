@@ -1,0 +1,110 @@
+/* Container for the entire layout */
+.layoutContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f5f5f5;
+  box-sizing: border-box;
+  position: relative;
+}
+
+/* Navbar styling */
+.navbar {
+  height: 60px;
+  width: 100%;
+  background-color: red;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+
+/* Main area (below the navbar) */
+.mainArea {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  margin-top: 60px; /* Offset the main area below the navbar */
+  height: calc(100vh - 60px); /* Account for the navbar height */
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #2c3e50;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 60px;
+  bottom: 0;
+  z-index: 1;
+  transition: width 0.3s ease-in-out;
+}
+
+.sidebar.collapsed {
+  width: 70px; /* Collapse sidebar width */
+}
+
+.mainContent {
+  flex: 1;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: 100%;
+  position: relative;
+  overflow-y: auto; /* Make the main content scrollable */
+  transition: margin-left 0.3s ease-in-out; /* Smooth transition for the margin */
+}
+
+.mainContent.expanded {
+  margin-left: 200px; /* Main content takes 200px space when sidebar is expanded */
+}
+
+.mainContent.collapsed {
+  margin-left: 70px; /* Main content takes 70px space when sidebar is collapsed */
+}
+
+.taskWorkspace {
+  display: flex; /* Use flexbox for alignment */
+  gap: 2%; /* Add some space between the divs */
+  width: 100%; /* Parent div takes the full width */
+  box-sizing: border-box; /* Ensure padding/borders don't affect width */
+  padding: 10px;
+}
+
+.firstDiv {
+  width: 35%;
+  background-color: #ffffff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 15px;
+  box-shadow: 0px 0px 10px 0px #00000080;
+
+}
+
+.secondDiv {
+  width: 25%;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0px 0px 10px 0px #00000080;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+
+}
+
+.thirdDiv {
+  width: 36%;
+  background-color: #ffffff;
+  padding: 20px;
+  box-shadow: 0px 0px 10px 0px #00000080;
+  border-radius: 15px;
+  border: 1px solid #ccc;
+}

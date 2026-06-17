@@ -1,0 +1,90 @@
+.carousel {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    width: 100%; /* Ensure full-width for the carousel */
+    height: 100%;
+    background-color: inherit;
+    padding: 0 20px;
+  }
+  
+  .previewTopContainer,
+  .previewBottomContainer {
+    width: 100%; /* Make sure the preview containers take up full width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .pageTopPreview, 
+  .pageBottomPreview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .previewTopContainer {
+    background-color: #c4cec4; /* Set background color for the top preview */
+
+  }
+  
+  .previewBottomContainer {
+    background-color: #14e714; /* Set background color for the bottom preview */
+
+  }
+
+  .pageTopPreview,.previewTopContainer{
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+  }
+  
+  .pageBottomPreview,.previewBottomContainer{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  
+
+  
+  .page {
+    font-size: 1.5rem;
+    color: #333;
+    padding-top: 10px; /* Add space between button and page number */
+  }
+  
+  .currentPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Distribute items evenly with space */
+    align-items: center;
+    width: 100%; /* Ensure the current page takes the full width */
+    height: calc(90vh - 160px);
+    background-color: inherit; /* Background color for the current page */
+    text-align: center;
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px 0;
+    gap: 20px; /* Space between the two components */
+    transition: translate 300ms ease-in-out;
+  }
+  
+  .currentPage > div {
+    flex: 1; /* Make both components take up equal height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ensure components take full width */
+    transition: translate 300ms ease-in-out;
+  }
+  
+  

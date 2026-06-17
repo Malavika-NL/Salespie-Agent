@@ -1,0 +1,24 @@
+/* UserCarouselContent.module.css */
+
+.container {
+  display: flex;
+  height: inherit;             /* Take full viewport height */
+  width: inherit; 
+
+}
+
+.card {
+  height: inherit;
+  width: inherit; 
+  display: flex;
+  transform-origin: center;  /* Ensure scaling happens from the center */
+  transition: transform 0.3s ease;  /* Smooth transition for scaling */
+  background-color: #dce6fe;
+  transform: scale(1);
+
+}
+
+/* .card > div {
+  transform: scale(0.65); 
+} */
+

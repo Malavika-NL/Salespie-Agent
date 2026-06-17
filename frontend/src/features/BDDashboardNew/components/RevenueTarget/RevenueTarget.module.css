@@ -1,0 +1,116 @@
+.container {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    height: 300px;
+    overflow-y: auto;
+    margin: 20px 0;
+    box-shadow: 0px 4px 4px 0px #00000040;
+
+}
+
+.container::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+}
+
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.lefthead {
+    padding: 10px;
+    margin-right: 10px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.righthead {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px;
+}
+
+.select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.targetDiv {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    justify-content: center;
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: 500;
+    background-color: #c9e0f9;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.icon {
+    margin-left: 10px;
+    font-size: 20px;
+}
+
+.personicon {
+    margin-right: 2px;
+    font-size: 10px;
+}
+
+.mainContainer {
+    padding: 5px;
+    background-color: inherit;
+    height: 100%;
+}
+
+.row,
+.headerrow {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.row {
+    background-color: #F1F8FF;
+    border: 1px solid #D9D9D9;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.headerrow {
+    background-color: #C9E0F9;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.cellHeader {
+    flex: 1;
+    font-weight: 500;
+    text-align: left;
+    font-size: 12px;
+    padding: 5px;
+
+}
+
+.cell {
+    flex: 1;
+    padding: 5px;
+    text-align: left;
+    font-size: 12px;
+    font-weight: 500;
+
+}
+
+
+.rowContainer {
+   
+    border: 1px solid #D9D9D9;
+}

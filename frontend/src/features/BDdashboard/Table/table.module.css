@@ -1,0 +1,84 @@
+.tablecontainer{
+    background: #FFFFFF;
+    border-radius: 10px;
+    width: 100%;
+    /* height: 100%; */
+    padding: 10px;
+}
+
+.tableHeader {
+        font-size: 16px;
+        font-weight: 600;
+}
+
+.tableHeaderContainer {
+    display: flex; /* Use flexbox to align items */
+    justify-content: space-between; /* Align items to the right */
+    align-items: center; /* Center vertically */
+    margin-bottom: 10px; /* Space below the header container */
+}
+
+.addCustomerButton {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove default border */
+    padding: 8px 16px; /* Padding for button */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+  
+}
+
+.addCustomerButton:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
+
+.iconContainer {
+    display: flex; /* Flexbox for icon alignment */
+    align-items: center; /* Center vertically */
+    margin-right: 10px; /* Space between icon and button */
+}
+
+.icon {
+    width: 20px; /* Adjust icon size */
+    height: 20px; /* Adjust icon size */
+}
+
+
+
+.customerTable {
+    width: 100%; /* Full width of the parent */
+    border-collapse: collapse; /* Collapse borders */
+    border-radius: 8px; /* Rounded corners */
+    overflow: hidden; /* Prevents the border radius from being clipped */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow effect */
+
+}
+
+.customerTable th, .customerTable td {
+    padding: 10px; /* Padding in cells */
+    text-align: left; /* Align text to the left */
+    font-family: Arial, Helvetica, sans-serif;
+}
+.customerTable th{
+ font-size: 12px;
+ background: #F9F9F9;
+
+}
+.customerTable td{
+    font-size: 10px;
+   }
+   
+
+.customerTable th {
+    background-color: #f2f2f2; /* Light gray background for headers */
+}
+
+.customerTable tr {
+    background-color: white; /* White background for table rows */
+}
+
+/* Remove the vertical line by ensuring the border is only on the bottom */
+.customerTable th, .customerTable td {
+    border-bottom: 1px solid #ccc; /* Light gray border on the bottom only */
+}
+

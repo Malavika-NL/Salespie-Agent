@@ -1,0 +1,16 @@
+
+.eventCreationContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 2%;
+}
+
+
+.financeInformation {
+  width: 39%;
+}
+
+.upcomingInfo {
+  flex-grow: 1;
+}

@@ -1,0 +1,11 @@
+
+
+
+
+.logo{
+    height: var(--size-25);
+    display: block;
+    margin: 0 auto;
+    margin-top: var(--size-10);
+    margin-bottom: var(--size-10);
+}

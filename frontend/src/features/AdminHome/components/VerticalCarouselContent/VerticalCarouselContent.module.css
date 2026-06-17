@@ -1,0 +1,22 @@
+.carouselContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 100%; /* Ensure it takes full height */
+  }
+  
+  .contentDiv {
+    background-color: #f0f0f0; /* Light background color */
+    padding: 20px;
+    border-radius: 8px; /* Optional: Add rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+  }
+  
+  .text {
+    font-size: 1.5rem;
+    color: #333; /* Text color */
+    margin: 0; /* Remove default margin */
+  }
+  

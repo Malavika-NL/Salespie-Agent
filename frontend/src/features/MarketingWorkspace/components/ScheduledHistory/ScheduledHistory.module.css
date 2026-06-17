@@ -1,0 +1,17 @@
+.container {
+    padding: 20px;
+  }
+  
+  .heading {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .historyDiv {
+    padding: 20px;
+    background-color: #F4F6F6;
+    border-radius: 10px;
+    text-align: center;
+  }
+  

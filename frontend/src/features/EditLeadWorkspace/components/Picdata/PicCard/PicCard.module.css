@@ -1,0 +1,75 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px;
+  background-color: #f9f9f9;
+
+}
+
+.cardDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.firstLine,
+.secondLine {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.phoneLine {
+  display: flex;
+  gap: 20px;
+  width: 75%; /* Ensures phone fields are wider */
+}
+
+.lineItem {
+  display: flex;
+  flex-direction: column;
+  width: 22%; /* Adjust the width for each item */
+}
+
+.label {
+  font-size: 14px;
+  color: #6B8B88;
+  font-weight: 500;
+  margin: 0;
+  padding: 0;
+}
+
+.value {
+  font-size: 12px;
+  font-weight: 600;
+
+  border-radius: 5px;
+  padding: 5px;
+  outline: none;
+  background-color: inherit;
+  color: #000000;
+}
+
+.editButton {
+  padding: 5px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  width: 80px;
+  height: 30px;
+  text-align: center;
+}
+
+.editButton:hover {
+  background-color: #0056b3;
+}
+
+.defaultselect {
+  color: #000000c3 !important;
+  font-weight: 300 !important;
+}

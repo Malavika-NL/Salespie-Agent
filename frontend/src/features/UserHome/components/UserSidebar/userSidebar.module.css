@@ -1,0 +1,1197 @@
+/* .sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 200px;
+  height: 100%;
+  background-color: white;
+  color: black;
+  padding: 20px 0;
+  border: 1px solid #00000040;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  transition: width 0.3s ease-in-out;
+ 
+  position: relative;
+}
+
+
+.collapsed {
+  width: 70px;
+  transition: width 0.3s ease-in-out;
+}
+
+.logoSection {
+  position: relative;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.3s ease-in-out;
+}
+
+.collapsedLogoSection {
+  position: relative;
+  width: 70px;
+  padding: 0;
+  border-radius: 5px;
+  
+}
+
+.logo {
+  width: 150px;
+  height: 35px;
+  margin: 10px 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.chevronIcon {
+  position: absolute;
+  right: -8px;
+  top: 0;
+  color: #00000096;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+.nlContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: auto;
+  padding: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  background-color: #100B52;
+  border: 1px solid #00000040;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  border-radius: 5px;
+}
+
+
+.links {
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+  width: 100%;
+  padding-left: 10%;
+  margin: 0.575rem 0.625rem;
+  border-radius: 0.625rem;
+  
+  color: #100B52;
+  font-weight: 500;
+  gap: 10px;
+  max-width: 150px;
+}
+
+.aboutcontainer {
+  text-decoration: none;
+  margin: 0.575rem 0.625rem;
+    padding-left: 10%;
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right:10%;
+  color: #100B52;
+}
+
+.abouticons {
+  color: #100B52;
+}
+.version {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000dff;
+  margin-right:10%;
+  font-size: 12px;
+}
+.sublinks {
+  color: #000000;
+  font-weight: 500;
+  font-size: 12px;
+}
+
+.navLinks:hover .links,
+.navLinks:focus .links,
+.navLinks.active .links {
+  background-color: #100B52;
+  color: white;
+}
+
+.navLinks:hover .links .navicons,
+.navLinks:focus .links .navicons,
+.navLinks.active .links .navicons {
+  color: white;
+}
+
+
+.dropdownItems:hover .sublinks,
+.dropdownItems:focus .sublinks,
+.dropdownItems.active .sublinks {
+  background-color: #100B52;
+  color: white;
+  padding: 5px 10PX;
+  border-radius: 5px;
+}
+
+.navicons {
+  color: #000000;
+}
+
+
+.collapsed .links {
+  pointer-events: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: start;
+  
+  padding-left: 15%;
+  margin: 10px auto;
+ 
+}
+
+
+
+.navLinks {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.bottomSection {
+  margin-top: auto;
+} */
+
+
+/* Styles for the dropdown link */
+/* .dropdown {
+  width: 100%;
+  
+} */
+
+/* Styles for the dropdown menu */
+/* .dropdownMenu {
+  background-color: transparent;
+  border-radius: 0.5rem;
+  width: 100%;
+  display: none;
+ 
+  z-index: 100;
+  opacity: 0;
+ 
+  transform: translateY(-10px);
+ 
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  
+} */
+
+/* Show the dropdown on click with animation */
+/* .dropdownMenu.show {
+  display: block;
+  opacity: 1;
+  
+} */
+
+/* Adjusting for collapsed view */
+
+/* 
+.dropdownLinks {
+  text-decoration: none;
+}
+
+.dropdownItems {
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+  width: 100%;
+  padding-left: 10%;
+  margin: 0 0.625rem;
+  border-radius: 0.625rem;
+  font-size: 11px;
+  
+  color: #00000096;
+  gap: 10px;
+}
+
+.dropdownImg {
+  height: 15px;
+  width: 15px;
+}
+
+
+.collapsed .dropdownItems {
+  pointer-events: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: start;
+ 
+  padding-left: 15%;
+  margin: 10px auto;
+}
+
+
+
+
+
+
+.searchBar {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  width: 100%;
+  margin: 0.575rem .675rem;
+  border-radius: 0.625rem;
+
+  max-width: 150px;
+  background: #F2EFFF;
+
+
+}
+
+.searchIcon {
+  color: rgb(99, 97, 97);
+  margin-left: 18px;
+  margin-right: 5px;
+}
+
+.searchInput {
+
+  font-size: 14px;
+  border: none;
+  outline: none;
+  width: inherit;
+  background: #F2EFFF;
+}
+
+.collapsed .searchBar {
+  pointer-events: none;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+ 
+  margin: 10px auto;
+  border-radius: 0;
+}
+
+.collapsed .searchIcon {
+  margin: 0;
+} */
+/* ============================================================================================================================== */
+/* ================================================================
+   userSidebar.module.css  –  Clean Light Sidebar
+   Matches SalesUserDashboard palette: slate bg, indigo accents
+   ================================================================ */
+
+   /* @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700&family=DM+Sans:wght@400;500;600&display=swap'); */
+
+   /* ── Shell ───────────────────────────────────────────────────────── */
+   /* .sidebar {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     width: 200px;
+     height: 100%;
+     background-color: #FFFFFF;
+     color: #1E293B;
+     padding: 16px 0 12px;
+     border-right: 1px solid #E2E8F0;
+     box-shadow: 2px 0 8px rgba(15, 23, 42, 0.06);
+     transition: width 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+     position: relative;
+     font-family: 'DM Sans', system-ui, sans-serif;
+     overflow: hidden;
+   }
+   
+   .collapsed {
+     width: 68px;
+   }
+    */
+   /* ── Logo Section ────────────────────────────────────────────────── */
+   /* .logoSection {
+     position: relative;
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding: 0 16px 16px;
+     border-bottom: 1px solid #F1F5F9;
+     margin-bottom: 8px;
+   }
+   
+   .collapsedLogoSection {
+     padding: 0 0 16px;
+     border-bottom: 1px solid #F1F5F9;
+     margin-bottom: 8px;
+   }
+   
+   .logo {
+     width: 130px;
+     height: 32px;
+     object-fit: contain;
+     transition: opacity 0.2s ease;
+   }
+    */
+   /* Collapse / expand toggle */
+   /* .chevronIcon {
+     position: absolute;
+     right: -9px;
+     top: 4px;
+     color: #94A3B8;
+     cursor: pointer;
+     background-color: #FFFFFF;
+     border: 1px solid #E2E8F0;
+     border-radius: 50%;
+     padding: 1px;
+     transition: color 150ms ease, transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 150ms ease;
+     z-index: 10;
+   }
+   
+   .chevronIcon:hover {
+     color: #4F46E5;
+     box-shadow: 0 2px 8px rgba(79, 70, 229, 0.18);
+   }
+   
+   .rotated {
+     transform: rotate(180deg);
+   }
+    */
+   /* ── Scrollable nav area ─────────────────────────────────────────── */
+   /* .sidebarContent {
+     flex: 1;
+     overflow-y: auto;
+     overflow-x: hidden;
+     padding: 0 8px;
+     scrollbar-width: none;
+   }
+   
+   .sidebarContent::-webkit-scrollbar {
+     display: none;
+   } */
+   
+   /* ── Nav link rows ───────────────────────────────────────────────── */
+   /* .navLinks {
+     text-decoration: none;
+     cursor: pointer;
+     display: block;
+     color: inherit;
+   }
+   
+   .links {
+     display: flex;
+     align-items: center;
+     height: 38px;
+     width: 100%;
+     padding: 0 10px;
+     margin: 2px 0;
+     border-radius: 8px;
+     color: #475569;
+     font-size: 13.5px;
+     font-weight: 500;
+     gap: 10px;
+     transition: background-color 150ms ease, color 150ms ease;
+     white-space: nowrap;
+   }
+   
+   .navLinks:hover .links {
+     background-color: #EEF2FF;
+     color: #4F46E5;
+   }
+   
+   .navLinks:hover .links .navicons {
+     color: #4F46E5;
+   }
+   
+   .navicons {
+     color: #64748B;
+     flex-shrink: 0;
+     transition: color 150ms ease;
+   }
+    */
+   /* Active nav item */
+   /* .navLinks.active .links {
+     background-color: #4F46E5;
+     color: #FFFFFF;
+   }
+   
+   .navLinks.active .links .navicons {
+     color: #FFFFFF;
+   } */
+   
+   /* ── Dropdown wrapper ────────────────────────────────────────────── */
+   /* .dropdown {
+     width: 100%;
+   }
+   
+   .dropdownMenu {
+     display: none;
+     opacity: 0;
+     transform: translateY(-6px);
+     transition: opacity 0.2s ease, transform 0.2s ease;
+     padding: 2px 0 4px 0;
+     background: #F8FAFC;
+     border-radius: 8px;
+     margin: 2px 0 4px;
+     border: 1px solid #F1F5F9;
+   }
+   
+   .dropdownMenu.show {
+     display: block;
+     opacity: 1;
+     transform: translateY(0);
+   }
+   
+   .dropdownLinks {
+     text-decoration: none;
+     display: block;
+   }
+   
+   .dropdownItems {
+     display: flex;
+     align-items: center;
+     height: 34px;
+     width: 100%;
+     padding: 0 10px 0 22px;
+     border-radius: 6px;
+     font-size: 12px;
+     color: #64748B;
+     font-weight: 500;
+     gap: 8px;
+     transition: background-color 150ms ease, color 150ms ease;
+     white-space: nowrap;
+   }
+   
+   .dropdownItems:hover {
+     background-color: #EEF2FF;
+     color: #4F46E5;
+   }
+   
+   .dropdownItems:hover .sublinks {
+     color: #4F46E5;
+     background: none;
+     padding: 0;
+     border-radius: 0;
+   }
+   
+   .sublinks {
+     color: #64748B;
+     font-weight: 500;
+     font-size: 12px;
+     transition: color 150ms ease;
+   }
+   
+   .dropdownImg {
+     height: 14px;
+     width: 14px;
+     object-fit: contain;
+     opacity: 0.75;
+     flex-shrink: 0;
+   } */
+   
+   /* ── Collapsed state tweaks ──────────────────────────────────────── */
+   /* .collapsed .links {
+     justify-content: center;
+     padding: 0;
+     height: 40px;
+     width: 44px;
+     margin: 2px auto;
+   }
+   
+   .collapsed .dropdownItems {
+     justify-content: center;
+     padding: 0;
+     height: 36px;
+     width: 44px;
+     margin: 2px auto;
+   }
+   
+   .collapsed .dropdownMenu {
+     background: transparent;
+     border: none;
+     padding: 0;
+   }
+    */
+   /* ── Search bar ──────────────────────────────────────────────────── */
+   /* .searchBar {
+     display: flex;
+     align-items: center;
+     height: 34px;
+     width: 100%;
+     margin: 4px 0 8px;
+     border-radius: 8px;
+     background: #F1F5F9;
+     border: 1px solid #E2E8F0;
+     overflow: hidden;
+     transition: border-color 150ms ease, box-shadow 150ms ease;
+   }
+   
+   .searchBar:focus-within {
+     border-color: #C7D2FE;
+     box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.10);
+   }
+   
+   .searchIcon {
+     color: #94A3B8;
+     margin: 0 8px;
+     flex-shrink: 0;
+   }
+   
+   .searchInput {
+     font-family: 'DM Sans', system-ui, sans-serif;
+     font-size: 13px;
+     border: none;
+     outline: none;
+     width: 100%;
+     background: transparent;
+     color: #1E293B;
+   }
+   
+   .searchInput::placeholder {
+     color: #94A3B8;
+   }
+   
+   .collapsed .searchBar {
+     width: 44px;
+     height: 40px;
+     margin: 2px auto;
+     border-radius: 8px;
+     justify-content: center;
+   }
+   
+   .collapsed .searchIcon {
+     margin: 0;
+   } */
+   
+   /* ── Bottom section ──────────────────────────────────────────────── */
+   /* .bottomSection {
+     padding: 12px 8px 0;
+     border-top: 1px solid #F1F5F9;
+     margin-top: 4px;
+   }
+   
+   .aboutcontainer {
+     text-decoration: none;
+     display: flex;
+     flex-direction: column;
+     gap: 2px;
+     padding: 8px 10px;
+     border-radius: 8px;
+     transition: background-color 150ms ease;
+   }
+   
+   .aboutcontainer:hover {
+     background-color: #F8FAFC;
+   }
+   
+   .about {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     color: #475569;
+     font-size: 13.5px;
+     font-weight: 500;
+   }
+   
+   .about .navicons {
+     color: #64748B;
+   }
+   
+   .aboutcontainer:hover .about {
+     color: #4F46E5;
+   }
+   
+   .aboutcontainer:hover .about .navicons {
+     color: #4F46E5;
+   }
+   
+   .version {
+     padding-left: 30px;
+     font-size: 11px;
+     color: #94A3B8;
+     font-weight: 400;
+   } */
+
+
+/* ================================================================
+   userSidebar.module.css  —  Animated Clean Light Sidebar
+   ================================================================ */
+
+   /* Removed external Google Fonts import to avoid runtime css2 loading failures. */
+
+   /* ── Shell ── */
+   .sidebar {
+     display: flex;
+     flex-direction: column;
+     justify-content: space-between;
+     width: 230px;
+     height: 100%;
+     background-color: #FFFFFF;
+     color: #1E293B;
+     padding: 20px 0 14px;
+     border-right: 1px solid #E2E8F0;
+     box-shadow: 2px 0 16px rgba(15, 23, 42, 0.07);
+     transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+     position: relative;
+     font-family: 'DM Sans', system-ui, sans-serif;
+     overflow: visible;
+     
+   }
+   
+   .collapsed { width: 76px; }
+   
+   
+   /* ════════════════════════════════════════
+      LOGO SECTION
+      ════════════════════════════════════════ */
+   .logoSection {
+     position: relative;
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: flex-start;
+     padding: 0 16px 18px;
+     border-bottom: 1px solid #F1F5F9;
+     margin-bottom: 12px;
+     /* Entrance: slides down + fades in */
+     animation: logoSlideIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+   }
+   
+   .collapsedLogoSection {
+     position: relative;
+     width: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding: 0 0 18px;
+     border-bottom: 1px solid #F1F5F9;
+     margin-bottom: 12px;
+     animation: logoSlideIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+   }
+   
+   @keyframes logoSlideIn {
+     from { opacity: 0; transform: translateY(-14px); }
+     to   { opacity: 1; transform: translateY(0); }
+   }
+   
+   
+   /* ════════════════════════════════════════
+      ICON ANIMATIONS
+      ════════════════════════════════════════ */
+   
+   /* Glow ring: continuous slow pulse */
+   .glowRing {
+     animation: glowPulse 3s ease-in-out 1.8s infinite;
+   }
+   @keyframes glowPulse {
+     0%, 100% { opacity: 0.45; }
+     50%       { opacity: 0.8; }
+   }
+   
+   /* Main pie slice: scale in from center */
+   .pieMain {
+     transform-origin: 28px 32px;
+     animation: pieGrow 0.75s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+   }
+   .pieLight {
+     transform-origin: 28px 32px;
+     animation: pieGrow 0.75s cubic-bezier(0.34, 1.56, 0.64, 1) 0.38s both;
+   }
+   @keyframes pieGrow {
+     from { opacity: 0; transform: scale(0.3) rotate(-25deg); }
+     to   { opacity: 1; transform: scale(1)   rotate(0deg); }
+   }
+   
+   /* Center dot: pop in */
+   .pieDot {
+     transform-origin: 28px 32px;
+     animation: dotPop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.82s both;
+   }
+   @keyframes dotPop {
+     from { transform: scale(0); }
+     to   { transform: scale(1); }
+   }
+   
+   /* Trend line: SVG path draw */
+   .trendLine {
+     stroke-dasharray: 70;
+     stroke-dashoffset: 70;
+     animation: drawLine 0.55s ease-out 0.95s forwards;
+   }
+   .trendTip {
+     stroke-dasharray: 20;
+     stroke-dashoffset: 20;
+     animation: drawLine 0.3s ease-out 1.45s forwards;
+   }
+   @keyframes drawLine {
+     to { stroke-dashoffset: 0; }
+   }
+   
+   /* $ badge: scale + fade pop */
+   .dollarBadge {
+     animation: badgePop 0.4s cubic-bezier(0.34, 1.8, 0.64, 1) 1.65s both;
+     transform-origin: 51px 13px;
+   }
+   @keyframes badgePop {
+     from { opacity: 0; transform: scale(0); }
+     to   { opacity: 1; transform: scale(1); }
+   }
+   
+   
+   /* ════════════════════════════════════════
+      BRAND LOCKUP
+      ════════════════════════════════════════ */
+   .brandLockup {
+     display: flex;
+     align-items: center;
+     gap: 12px;
+     flex: 1;
+     min-width: 0;
+   }
+   
+   .brandTextBlock {
+     display: flex;
+     flex-direction: column;
+     gap: 3px;
+     min-width: 0;
+     /* Slides in from left after icon loads */
+     animation: nameReveal 0.5s cubic-bezier(0.34, 1.2, 0.64, 1) 0.4s both;
+   }
+   
+   @keyframes nameReveal {
+     from { opacity: 0; transform: translateX(-12px); }
+     to   { opacity: 1; transform: translateX(0); }
+   }
+   
+   .brandName {
+     font-family: 'Sora', system-ui, sans-serif;
+     font-size: 22px;
+     font-weight: 800;
+     line-height: 1.1;
+     letter-spacing: -0.5px;
+     white-space: nowrap;
+     display: flex;
+     align-items: baseline;
+     gap: 1px;
+   }
+   
+   .brandSales {
+     color: #0F172A;
+   }
+   
+   .brandDivider {
+     color: #C7D2FE;
+     font-weight: 200;
+     font-size: 26px;
+     margin: 0 2px;
+     line-height: 1;
+   }
+   
+   /* "Pie" — animated gradient shift */
+   .brandPie {
+     background: linear-gradient(135deg, #4F46E5 0%, #06B6D4 100%);
+     background-size: 200% 100%;
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     background-clip: text;
+     animation: gradShift 5s ease-in-out 2s infinite alternate;
+   }
+   @keyframes gradShift {
+     from { background-position: 0% 50%; }
+     to   { background-position: 100% 50%; }
+   }
+   
+   .brandTagline {
+     font-family: 'DM Sans', system-ui, sans-serif;
+     font-size: 8.5px;
+     font-weight: 600;
+     color: #94A3B8;
+     text-transform: uppercase;
+     letter-spacing: 1.3px;
+     white-space: nowrap;
+     animation: nameReveal 0.5s cubic-bezier(0.34, 1.2, 0.64, 1) 0.55s both;
+   }
+   
+   
+   /* ════════════════════════════════════════
+      CHEVRON TOGGLE
+      ════════════════════════════════════════ */
+   .chevronIcon {
+     position: absolute;
+     right: -13px;
+     top: 10px;
+     color: #94A3B8;
+     cursor: pointer;
+     background-color: #FFFFFF;
+     border: 1.5px solid #E2E8F0;
+     border-radius: 50%;
+     padding: 2px;
+     z-index: 99;
+     transition: color 0.2s ease,
+                 border-color 0.2s ease,
+                 box-shadow 0.2s ease,
+                 transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+     animation: chevronFadeIn 0.4s ease 0.8s both;
+   }
+   @keyframes chevronFadeIn {
+     from { opacity: 0; transform: scale(0.5); }
+     to   { opacity: 1; transform: scale(1); }
+   }
+   .chevronIcon:hover {
+     color: #4F46E5;
+     border-color: #C7D2FE;
+     box-shadow: 0 2px 12px rgba(79, 70, 229, 0.28);
+   }
+   .rotated { transform: rotate(180deg) !important; }
+   
+   
+   /* ════════════════════════════════════════
+      NAV CONTENT
+      ════════════════════════════════════════ */
+   .sidebarContent {
+     flex: 1;
+     overflow-y: auto;
+     overflow-x: visible;
+     padding: 0 10px;
+     scrollbar-width: none;
+   }
+   .sidebarContent::-webkit-scrollbar { display: none; }
+   
+   .navLinks {
+     text-decoration: none;
+     cursor: pointer;
+     display: block;
+     color: inherit;
+   }
+   
+   /* Staggered entrance for each nav item */
+   .navItem1 { animation: navSlideIn 0.45s cubic-bezier(0.34, 1.2, 0.64, 1) 0.30s both; }
+   .navItem2 { animation: navSlideIn 0.45s cubic-bezier(0.34, 1.2, 0.64, 1) 0.42s both; }
+   .navItem3 { animation: navSlideIn 0.45s cubic-bezier(0.34, 1.2, 0.64, 1) 0.54s both; }
+   .navItem4 { animation: navSlideIn 0.45s cubic-bezier(0.34, 1.2, 0.64, 1) 0.66s both; }
+   .navItem5 { animation: navSlideIn 0.45s cubic-bezier(0.34, 1.2, 0.64, 1) 0.78s both; }
+   
+   @keyframes navSlideIn {
+     from { opacity: 0; transform: translateX(-18px); }
+     to   { opacity: 1; transform: translateX(0); }
+   }
+   
+   .links {
+     display: flex;
+     align-items: center;
+     height: 40px;
+     width: 100%;
+     padding: 0 10px;
+     margin: 2px 0;
+     border-radius: 9px;
+     color: #475569;
+     font-size: 13.5px;
+     font-weight: 500;
+     gap: 10px;
+     white-space: nowrap;
+     position: relative;
+     overflow: hidden;
+     transition: background-color 0.2s ease,
+                 color 0.2s ease,
+                 transform 0.15s ease;
+   }
+   
+   /* Shimmer sweep on hover */
+   .links::before {
+     content: '';
+     position: absolute;
+     inset: 0;
+     background: linear-gradient(90deg,
+       transparent 0%,
+       rgba(79, 70, 229, 0.06) 50%,
+       transparent 100%);
+     transform: translateX(-100%);
+     transition: transform 0.4s ease;
+     border-radius: 9px;
+     pointer-events: none;
+   }
+   .navLinks:hover .links::before { transform: translateX(100%); }
+   
+   .navLinks:hover .links {
+     background-color: #EEF2FF;
+     color: #4F46E5;
+     transform: translateX(3px);
+   }
+   .navLinks:hover .links .navicons { color: #4F46E5; transform: scale(1.12); }
+   
+   /* Active state — gradient background */
+   .navLinks.active .links {
+     background: linear-gradient(135deg, #4F46E5, #6366F1);
+     color: #FFFFFF;
+     box-shadow: 0 4px 14px rgba(79, 70, 229, 0.28);
+   }
+   .navLinks.active .links .navicons { color: #FFFFFF; }
+   
+   .navicons {
+     color: #64748B;
+     flex-shrink: 0;
+     transition: color 0.2s ease, transform 0.2s ease;
+   }
+   
+   /* Dropdown inline chevron "›" */
+   .dropChevron {
+     margin-left: auto;
+     font-size: 18px;
+     line-height: 1;
+     color: #94A3B8;
+     transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s;
+     display: inline-block;
+   }
+   .dropChevronOpen {
+     transform: rotate(90deg);
+     color: #4F46E5;
+   }
+   
+   
+   /* ════════════════════════════════════════
+      DROPDOWNS
+      ════════════════════════════════════════ */
+   .dropdown { width: 100%; }
+   
+   .dropdownMenu {
+     display: none;
+     padding: 4px 0;
+     background: #F8FAFC;
+     border-radius: 9px;
+     margin: 2px 0 4px;
+     border: 1px solid #F1F5F9;
+   }
+   
+   .dropdownMenu.show {
+     display: block;
+     animation: dropIn 0.22s cubic-bezier(0.34, 1.2, 0.64, 1) both;
+   }
+   
+   @keyframes dropIn {
+     from { opacity: 0; transform: translateY(-8px) scaleY(0.9); transform-origin: top; }
+     to   { opacity: 1; transform: translateY(0) scaleY(1); }
+   }
+   
+   .dropdownLinks {
+     text-decoration: none;
+     display: block;
+     animation: dropItemIn 0.2s ease both;
+   }
+   
+   @keyframes dropItemIn {
+     from { opacity: 0; transform: translateX(-8px); }
+     to   { opacity: 1; transform: translateX(0); }
+   }
+   
+   .dropdownItems {
+     display: flex;
+     align-items: center;
+     height: 34px;
+     width: 100%;
+     padding: 0 10px 0 24px;
+     border-radius: 7px;
+     font-size: 12px;
+     color: #64748B;
+     font-weight: 500;
+     gap: 8px;
+     white-space: nowrap;
+     transition: background-color 0.15s ease,
+                 color 0.15s ease,
+                 transform 0.15s ease;
+   }
+   .dropdownItems:hover {
+     background-color: #EEF2FF;
+     color: #4F46E5;
+     transform: translateX(4px);
+   }
+   .dropdownItems:hover .sublinks { color: #4F46E5; }
+   
+   .sublinks {
+     color: #64748B;
+     font-weight: 500;
+     font-size: 12px;
+     transition: color 0.15s ease;
+   }
+   
+   .dropdownImg {
+     height: 14px;
+     width: 14px;
+     object-fit: contain;
+     opacity: 0.7;
+     flex-shrink: 0;
+     transition: opacity 0.15s, transform 0.15s;
+   }
+   .dropdownItems:hover .dropdownImg {
+     opacity: 1;
+     transform: scale(1.1);
+   }
+   
+   
+   /* ════════════════════════════════════════
+      COLLAPSED OVERRIDES
+      ════════════════════════════════════════ */
+   .collapsed .links {
+     justify-content: center;
+     padding: 0;
+     height: 42px;
+     width: 46px;
+     margin: 2px auto;
+   }
+   .collapsed .dropdownItems {
+     justify-content: center;
+     padding: 0;
+     height: 36px;
+     width: 46px;
+     margin: 2px auto;
+   }
+   .collapsed .dropdownMenu { background: transparent; border: none; padding: 0; }
+   
+   
+   /* ════════════════════════════════════════
+      BOTTOM SECTION
+      ════════════════════════════════════════ */
+   .bottomSection {
+     padding: 12px 10px 0;
+     border-top: 1px solid #F1F5F9;
+     margin-top: 4px;
+     animation: navSlideIn 0.45s cubic-bezier(0.34, 1.2, 0.64, 1) 0.9s both;
+   }
+   
+   .aboutcontainer {
+     text-decoration: none;
+     display: flex;
+     flex-direction: column;
+     gap: 2px;
+     padding: 8px 10px;
+     border-radius: 9px;
+     transition: background-color 0.15s ease;
+   }
+   .aboutcontainer:hover { background-color: #F8FAFC; }
+   
+   .about {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     color: #475569;
+     font-size: 13px;
+     font-weight: 500;
+   }
+   .about .navicons { color: #64748B; }
+   .aboutcontainer:hover .about { color: #4F46E5; }
+   .aboutcontainer:hover .about .navicons { color: #4F46E5; }
+   
+   .version {
+     padding-left: 30px;
+     font-size: 10.5px;
+     color: #94A3B8;
+     font-weight: 500;
+   }
+
+   .navActive .links {
+    background: linear-gradient(135deg, #4F46E5, #6366F1);
+    color: #FFFFFF !important;
+    box-shadow: 0 4px 14px rgba(79, 70, 229, 0.28);
+  }
+  .navActive .links .navicons {
+    color: #FFFFFF !important;
+  }
+  
+  /* Top-level dropdown parent active (Form, Dashboard) */
+  .navGroupActive > .links {
+    background-color: #EEF2FF;
+    color: #4F46E5 !important;
+  }
+  .navGroupActive > .links .navicons {
+    color: #4F46E5 !important;
+  }
+  .navGroupActive > .links .dropChevron {
+    color: #4F46E5;
+  }
+  
+  /* Dropdown child item active */
+  .dropdownLinkActive .dropdownItems {
+    background-color: #EEF2FF;
+    color: #4F46E5 !important;
+    transform: translateX(4px);
+  }
+  .dropdownLinkActive .dropdownItems .sublinks {
+    color: #4F46E5 !important;
+    font-weight: 600;
+  }
+  .dropdownLinkActive .dropdownItems .dropdownImg {
+    opacity: 1;
+  }
+/* ════════════════════════════════════════
+   DATA DROPDOWN STYLES
+   ════════════════════════════════════════ */
+
+/* ── Data dropdown item layout ── */
+.dataItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 38px;
+  padding: 0 10px 0 20px;
+}
+
+/* ── Colored icon pill for each data link ── */
+.dataIcon {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: transform 0.15s;
+}
+
+/* ── Permanent custom colors for icons (Like image) ── */
+.dataIconAccount     { background: #EEF2FF; color: #4F46E5; }
+.dataIconOpportunity { background: #FDF2F8; color: #EC4899; }
+.dataIconTarget      { background: #F0FDFA; color: #0D9488; }
+.dataIconLead        { background: #FFF7ED; color: #F97316; }
+.dataIconTask        { background: #F0FDF4; color: #16A34A; }
+
+/* ════════════════════════════════════════
+   ACTIVE STATES (Matches Image)
+   ════════════════════════════════════════ */
+
+/* Apply to ALL active dropdown items (Data, Forms, Dashboard) */
+.dropdownLinkActive .dropdownItems {
+  background-color: #EEF2FF !important; /* Light blue background */
+  color: #4F46E5 !important;            /* Blue text */
+  transform: translateX(4px);           /* Slight nudge for visual hierarchy */
+  border-left: none !important;         /* Removes any color borders */
+}
+
+/* Ensure the text becomes bold and blue when active */
+.dropdownLinkActive .dropdownItems .sublinks {
+  color: #4F46E5 !important;
+  font-weight: 600 !important;
+}
+
+/* Make sure the icons stay their own color and just get a small bump when hovered/active */
+.dropdownLinkActive .dropdownItems .dataIcon {
+  transform: scale(1.05);
+}
+
+.dropdownItems:hover .dataIcon {
+  transform: scale(1.1);
+}
+
+/* ── navItem6 stagger ── */
+.navItem6 { animation: navSlideIn 0.45s cubic-bezier(0.34, 1.2, 0.64, 1) 0.90s both; }

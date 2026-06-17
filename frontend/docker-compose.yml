@@ -1,0 +1,9 @@
+services:
+  salespie:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    ports:
+      - "8001:8001"
+    container_name: salespie-app
+    restart: unless-stopped

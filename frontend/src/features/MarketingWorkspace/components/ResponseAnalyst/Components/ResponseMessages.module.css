@@ -1,0 +1,70 @@
+.container {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.heading {
+  font-size: 24px;
+  color: #333;
+}
+
+.searchBar {
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.tablecontainer {
+  padding: 20px 15px 0 15px;
+  border: 2px solid #93939366;
+  border-radius: 10px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border: none;
+  border-radius: 10px;
+}
+
+.tdCell,
+.thCell {
+  border: none;
+  padding: 10px;
+  text-align: center;
+}
+
+.thcontent{
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.thCell {
+  color: #6B8B88;
+  background-color: #F4F6F6;
+  border-radius: 10px;
+  padding: 10px;
+  width: 50%; /* Ensures both th elements take up equal space */
+}
+
+.table tr td:first-child {
+  border-left: none;
+  border-bottom: none;
+}
+
+.table tr td:last-child {
+  border-right: none;
+  border-bottom: none;
+}
+
+/* Optional: Add borders to ensure styling is consistent */
+.table tr td {
+  border: 1px solid #ccc; /* You can change the color or style as needed */
+}

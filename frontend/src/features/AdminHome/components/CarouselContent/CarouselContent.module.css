@@ -1,0 +1,62 @@
+.container {
+    display: flex;
+    flex-direction: column; /* Stack the child divs vertically */
+    gap: 1rem; /* Add spacing between the stacked items */
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .firstChild {
+    display: flex;
+    flex-direction: column; /* Stack head and mainContent vertically */
+    gap: 1rem; /* Add spacing between head and mainContent */
+    padding: 1rem; /* Add padding to prevent content from touching edges */
+    border-radius: 8px; /* Optional: add rounded corners */
+  }
+  
+  .head {
+    display: flex; /* Use flexbox to align items horizontally */
+    flex-direction: row; /* Align icon and text horizontally */
+    align-items: center; /* Vertically center the items */
+    gap: 0.5rem; /* Add spacing between the icon and text */
+  }
+  
+  .icon {
+    font-size: 2rem; /* Adjust icon size */
+    color: #333; /* Icon color */
+  }
+  
+  .text {
+    font-size: 1rem;
+    color: #555; /* Text color */
+    margin-left: 2%; /* You may remove this margin for better alignment */
+  }
+  
+  .mainContent {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align text to the left */
+    gap: 0.5rem; /* Add spacing within the main content */
+  }
+  
+  .secondChild {
+    display: flex;
+    align-items: center; /* Align button and icon in the same line */
+    gap: 0.5rem; /* Add spacing between the button and the icon */
+  }
+  
+  .button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #007bff; /* Button color */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+  }
+  

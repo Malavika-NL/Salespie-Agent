@@ -1,0 +1,67 @@
+/* Main container for the admin home page */
+.container {
+  display: flex;
+  background-color: #dce6fe;
+}
+
+/* Dashboard section styling */
+.dashboard {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+  /* margin-left: ;/ */
+  background-color: #dce6fe;
+  margin-top: 10vh;
+  height: calc(100vh - 10vh); /* Adjust height dynamically */
+}
+
+/* Top container (70% height of the dashboard) */
+.topContainer {
+  display: flex;
+  flex: 7; /* Occupies 70% of the dashboard */
+  height: 70%;
+  width: 100%;
+}
+
+/* Left section of the top container (70% width) */
+.leftSection {
+  flex: 7; /* 70% width */
+  background-color: #ffffff;
+  padding: 16px;
+  box-shadow: inset -2px 0 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Right section of the top container (30% width) */
+.rightSection {
+  flex: 3; /* 30% width */
+  background-color: #ffffff;
+  padding: 16px;
+  box-shadow: inset -2px 0 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 20px;
+}
+
+/* Bottom container (30% height of the dashboard) */
+.bottomContainer {
+  flex: 3; /* Occupies 30% of the dashboard */
+  height: 30%;
+  width: 100%;
+  background-color: #dce6fe;
+  margin-top: 20px;
+  border-radius: 8px;
+  /* box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

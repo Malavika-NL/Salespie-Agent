@@ -1,0 +1,18 @@
+
+.taskCreationContainer {
+  display: flex;
+  align-items: flex-start; /* Aligns items to the top so they grow downwards naturally */
+  width: 100%;
+  gap: 2%;
+  padding: 10px 0;
+  box-sizing: border-box;
+}
+
+.taskInformation {
+  width: 39%;
+}
+
+.upcomingInfo {
+  flex-grow: 1;
+  width: 59%; /* Fallback to ensure it takes the remaining space minus the gap */
+}

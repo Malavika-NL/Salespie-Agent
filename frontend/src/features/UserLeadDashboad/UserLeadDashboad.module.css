@@ -1,0 +1,66 @@
+.mainContent {
+
+    padding: 20px;
+    
+    }
+    
+
+    
+    .head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    
+      margin-top: 10px;
+      /* padding: 0; */
+    }
+    
+    .leftSection {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+    
+    .rightSection {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    /* Create Task Button */
+    .createTaskButton {
+      background-color: #1a73e8;
+      color: #fff;
+      border: none;
+      padding: 6px 10px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      height: auto;
+      width: auto;
+    }
+    
+    .createTaskButton:hover {
+      background-color: #155db2;
+    }
+
+    .tasklist{
+      color:black;
+      font-weight: 600;
+      font-size: 18px;
+      border: none;
+      background-color: inherit;
+  }
+    
+  .subhead{
+    color: #000000;
+    font-weight: 600;
+    font-size: 24px;
+    margin: 0;
+    padding: 0;
+  }
+  .subtext{
+    color: #6B8B88;
+    font-size: 14px;
+  }

@@ -1,0 +1,65 @@
+.cardWrapper {
+    /* background-color: transparent; */
+    background-color: #f4f6f6;
+    border-radius: 5px;
+  }
+  
+  .card {
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 5px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .iconContainer {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 5px 2px;
+  
+    }
+    
+    .icon {
+      font-size: 10px;
+      color: #000000; /* Adjust the color of the icon */
+      margin-left: auto;
+    }
+    
+    
+    .head {
+      font-size: 10px;
+      color: #6B8B88;
+      text-align: start;
+    }
+    
+    .subhead {
+      font-size: 8px;
+      color: black;
+      padding: 2px;
+      border: 1px solid #dcdcdc;
+      text-align: start;
+      border-radius: 3px;
+    }
+    
+    .footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.9rem;
+      color: #555;
+    }
+    
+    .date {
+      font-weight: bold;
+      font-size: 8px;
+      text-align: start;
+    }
+    
+    .time {
+      color: #007bff;
+      font-size: 8px;
+      text-align: start;
+    }
+    

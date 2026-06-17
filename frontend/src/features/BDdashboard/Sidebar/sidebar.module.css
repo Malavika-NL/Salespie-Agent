@@ -1,0 +1,31 @@
+.sidebar {
+  width: 100px;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: white;
+  overflow-x: hidden;
+}
+
+.sidebarContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  text-align: left;
+}
+
+.logo {
+  background: #002074;
+  font-size: 12px;
+  padding: 20px 4px;
+  color: white;
+}
+
+.img {
+  height: 50px;
+  width: 50px;
+  margin: 20px auto;
+}

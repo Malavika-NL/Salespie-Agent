@@ -1,0 +1,139 @@
+.container {
+  background-color: #f9fafb;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 24px;
+  min-height: 480px; 
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  box-sizing: border-box;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.heading {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  color: #111827;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.countBadge {
+  background-color: #eff6ff;
+  color: #2563eb;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 20px;
+}
+
+.historyBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #374151;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.historyBtn:hover {
+  background-color: #f3f4f6;
+}
+
+.historyIcon {
+  color: #d97706; 
+  font-size: 14px;
+}
+
+.historyBtnActive {
+  background-color: #fef2f2;
+  border-color: #fecaca;
+  color: #b91c1c;
+}
+
+.historyBtnActive:hover {
+  background-color: #fee2e2;
+}
+
+.historyIconActive {
+  color: #ef4444;
+  font-size: 14px;
+}
+
+.line {
+  border: none;
+  border-top: 1px solid #e5e7eb;
+  margin: 10px 0 20px 0;
+}
+
+.emptyState {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 20px;
+}
+
+.emptyIconWrap {
+  width: 64px;
+  height: 64px;
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.emptyText {
+  margin: 0;
+  font-size: 13px;
+  color: #6b7280;
+  font-weight: 600;
+}
+
+.emptySubText {
+  margin: 0;
+  font-size: 12px;
+  color: #9ca3af;
+}
+
+.tasksGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  overflow-y: auto;
+  align-content: start;
+  padding-right: 4px;
+  max-height: calc(100vh - 350px); 
+}
+
+.tasksGrid::-webkit-scrollbar {
+  width: 6px;
+}
+.tasksGrid::-webkit-scrollbar-track {
+  background: transparent;
+}
+.tasksGrid::-webkit-scrollbar-thumb {
+  background-color: #d1d5db;
+  border-radius: 10px;
+}

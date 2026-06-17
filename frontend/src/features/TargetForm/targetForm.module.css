@@ -1,0 +1,367 @@
+.mainContainer {
+
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background-color: #C4DFE6; 
+    /* margin-bottom: 2%; */
+}
+
+.formContainer{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 3%;
+    width: 90%;
+    height: auto;
+    background-color: #C4DFE6; 
+    border-radius: 20px;
+}
+
+
+.title{
+    
+    margin-top: 2%;
+    margin-bottom: 2%;
+    background-color: #C4DFE6;
+    font-size: 26px;
+    font-weight: 700;
+    color: black;
+}   
+
+.form {
+    display: flex;
+    width: 100%;
+ 
+    background-color: white;
+    border-radius: 20px;
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  */
+    box-shadow: 0 10px 20px rgba(189, 188, 188, 0.3), /* Bottom shadow */
+    0 -10px 20px rgba(189, 188, 188, 0.3), /* Top shadow */
+    10px 0 20px rgba(189, 188, 188, 0.3), /* Right shadow */
+    -10px 0 20px rgba(189, 188, 188, 0.3); /* Left shadow */
+}
+
+.leftContainer, .rightContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    flex: 1;    
+    padding: 40px;
+    border-bottom: 2px solid #AEAEAE;
+}
+
+.rightContainer{
+    background-color:#A1D6E2;
+    border-top-right-radius: 20px; 
+    border-bottom-right-radius: 20px; 
+  }
+.leftContainer{
+    background-color:#F1F1F2;
+    border-top-left-radius: 20px; 
+    border-bottom-left-radius: 20px; 
+  }
+
+.rightInput,
+.PIC,
+.designation,
+.rightSelect,
+.leftInput,
+.leftSelect {
+    width: 100%;
+    height: auto;
+    /* padding: 20px; */
+    box-sizing: border-box;
+    /* border: 1px solid #ccc; */
+    /* border-radius: 4px; */
+    font-size: 14px;
+    outline: none;
+    border: none; /* Remove default focus outline */
+    border-bottom: 2px solid #AEAEAE;
+    
+   
+}
+
+.leftLabel{
+    font-size: 14px;
+   
+   
+}
+
+.NextActionDate{
+    width: 100%;
+    height: auto;
+    /* padding: 20px; */
+    box-sizing: border-box;
+    /* border: 1px solid #ccc; */
+    /* border-radius: 4px; */
+    font-size: 14px;
+    outline: none;
+    border: none; /* Remove default focus outline */
+    border-bottom: 2px solid #AEAEAE;
+    padding: 0;
+}
+
+.nextTimeContainer{
+    display: grid;
+    grid-template-columns: 30% 69%; /* First item 30%, second item 70% */
+    /* gap: 2%; */
+   
+}
+
+.rightSelect,
+.rightInput{
+  background-color:#A1D6E2;
+  color: black;
+}
+
+.leftSelect,
+.leftInput,
+.PIC{
+    background-color:#F1F1F2;
+    color: black;
+}
+
+
+/* .rightInput::placeholder{
+    color: black;
+   
+} */
+.rightSelect{
+    color: black;
+   
+}
+
+/* .leftInput::placeholder{
+    color: black;
+   
+} */
+.leftSelect{
+    color: black;
+   
+}
+/* .inputItem::placeholder,
+.selectItem::placeholder,
+.PIC::placeholder,
+.designation::placeholder{
+  padding-bottom: 20%;
+
+ } */
+
+
+
+.input:focus, .selectItem, .PIC:focus, .designation:focus {
+    outline: none; /* Remove default focus outline */
+    border-bottom: 2px solid #AEAEAE; /* Change bottom border color on focus */
+}
+
+
+.subcontainer {
+    display: grid;
+    grid-template-columns: 49% 49%; /* First item 30%, second item 70% */
+    gap: 2%; /* Gap specifically for subcontainer items */
+}
+
+.button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: white;
+    color: black;
+    font-size: 14px;
+    cursor: pointer;
+    align-self: flex-end;
+    width: 200px;
+}
+
+.button:hover {
+    background-color: white;
+}
+
+
+
+
+
+
+/* App.module.css */
+
+.dropContainer {
+    display: flex;
+    position: relative;
+    width: 100%;
+    flex-direction: column;
+  }
+  
+  .selectedItemDisplay {
+    
+
+   
+
+   
+  
+    cursor: pointer;
+
+    width: 100%;
+    height: auto;
+ 
+    box-sizing: border-box;
+  
+    font-size: 14px;
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #AEAEAE;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 100%; /* Position the dropdown below the selectedItemDisplay */
+    left: 0;
+    width: 100%;
+    max-height: 300px;
+    overflow-y: auto; /* Add scroll if the content exceeds max height */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    z-index: 1; /* Ensure the dropdown is above other content */
+  }
+  
+  .dropdownContent {
+    width: 100%;
+  }
+  
+  .dropdownItem {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .dropdownItem:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .submenu {
+    position: absolute;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    width: 150px;
+  }
+  
+  .submenuItem {
+    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .submenuItem:hover {
+    background-color: #f0f0f0;
+  }
+  
+
+  
+
+
+.inputRightGroup {
+    position: relative;
+    /* margin: 20px 0; */
+}
+
+.inputRightGroup .rightlabel {
+    position: absolute;
+    top: 50%;
+    left: 1px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    /* color: #0ef; */
+    /* padding: 0 5px; */
+    pointer-events: none;
+    transition: .5s;
+}
+
+.inputRightGroup .rightInputGroup {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: black;
+    /* padding: 0 15px; */
+    background: transparent;
+    /* border: 1.2px solid #0ef; */
+    padding-top: 20px;
+    border: none; 
+    outline: none;
+    /* border-radius: 5px; */
+    border-bottom: 2px solid #AEAEAE;
+}
+
+.inputRightGroup .rightInputGroup:focus~label,
+.inputRightGroup .rightInputGroup:valid~label {
+    top: 0;
+    font-size: 14px;
+    background: #A1D6E2;
+}
+
+.rightInputGroup:-webkit-autofill {
+    background-color: #A1D6E2 !important; /* Change to your desired color */
+    -webkit-box-shadow: 0 0 0px 1000px #A1D6E2 inset; /* Ensure the background color is applied */
+  }
+  
+  .rightInputGroup:-webkit-autofill:focus {
+    background-color: #A1D6E2 !important; /* Ensure the background color is applied when focused */
+    -webkit-box-shadow: 0 0 0px 1000px #A1D6E2 inset; /* Ensure the background color is applied */
+  }
+
+
+
+
+.inputLeftGroup {
+    position: relative;
+    /* margin: 20px 0; */
+}
+
+.inputLeftGroup .leftlabel {
+    position: absolute;
+    top: 50%;
+    left: 1px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    /* color: #0ef; */
+    /* padding: 0 5px; */
+    pointer-events: none;
+    transition: .5s;
+}
+
+.inputLeftGroup .leftInputGroup {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: black;
+    /* padding: 0 15px; */
+    background: transparent;
+    /* border: 1.2px solid #0ef; */
+    padding-top: 20px;
+    border: none; 
+    outline: none;
+    /* border-radius: 5px; */
+    border-bottom: 2px solid #AEAEAE;
+}
+
+.inputLeftGroup .leftInputGroup:focus~label,
+.inputLeftGroup .leftInputGroup:valid~label {
+    top: 0;
+    font-size: 14px;
+    background: #F1F1F2;
+}
+
+.leftInputGroup:-webkit-autofill {
+    background-color: #F1F1F2 !important; /* Change to your desired color */
+    -webkit-box-shadow: 0 0 0px 1000px #F1F1F2 inset; /* Ensure the background color is applied */
+  }
+  
+  .leftInputGroup:-webkit-autofill:focus {
+    background-color: #F1F1F2 !important; /* Ensure the background color is applied when focused */
+    -webkit-box-shadow: 0 0 0px 1000px #F1F1F2 inset; /* Ensure the background color is applied */
+  }

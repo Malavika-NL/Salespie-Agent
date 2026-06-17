@@ -1,0 +1,102 @@
+.tableContainer {
+    width: auto;
+    /* margin: 1rem auto; */
+    margin:0 1rem;
+   
+  }
+  
+  .tableHeading {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .tableWrapper {
+    overflow-x: auto; /* Makes the table scrollable along the x-axis */
+    width: 100%;
+  }
+  
+  .table {
+    width: auto;
+    border-collapse: collapse;
+    table-layout: fixed; /* Ensures that table cells obey their widths */
+  }
+  
+  .table th,
+  .table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: left;
+    vertical-align: top; /* Ensure td content aligns at the top */
+  }
+  
+  .table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+  
+  /* Adjust the width of each column as needed */
+  /* .table th:nth-child(1) { width: 8%; }
+  .table th:nth-child(2) { width: 8%; }
+  .table th:nth-child(3) { width: 8%; }
+  .table th:nth-child(4) { width: 8%; }
+  .table th:nth-child(5) { width: 8%; }
+  .table th:nth-child(6) { width: 8%; }
+  .table th:nth-child(7) { width: 8%; }
+  .table th:nth-child(8) { width: 8%; }
+  .table th:nth-child(9) { width: 8%; }
+  .table th:nth-child(10) { width: 8%; }
+  .table th:nth-child(11) { width: 8%; }
+  .table th:nth-child(12) { width: 8%; } */
+  
+
+  .table td {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+  }
+
+ 
+  .table th,
+  .table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center; /* Align contents in the center */
+    vertical-align: middle; /* Align contents vertically in the center */
+  }
+  
+  .table th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+  }
+
+  
+  
+  .tableHeading{
+     margin-top:1% ;
+     width: 300px;
+     margin-bottom: 1%;
+     margin-left: auto;
+     margin-right: auto;
+     font-weight: 700;
+     font-size: 24px;
+   }
+  
+   .tableContainer {
+    overflow-x: auto;
+  }
+
+  .tableContainer::-webkit-scrollbar {
+    width: 0;  /* Hide scrollbar */
+    background: transparent;  /* Make the scrollbar track transparent */
+  }
+
+  .table th:nth-child(16),
+  .table td:nth-child(16),
+  .table td:nth-child(22) {
+      width: 5vh; /* Adjust width as needed */
+      min-height: 40px; /* Minimum height for cells */
+      max-height: 200px; /* Maximum height for cells */
+      overflow: hidden; /* Hide scrollbars */
+      word-wrap: break-word; /* Allow long words to break */
+  }
+  

@@ -1,0 +1,40 @@
+/* Container to center buttons */
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    /* Center the buttons horizontally */
+    align-items: center;
+    /* Center the buttons vertically */
+    height: 100%;
+    /* Ensure the container takes full height */
+    gap: 20px;
+    /* Add space between the buttons */
+    margin-top: 20px;
+}
+
+/* Button styling */
+.campaignbutton,
+.sendbutton {
+    padding: 10px 20px;
+    font-size: 12px;
+
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.campaignbutton {
+    width: 25%;
+    color: #3BA3D4;
+    background-color: white;
+    border: 1px solid #BFBFBF
+}
+
+.sendbutton {
+    background-color: #2196F3;
+    color: white;
+    width: 15%;
+    margin-right: 10%;
+}

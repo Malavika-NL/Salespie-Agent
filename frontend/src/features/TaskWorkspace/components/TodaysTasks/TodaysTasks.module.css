@@ -1,0 +1,91 @@
+.todaysTasks {
+    background-color: #ffffff;
+    margin: 0 auto;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.todaysTasks::-webkit-scrollbar {
+    display: none;  /* Hide scrollbar for Webkit-based browsers */
+}
+
+/* First Div Styles: Header Section */
+.headerSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.taskHeader {
+    color: #000000;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.taskDate {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    color: #2A64D3;
+    cursor: pointer;
+}
+
+.taskDate .icon {
+    margin-left: 2px;
+    color: #2A64D3;
+    font-size: 12px;
+}
+
+/* Second Div: Task Container */
+.taskContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Individual Task Card */
+.taskCard {
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 0 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.taskTitle {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.taskAssigned {
+    font-size: 9px;
+    color: #000000;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+
+
+.taskPriority {
+    font-size: 10px;
+    font-weight: 400;
+    color: #D41414;
+}
+
+
+.priorityimg {
+    width: 15px;
+    height: 15px;
+}
+
+.bottomcontent ,.topcontent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}

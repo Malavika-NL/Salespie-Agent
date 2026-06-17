@@ -1,0 +1,55 @@
+/* Footer container styles */
+.footer {
+    display: grid;
+    grid-template-rows: repeat(2, auto); /* Create two rows for links */
+    gap: 1rem; /* Space between rows */
+    justify-content: center; /* Center rows horizontally */
+    padding: 1rem;
+    background-color: inherit; /* Match parent background color */
+    width: 100%; /* Inherit width from parent */
+  }
+  
+  /* Row containing links */
+  .linkRow {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Split into 6 equal columns */
+    gap: 0.625rem; /* Space between links */
+    width: 100%; /* Stretch row width */
+    justify-items: center; /* Center items within their columns */
+  }
+  
+  /* Individual link styles */
+  .links {
+    height: 2.5rem;
+    background-color: #001740;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0.625rem;
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+    width: 100%; /* Make links responsive to column width */
+    max-width: 12rem; /* Limit maximum width */
+  }
+  
+  /* Responsive adjustments for smaller screens */
+  @media (max-width: 768px) {
+    .linkRow {
+      grid-template-columns: repeat(3, 1fr); /* Switch to 3 columns per row */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .linkRow {
+      grid-template-columns: repeat(2, 1fr); /* Switch to 2 columns per row */
+      gap: 0.5rem; /* Reduce spacing */
+    }
+  
+    .links {
+      font-size: 0.9rem; /* Smaller font size for smaller screens */
+    }
+  }
+  

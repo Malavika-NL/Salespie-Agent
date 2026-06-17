@@ -1,0 +1,94 @@
+.mainContent {
+
+  padding: 20px;
+  overflow-y: auto;
+  
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  margin-top: 10px;
+  /* padding: 0; */
+}
+
+.subhead{
+  color: #000000;
+  font-weight: 600;
+  font-size: 24px;
+  margin: 0;
+  padding: 0;
+}
+.subtext{
+  color: #6B8B88;
+  font-size: 14px;
+}
+
+.row,.row1 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 10px 0;
+  
+}
+
+.row{
+  border: 1px solid #93939366;
+}
+
+.row1{
+  gap: 2%;
+}
+.summaryOverview {
+  flex: 0 0 40%;
+}
+
+.listOfOpportunities {
+  flex: 0 0 60%;
+}
+
+.financeInformation{
+  flex: 0 0 49%;
+}
+
+.buttonContainer {
+  margin: 10px 0;
+  gap: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.editbutton {
+  background-color: #2196F3;
+  font-size: 14px;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 50px;
+}
+
+.savebutton {
+  background-color: #3FA749;
+  font-size: 18px;
+  color: white;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  font-weight: 600;
+}

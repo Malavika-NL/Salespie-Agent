@@ -1,0 +1,127 @@
+.verticalCarouselContent {
+  display: flex;
+  flex-direction: column; /* Arrange items vertically */
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+  height: 100%; /* Adjust based on the parent container's height */
+  width: 100%; /* Full width of the parent container */
+  box-sizing: border-box; /* Include padding and border in width/height */
+  overflow: hidden; /* Prevent content overflow */
+  justify-content: space-between; /* Distribute space evenly */
+}
+
+.contentItem {
+  display: flex;
+  align-items: center; /* Align the icon and text on the same line */
+  justify-content: center;
+  width: 100%; /* Ensure the border spans the full width */
+  flex-shrink: 0; /* Prevent shrinking of the content title */
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+align-items: center;
+  width: 100%;
+  flex-grow: 1; /* Allow this section to take up available vertical space */
+}
+
+.icon {
+  font-size: 24px; /* Size of the icon */
+  margin-right: 10px; /* Space between icon and text */
+  flex-shrink: 0; /* Prevent shrinking of the icon */
+}
+
+.text {
+  font-size: 12px; /* Text size */
+  color: #fff; /* Text color white for better contrast */
+  flex-shrink: 0; /* Prevent shrinking of the text */
+}
+
+.line {
+  width: 100%;
+  border: 1px solid #fff; /* White line */
+  margin-bottom: 10px;
+  flex-shrink: 0; /* Prevent shrinking of the line */
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  gap: 20px; /* Adjust spacing between items */
+
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: flex-start; */
+  color: white;
+  font-size: 10px;
+  flex: 1; /* Ensure equal width for date items */
+  box-sizing: border-box;
+
+}
+
+.buttonContainer {
+  color: white;
+  font-size: 12px;
+  background: #2BBC77;
+  padding: 10px;
+  border-radius: 10px;
+  text-align: center;
+  width: 50%; /* Button width relative to the parent container */
+  box-sizing: border-box;
+  align-self: center; /* Center the button horizontally */
+  flex-shrink: 0; /* Prevent the button from shrinking */
+}
+
+/* Add media queries for smaller screens or reduced height */
+@media (max-height: 768px) {
+  .verticalCarouselContent {
+    padding: 10px; /* Reduce padding for smaller heights */
+  }
+
+  .icon {
+    font-size: 20px; /* Shrink icon size */
+  }
+
+  .text {
+    font-size: 10px; /* Reduce text size */
+  }
+
+  .date {
+    font-size: 8px; /* Reduce font size for date details */
+  }
+
+  .buttonContainer {
+    font-size: 10px; /* Reduce button font size */
+    padding: 8px; /* Adjust button padding */
+  }
+
+  .row {
+    gap: 10px; /* Reduce gap between date items */
+  }
+}
+
+/* Ensure proper spacing for extremely small screens */
+@media (max-height: 500px) {
+  .icon {
+    font-size: 16px;
+  }
+
+  .text, .buttonContainer {
+    font-size: 8px;
+  }
+
+  .date {
+    font-size: 7px;
+  }
+
+  .buttonContainer {
+    padding: 5px;
+  }
+}

@@ -1,0 +1,230 @@
+.accountDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    width: 100%;
+    border-radius: 10px;
+    transition: width 0.3s ease-in-out; /* Smooth transition */
+}
+
+.accountDetails.expanded {
+    height: auto; /* Expanded width */
+}
+.accountDetailscontent {
+    display: flex;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    align-items: flex-start;
+    border: 1px solid #93939366;
+    gap: 10px;
+    justify-content: space-between; /* Ensures gaps between child divs */
+}
+
+
+.accountDetailBox1 {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px 0;
+    gap: 10px;
+    margin-left: 1%;
+    width: auto;
+    max-width: 20px;
+}
+
+.accountDetailBox {
+    flex: 1;
+    /* height: 60px; */
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    padding: 10px 10px;
+    position: relative;
+    gap: 5px;
+}
+
+
+.accountDetailBox:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    right: 0;
+    width: 1px;
+    background-color: #bfbfbf;
+}
+
+.texthead {
+    font-size: 14px;
+    color: #6B8B88;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+
+.maininput {
+    width: 100%;
+    font-size: 12px;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    background-color: inherit;
+    margin: 0;
+    padding: 5px;
+    color: #000000;
+    border: 1px solid #BFBFBF;
+    border-radius: 5px;
+}
+
+.maininput::placeholder{
+    color: #0000007d;
+    font-weight: 300px;
+}
+
+.select .defaultselect{
+    color: #0000007d !important;
+    font-weight: 300px !important;
+}
+
+.select option:not(.defaultselect) {
+    color: #0000007d !important;
+    font-weight: 300 !important; /* Different weight for other options */
+}
+
+.select {
+    width: 100%;
+    font-size: 12px;
+    font-weight: 600;
+    border: none;
+    outline: none;
+    background-color: inherit; /* Keeps the background consistent */
+    margin: 0;
+    color: #000000;
+    cursor: pointer; /* Indicates interactivity */
+    position: relative; /* Required for custom dropdown arrow positioning */
+    border: none;
+    padding: 5px;
+    border-radius: 4px; /* Slightly rounded corners */
+    border: 1px solid #BFBFBF;
+    border-radius: 5px;
+}
+
+
+
+.select::placeholder{
+    padding: none;
+}
+
+/* Add a custom arrow */
+.select::after {
+    content: '▼'; /* Unicode character for the arrow */
+    position: absolute;
+    right: 10px; /* Space from the right edge */
+    top: 50%;
+    transform: translateY(-50%); /* Centers the arrow vertically */
+    pointer-events: none; /* Makes the arrow non-interactive */
+    font-size: 10px; /* Adjusts arrow size */
+    color: #000000; /* Arrow color */
+}
+
+/* Style the dropdown options */
+
+
+.box{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 2px;
+    margin-bottom: 20px;
+}
+
+
+.additionalDetails {
+    width: 100%;
+    padding: 10px 20px;
+    background-color: inherit;
+    border-radius: 10px;
+    border: 1px solid #93939366;
+}
+
+.iconContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.additionalContent {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+
+.subhead{
+    color: #000000;
+    font-size: 15px;
+    padding: 10px 0;
+    font-weight: 600;
+}
+.detailBox {
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+    align-items: start;
+    height: 100%;
+}
+
+.buttonContainer {
+    margin: 10px 0;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.editbutton {
+    background-color: #2196F3;
+    font-size: 14px;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.savebutton {
+    background-color: #3FA749;
+    font-size: 14px;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+
+.textarea{
+    border: none;
+    outline: none;
+    background-color: inherit;
+    color: #000000;
+    font-weight: 600;
+    font-size: 12px;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #BFBFBF;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.textarea::placeholder{
+    color: #0000007d;
+    font-weight: 300px;
+}

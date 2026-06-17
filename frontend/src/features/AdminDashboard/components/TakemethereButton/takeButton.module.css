@@ -1,0 +1,82 @@
+.takeButton{
+    width: 250px;
+    height: 60px;
+    display: flex;
+    color: black;
+    text-align: left;
+    border-radius: 20px;
+    white-space: nowrap;
+    align-items: center;
+    background-color: white;
+    transition: 0.25s;
+    padding-left: 15px;
+    float: right;
+}
+
+.arrowbg{
+    background-color: black;
+    border-radius: 80%;
+    width:40px;
+    height: 40px;
+    position: relative;
+    left: 15%;
+}
+
+.arrow {
+    width: 20px;
+    height: 20px;
+    box-sizing: border-box;
+    position: relative;
+    top: 25%;
+    left: 20%;
+    transform: rotate(45deg);
+  }
+
+  .arrow::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-width: 0.4vmin 0.4vmin 0 0;
+    border-style: solid;
+    border-color: #fafafa;
+    transition: 0.2s ease;
+    display: block;
+    transform-origin: 100% 0;
+  }
+
+  .arrow::after {
+    content: "";
+    float: left;
+    position: relative;
+    top: -92%;
+    width: 100%;
+    height: 100%;
+    border-width: 0 0.4vmin 0 0;
+    border-style: solid;
+    border-color: #fafafa;
+    transform-origin: 100% 0;
+    transition: 0.2s ease;
+  }
+
+  .takeButton:hover,
+  .takeButton:focus {
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
+    background-color: black;
+    color: white;
+  }
+
+  .takeButton:hover .arrowbg {
+    background-color: white;
+  }
+
+  .takeButton:hover .arrow::after {
+    transform: rotate(45deg);
+    border-color: rgb(0, 0, 0);
+    height: 120%;
+  }
+  
+  .takeButton:hover .arrow::before {
+    border-color:rgb(0, 0, 0);
+    transform: scale(0.8);
+  }

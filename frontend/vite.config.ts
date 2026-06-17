@@ -1,0 +1,53 @@
+// import { defineConfig } from 'vite'
+// import react from '@vitejs/plugin-react'
+
+// // https://vite.dev/config/
+// export default defineConfig({
+//   plugins: [react()],
+//   build: {
+//     outDir: '../backend/build',
+//     emptyOutDir: true,
+//     assetsDir: 'static',
+//   },
+// })
+// import { defineConfig } from 'vite'
+// import react from '@vitejs/plugin-react'
+
+// // https://vite.dev/config/
+// export default defineConfig({
+//   plugins: [react()],
+//   build: {
+//     outDir: '../backend/build',
+//     emptyOutDir: true,
+//     assetsDir: 'static',
+//   },
+//   server: {
+//     proxy: {
+//       '/login': {
+//         target: 'http://127.0.0.1:8000',
+//         changeOrigin: true,
+//       },
+//     },
+//   },
+// })
+
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+export default defineConfig({
+  plugins: [react()],
+  build: {
+    outDir: '../backend/build',
+    emptyOutDir: true,
+    assetsDir: 'static',
+  },
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://127.0.0.1:8000',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, ''), // strips /api prefix before forwarding
+      },
+    },
+  },
+})

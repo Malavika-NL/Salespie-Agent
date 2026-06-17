@@ -1,0 +1,91 @@
+/* Blurred background overlay */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px); /* Adds a blur effect */
+    background: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+    z-index: 1000; /* Behind the popup but in front of other content */
+}
+
+/* Centered popup form */
+.popupForm {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    z-index: 2000;
+    width: 400px;
+    max-width: 90%;
+}
+
+/* Form content styling */
+.formContent h3 {
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+    font-size: 1.4rem;
+}
+
+.formContent form {
+    display: flex;
+    flex-direction: column;
+}
+
+.formContent label {
+    margin-bottom: 15px;
+    font-size: 14px;
+    color: #555;
+    font-weight: 500;
+}
+
+.formContent input,
+.formContent select {
+    padding: 8px 12px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    width: 100%;
+}
+
+.formContent input:disabled {
+    background-color: #f9f9f9;
+    color: #999;
+}
+
+/* Buttons styling */
+.buttonGroup {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.buttonGroup button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.buttonGroup button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+}
+
+.buttonGroup button[type="button"] {
+    background-color: #ddd;
+    color: #333;
+}
+
+.buttonGroup button:hover {
+    opacity: 0.9;
+}

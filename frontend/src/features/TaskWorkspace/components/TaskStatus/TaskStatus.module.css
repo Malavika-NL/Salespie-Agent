@@ -1,0 +1,103 @@
+
+
+
+.taskStatus{
+    padding: 30px;
+    box-shadow: 0px 0px 10px 0px #00000080;
+    margin: 10px;
+    border-radius: 15px;
+
+}
+
+.heading{
+    font-size: 20px;
+    font-weight: 700;
+}
+
+
+.taskcontent {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Dynamically adjust columns */
+    gap: 5%; /* Add spacing between sections */
+    height: 500px;
+    overflow-y: auto;
+  }
+  
+  .container {
+    flex: 1;
+  }
+  
+  .container h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+
+  .title{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px 0;
+    background-color: #F1F1F1;
+    box-shadow: 0px 0px 10px 0px #00000080;
+    color: black;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 5px 10px;
+
+  }
+
+  .iconcontainer{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+
+
+  .taskCard {
+    /* background-color: #eb1010; */
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 1rem;
+    cursor: grab;
+  }
+  
+
+  .taskCardDetails {
+    display: flex;
+    flex-direction: column;
+    color: #000000;
+    background-color: #D7C8FD;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px;
+}
+
+.taskrow{
+    display: flex;
+    justify-content: space-between;
+}
+
+.taskgroup{
+    display: flex;
+    flex-direction: column;
+
+}
+
+.taskhead{
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.tasksubhead{
+    font-size: 10px;
+    font-weight: 500;
+}
+.priorityimg{
+    height: 15px;
+    width: 15px;
+}

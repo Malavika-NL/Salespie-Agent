@@ -1,0 +1,111 @@
+.container {
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.heading {
+  font-size: 24px;
+  color: #333;
+}
+
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #45a049;
+}
+
+.divContainer,
+.headContainer {
+  display: flex;
+  justify-content: space-between;
+  border: 2px solid #93939366;
+  border-radius: 10px;
+  margin: 20px 0;
+}
+
+
+.headContainer {
+  background-color: #F4F6F6;
+  border-radius: 10px;
+}
+
+.divItem,
+.buttoncontainer,
+.headItem,
+.divItem1,
+.headItem1,
+.headItem2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20%;
+  /* Ensures that the divs take up equal space */
+  padding: 20px 0;
+  background-color: inherit;
+  text-align: center;
+  font-size: 12px;
+  text-align: start;
+}
+
+.divItem1,
+.buttoncontainer,
+.headItem1 {
+  width: 20%;
+  justify-content: start;
+  margin-left: 10px;
+}
+
+.headItem,
+.headItem1 ,.headItem2{
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.buttoncontainer {
+  display: flex;
+  width: 20%;
+  justify-content: end;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.savebutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: #2196F3;
+  color: white;
+  font-size: 10px;
+  padding: 5px 20px;
+  width: 90px;
+  font-weight: 500;
+}
+
+.deletebutton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  background-color: #C90000;
+  color: white;
+  font-size: 10px;
+  padding: 5px 20px;
+  width: 90px;
+  font-weight: 500;
+}

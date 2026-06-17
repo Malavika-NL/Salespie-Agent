@@ -1,0 +1,109 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+   
+  }
+  
+  .cardHeading {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    background-color: #F4F6F6;
+    width: 100%;
+  }
+  
+  .head {
+    font-size: 14px;
+    font-weight: 500;
+    color: #6B8B88;
+  }
+  
+  .iconContainer {
+    display: flex;
+    justify-content: flex-end;
+    color: #3b87e0;
+    gap: 12px;
+  }
+  
+  .icon {
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .icon:hover {
+    color: #3b87e0;
+  }
+  
+  /* Card content styling */
+  .cardContent {
+    background-color: white;
+  }
+  
+  .row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  
+  }
+  
+  .cardItem {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .cardItem2{
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    padding: 10px;
+  }
+
+  /* .box{
+
+  } */
+
+  .texthead {
+    font-size: 1.2vh;
+    color: #89b0ac;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+
+.text {
+    font-size: 1vh;
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+    max-width: 10vh;
+    word-wrap: break-word; /* Break long words to fit within the container */
+    overflow-wrap: break-word; /* Ensures long strings break */
+    white-space: normal;
+}
+
+.box1{
+ display: flex;
+ justify-content: start;
+ align-items:  start;    
+ width: 100%;
+}
+
+.box2{
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    width: 100%; 
+}
+  
+  @media (max-width: 768px) {
+    .cardItem {
+      width: 100%; /* On mobile, items take up full width */
+    }
+    .row {
+      flex-direction: column; /* Stack items in a column on small screens */
+    }
+  }
+  

@@ -1,0 +1,107 @@
+.container {
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  padding: 20px;
+  margin: auto;
+  height: 380px;
+  background-color: #F4F6F6;
+
+}
+
+.heading {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+.line {
+  border: none;
+  border-top: 2px solid black;
+  margin-bottom: 20px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.field {
+  flex: 1;
+  display: flex;
+  align-items: center; /* Align label and input on the same line */
+  justify-content: space-between;
+  gap: 10px; /* Space between label and input */
+}
+
+.label,.rowlabel {
+  font-size: 0.9vw;
+  color: #6B8B88;
+  font-weight: 500;
+ 
+}
+
+.rowlabel{
+  width: 12%;
+}
+
+.input {
+  width: 70%;
+  padding: 8px;
+  border: 1px solid #BFBFBF;
+  border-radius: 4px;
+  font-size: 10px;
+  height: 30px;
+}
+
+.input::placeholder {
+  color: #aaa;
+}
+.singleinput{
+  width: 70%;
+  padding: 8px;
+  border: 1px solid #BFBFBF;
+  border-radius: 4px;
+  font-size: 10px;
+ height: 30px;
+}
+
+
+.buttonContainer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.editButton {
+  background-color: #3FA749;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.saveButton {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.editButton:hover,
+.saveButton:hover {
+  opacity: 0.9;
+}

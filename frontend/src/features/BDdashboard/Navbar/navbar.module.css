@@ -1,0 +1,63 @@
+/* navbar.module.css */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 30px;
+    color: white;
+    position: fixed;
+    width: 90%;
+    z-index: 1;
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 50px;
+  }
+  
+  .menuToggle {
+    display: none; /* Hidden by default */
+    cursor: pointer;
+  }
+  
+  .navItems {
+    list-style-type: none;
+    display: flex;
+    gap: 20px; /* Space between items */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .navItem {
+    cursor: pointer;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .menuToggle {
+      display: block; /* Show the toggle button on smaller screens */
+    }
+  
+    .navItems {
+      display: none; /* Hide items by default on mobile */
+      flex-direction: column; /* Stack items vertically */
+      position: absolute;
+      top: 60px; /* Position below the navbar */
+      right: 0;
+      background-color: #333; /* Background for dropdown */
+      width: 100%; /* Full width */
+      z-index: 1; /* Ensure it overlays other elements */
+    }
+  
+    .navItems.active {
+      display: flex; /* Show items when active */
+    }
+  
+    .navItem {
+      padding: 15px 20px; /* Padding for items */
+      text-align: center; /* Center text in items */
+    }
+  }
+  

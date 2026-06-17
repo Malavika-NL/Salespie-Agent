@@ -1,0 +1,7 @@
+.divider {
+  background-color: var(--clr-cream);
+  border: none;
+  height: 0.1875rem;
+  width: auto;
+  margin: 0;
+}

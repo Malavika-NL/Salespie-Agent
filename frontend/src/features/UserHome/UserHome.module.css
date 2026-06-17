@@ -1,0 +1,148 @@
+.layoutContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100dvh;
+  width: 100%;
+  background-color: #f8fafc;
+  box-sizing: border-box;
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar {
+  height: 60px;
+  width: 100%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 0 #e2e8f0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
+
+.mainArea {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  min-height: 0;
+  margin-top: 60px;
+  height: calc(100dvh - 60px);
+}
+
+.mobileMainArea {
+  position: relative;
+}
+
+.sidebar {
+  width: 230px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 60px;
+  bottom: 0;
+  left: 0;
+  z-index: 60;
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-right: 1px solid #e2e8f0;
+  overflow: visible;
+}
+
+.sidebar.collapsed {
+  width: 76px;
+}
+
+.mainContent {
+  flex: 1;
+  min-width: 0;
+  background-color: #f8fafc;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+}
+
+.mainContent.expanded {
+  margin-left: 230px;
+  width: calc(100% - 230px);
+}
+
+.mainContent.collapsed {
+  margin-left: 76px;
+  width: calc(100% - 76px);
+}
+
+.mobileSidebar {
+  width: 230px;
+  box-shadow: 8px 0 24px rgba(15, 23, 42, 0.18);
+}
+
+.mobileSidebar.collapsed {
+  width: 230px;
+  transform: translateX(-100%);
+}
+
+.mobileContent {
+  margin-left: 0 !important;
+  width: 100% !important;
+}
+
+.backdrop {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.46);
+  border: 0;
+  padding: 0;
+  margin: 0;
+  z-index: 55;
+}
+
+.mobileMenuButton {
+  position: fixed;
+  top: 72px;
+  left: 12px;
+  z-index: 120;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #0f172a;
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+}
+
+@media (max-width: 1024px) {
+  .mainContent.expanded {
+    margin-left: 76px;
+    width: calc(100% - 76px);
+  }
+}
+
+@media (max-width: 768px) {
+  .mainArea {
+    height: calc(100dvh - 60px);
+  }
+
+  .mainContent {
+    padding-top: 44px;
+  }
+}
+
+@media (min-width: 769px) {
+  .mobileMenuButton {
+    display: none;
+  }
+}

@@ -1,0 +1,83 @@
+/* Sidebar container */
+.sidebar {
+  width: 15rem;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Search bar */
+.searchContainer {
+  margin-bottom: 1rem;
+  margin-top: 10vh;
+}
+
+.searchInput {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+/* Navigation styles */
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.navItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #444;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navItem:hover {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+/* Icons */
+.icon {
+  font-size: 1.25rem;
+}
+
+/* Apps section */
+.active {
+  background-color: #001740;
+  color: white;
+}
+
+.appsList {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-left: 2rem;
+  margin-top: 0.5rem;
+}
+
+.appItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: #555;
+  cursor: pointer;
+}
+
+.appItem:hover {
+  color: #000;
+}
+
+.appIcon {
+  font-size: 1rem;
+}

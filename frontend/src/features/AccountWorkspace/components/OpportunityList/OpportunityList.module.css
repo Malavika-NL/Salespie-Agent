@@ -1,0 +1,81 @@
+/* Container for the OpportunityList component */
+.opportunityListContainer {
+    padding: 20px;
+    background-color: #F4F6F6;
+
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+  
+  /* Header section styling */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  /* Title styling */
+  .title {
+    font-size: 0.95rem;
+    font-weight: bold;
+    color: #333333;
+  }
+  
+  /* Search bar styling */
+  .searchBar {
+    padding: 4px 12px;
+    font-size: 1rem;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    width: 250px;
+    color: #6B8B88;
+
+  }
+
+  .searchBar::placeholder{
+    color: #6B8B88;
+    
+  }
+  
+  /* Separator line styling */
+  .separator {
+    border: none;
+    border: 1px solid #000000;
+    margin: 10px 0;
+  }
+  
+  /* Table container styling */
+  .tableContainer {
+    overflow-x: auto; /* Add horizontal scrolling for small screens */
+  }
+  
+  /* Table styling */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+  }
+  
+  .table th,
+  .table td {
+    padding: 12px 15px;
+    text-align: left;
+    /* border: 1px solid #dddddd; */
+  }
+  
+  .table th {
+    background-color: #FFFFFF;
+    font-weight: bold;
+    color: #6B8B88;
+    
+  }
+  
+
+  .table td {
+    font-weight: 500;
+    color: black;
+    font-size: 14px;
+    
+  }
+  

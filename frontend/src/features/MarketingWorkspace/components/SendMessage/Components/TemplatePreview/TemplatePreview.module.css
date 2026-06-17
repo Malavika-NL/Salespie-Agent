@@ -1,0 +1,78 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px;
+    height: 100%;
+    border: 1px solid #93939366;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    height: 335px;
+  }
+  
+  .heading {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .line {
+    width: 100%;
+    height: 0.5px;
+    background-color: black ;
+    margin-bottom: 20px;
+  }
+  
+  .textArea {
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    font-size: 12px;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    resize: vertical; /* Allows vertical resizing */
+    background-color: inherit;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .textArea::placeholder {
+    color: #aaa;
+    font-style: italic;
+  }
+  
+
+  
+  .buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 15px;
+  }
+  
+  .editButton {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 4px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .saveButton {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 4px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .editButton:hover,
+  .saveButton:hover {
+    opacity: 0.9;
+  }

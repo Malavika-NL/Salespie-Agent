@@ -1,0 +1,198 @@
+/* taskForm.module.css */
+
+.outerContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #C4DFE6;
+    padding: 20px;
+    box-sizing: border-box;
+
+}
+
+.formContainer {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(189, 188, 188, 0.3),
+        /* Bottom shadow */
+        0 -10px 20px rgba(189, 188, 188, 0.3),
+        /* Top shadow */
+        10px 0 20px rgba(189, 188, 188, 0.3),
+        /* Right shadow */
+        -10px 0 20px rgba(189, 188, 188, 0.3);
+    /* Left shadow */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    gap: 20px;
+
+}
+
+.inputItem,
+.assigned {
+    padding: 10px;
+    border: none;
+    /* border-radius: 4px; */
+    outline: none;
+    font-size: 14px;
+    box-sizing: border-box;
+    width: 100%;
+    border-bottom: 2px solid #AEAEAE;
+}
+
+.label {
+    padding: 10px;
+    padding-top: 10px;
+    border: none;
+    /* border-radius: 4px; */
+    outline: none;
+    font-size: 14px;
+    box-sizing: border-box;
+    /* width: 100%; */
+    /* border-bottom: 2px solid #AEAEAE; */
+}
+
+.datecontainer {
+    display: grid;
+    grid-template-columns: 30% 69%;
+    /* First item 30%, second item 70% */
+
+}
+
+
+
+.buttonContainer {
+    display: flex;
+    justify-content: flex-end;
+    /* Move buttons to the end */
+    gap: 10px;
+    /* Space between buttons */
+    width: 40%;
+}
+
+.button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.rightSelect {
+    width: 100%;
+    height: auto;
+    /* padding: 20px; */
+    box-sizing: border-box;
+    /* border: 1px solid #ccc; */
+    /* border-radius: 4px; */
+    font-size: 14px;
+    outline: none;
+    border: none;
+    /* Remove default focus outline */
+    border-bottom: 2px solid #AEAEAE;
+    color: black !important;
+}
+
+
+
+
+
+.inputRightGroup {
+    position: relative;
+    /* margin: 20px 0; */
+}
+
+.inputRightGroup .rightlabel {
+    position: absolute;
+    top: 50%;
+    left: 1px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    /* color: #0ef; */
+    /* padding: 0 5px; */
+    pointer-events: none;
+    transition: .5s;
+}
+
+.inputRightGroup .rightInputGroup {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: black;
+    /* padding: 0 15px; */
+    background: transparent;
+    /* border: 1.2px solid #0ef; */
+    padding-top: 20px;
+    border: none; 
+    outline: none;
+    /* border-radius: 5px; */
+    border-bottom: 2px solid #AEAEAE;
+}
+
+.inputRightGroup .rightInputGroup:focus~label,
+.inputRightGroup .rightInputGroup:valid~label {
+    top: 0;
+    font-size: 14px;
+    background: #A1D6E2;
+}
+
+
+
+
+.inputLeftGroup {
+    position: relative;
+    /* margin: 20px 0; */
+}
+
+.inputLeftGroup .leftlabel {
+    position: absolute;
+    top: 50%;
+    left: 1px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    /* color: #0ef; */
+    /* padding: 0 5px; */
+    pointer-events: none;
+    transition: .5s;
+}
+
+.inputLeftGroup .leftInputGroup {
+    width: 100%;
+    height: auto;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: black;
+    /* padding: 0 15px; */
+    background: transparent;
+    /* border: 1.2px solid #0ef; */
+    padding-top: 20px;
+    border: none; 
+    outline: none;
+    /* border-radius: 5px; */
+    border-bottom: 2px solid #AEAEAE;
+}
+
+.inputLeftGroup .leftInputGroup:focus~label,
+.inputLeftGroup .leftInputGroup:valid~label {
+    top: 0;
+    font-size: 14px;
+    background: #F1F1F2;
+}

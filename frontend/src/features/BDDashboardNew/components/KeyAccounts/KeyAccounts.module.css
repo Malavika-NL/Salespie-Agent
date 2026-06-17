@@ -1,0 +1,143 @@
+  .container {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .head{
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .row {
+    position: relative;
+    display: grid;
+    grid-template-columns: 10% repeat(8, 1fr);
+    gap: 1%;
+    background-color: #FFFFFF;
+    border: 1px solid #D0D0D0;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    padding: 5px 50px 5px 10px;
+    border-radius: 10px;
+    margin: 10px 0;
+    min-height: 70px;
+
+  }
+
+  .boxPrimary {
+    background-color: inherit;
+    text-align: center;
+    display: flex;
+    /* Flexbox for horizontal layout */
+    justify-content: space-between;
+    /* Space between the inner divs */
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+
+  }
+
+  .innerBoxsquare {
+    flex: 0 0 30%;
+    /* 30% width */
+    height: 60%;
+    border: none;
+    border-radius: 4px;
+  }
+
+  .innerBoxname {
+    flex: 0 0 59%;
+    font-size: 14px;
+    color: #000;
+    font-weight: 600;
+    text-align: left;
+    margin-left: 1%;
+    border: none;
+  }
+
+  .box {
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    gap: 5px;
+  }
+
+  .innerBoxhead,
+  .innerBoxstatus {
+
+    border: none;
+    border-radius: 5px;
+    font-size: 10px;
+    font-weight: 600;
+    color: #000000;
+    padding: 5px;
+    width: 100%;
+    /* Full width of the inner boxes */
+    text-align: center;
+
+  }
+
+  .innerBox:last-child {
+    margin-bottom: 0;
+    /* Remove bottom margin for the last inner box */
+  }
+
+
+  .innerBoxhead {
+    background-color: #fff5d2;
+  }
+
+  .innerBoxstatus {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: inherit;
+  }
+
+  .statusPending {
+    color: #FFBA25;
+    border: 1px solid #FFBA26
+  }
+
+  .statusCompleted {
+    color: #0A9616;
+    border: 1px solid #0A9616;
+  }
+
+
+  .popup {
+    position: absolute;
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    flex-direction: row;
+    top: -40px;
+    gap: 10px;
+    z-index: 100; /* Ensure it appears above other elements */
+  }
+
+
+  .pending,
+  .completed {
+    padding: 5px;
+    color: white;
+    font-weight: 500;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 10px;
+  }
+
+  .pending {
+    background-color: #0C8D2F;
+  }
+
+  .completed {
+    background-color: #F37E30;
+  }

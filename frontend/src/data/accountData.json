@@ -1,0 +1,79 @@
+{
+    "companies": [
+      {
+        "company": "Honda",
+        "companybg": "#FCC700",
+        "companycolor": "#FFF5D2",
+        "content": [
+          { "head": "Mapping", "status": "Completed" },
+          { "head": "Target Campaign", "status": "Completed" },
+          { "head": "F to F Meeting", "status": "Completed" },
+          { "head": "Opps- Identification", "status": "Completed" },
+          { "head": "Quotation", "status": "Pending" },
+          { "head": "P.O", "status": "" },
+          { "head": "Repeat P.O", "status": "" },
+          { "head": "Third P.O", "status": "" }
+        ]
+      },
+      {
+        "company": "Maruthi",
+        "companybg": "#F3426E",
+        "companycolor": "#FFEAF1",
+        "content": [
+          { "head": "Mapping", "status": "Completed" },
+          { "head": "Target Campaign", "status": "Completed" },
+          { "head": "F to F Meeting", "status": "Completed" },
+          { "head": "Opps- Identification", "status": "Pending" },
+          { "head": "Quotation", "status": "" },
+          { "head": "P.O", "status": "" },
+          { "head": "Repeat P.O", "status": "" },
+          { "head": "Third P.O", "status": "" }
+        ]
+      },
+      {
+        "company": "RE",
+        "companybg": "#58BAAB",
+        "companycolor": "#CEF9F3",
+        "content": [
+          { "head": "Mapping", "status": "Completed" },
+          { "head": "Target Campaign", "status": "Completed" },
+          { "head": "F to F Meeting", "status": "Completed" },
+          { "head": "Opps- Identification", "status": "Completed" },
+          { "head": "Quotation", "status": "Completed" },
+          { "head": "P.O", "status": "Completed" },
+          { "head": "Repeat P.O", "status": "Pending" },
+          { "head": "Third P.O", "status": "" }
+        ]
+      },
+      {
+        "company": "Hero",
+        "companybg": "#019FF8",
+        "companycolor": "#D3F1FF",
+        "content": [
+          { "head": "Mapping", "status": "Completed" },
+          { "head": "Target Campaign", "status": "Completed" },
+          { "head": "F to F Meeting", "status": "Completed" },
+          { "head": "Opps- Identification", "status": "Completed" },
+          { "head": "Quotation", "status": "Pending" },
+          { "head": "P.O", "status": "" },
+          { "head": "Repeat P.O", "status": "" },
+          { "head": "Third P.O", "status": "" }
+        ]
+      },
+      {
+        "company": "TVS",
+        "companybg": "#C036BB",
+        "companycolor": "#FFD5FE",
+        "content": [
+          { "head": "Mapping", "status": "Completed" },
+          { "head": "Target Campaign", "status": "Completed" },
+          { "head": "F to F Meeting", "status": "Completed" },
+          { "head": "Opps- Identification", "status": "Pending" },
+          { "head": "Quotation", "status": "" },
+          { "head": "P.O", "status": "" },
+          { "head": "Repeat P.O", "status": "" },
+          { "head": "Third P.O", "status": "" }
+        ]
+      }
+    ]
+  }

@@ -1,0 +1,631 @@
+.pageContainer {
+  min-height: 100vh;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 56% 44%;
+  background: #eef3ff;
+  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+}
+
+.leftPanel {
+  padding: 52px 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  background-image: url('../../features/images/login-image-4.png');
+  background-size: cover;
+  background-position: left center;
+  background-repeat: no-repeat;
+}
+
+.leftBrand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 46px;
+  font-weight: 700;
+  color: #09164c;
+  margin-bottom: 26px;
+}
+
+.leftLogo {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+}
+
+.leftPanel::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(40, 90, 210, 0.12);
+  backdrop-filter: saturate(1.12) contrast(1.08);
+  pointer-events: none;
+}
+
+.leftTitle {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+  font-size: 52px;
+  line-height: 1.18;
+  font-weight: 800;
+  letter-spacing: 0.6px;
+  color: #111111;
+  margin: 0;
+  text-align: center;
+  animation: titleSlideIn 0.9s ease-out both;
+  text-wrap: balance;
+}
+
+.leftTitle span {
+  color: transparent;
+  display: inline-block;
+  background-image: linear-gradient(
+    120deg,
+    #4d5f87 0%,
+    #aebbd7 18%,
+    #f8fbff 33%,
+    #8299c8 48%,
+    #ffffff 56%,
+    #7088ba 72%,
+    #3d4f78 100%
+  );
+  background-size: 220% 100%;
+  background-position: -120% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 0 4px rgba(230, 240, 255, 0.45));
+  animation: highlightIn 1.2s ease-out both;
+}
+
+.leftTitle > span {
+  display: block;
+  opacity: 0;
+  position: relative;
+  animation: lineRunIn 0.9s cubic-bezier(0.2, 0.8, 0.2, 1) forwards, lineFloat 2.2s ease-in-out 1, metallicTrack 2.4s linear 1, settleBlack 0.01s linear 2.4s forwards;
+  will-change: transform, filter, opacity;
+}
+
+.leftTitle > span::after {
+  content: '✦';
+  position: absolute;
+  top: -0.22em;
+  right: -0.34em;
+  font-size: 0.34em;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(177, 214, 255, 0.95), 0 0 18px rgba(139, 194, 255, 0.7);
+  opacity: 0;
+  transform: scale(0.6) rotate(0deg);
+  animation: letterSparkTwinkle 1.45s ease-in-out 1, hideSparkle 0.01s linear 2.4s forwards;
+}
+
+.leftTitle > span:nth-child(1) {
+  transform: translateX(-64px) translateY(-8px);
+  animation-delay: 0.05s, 1.1s;
+}
+
+.leftTitle > span:nth-child(2) {
+  transform: translateX(-12px) translateY(0);
+  animation-delay: 0.25s, 1.35s;
+}
+
+.leftTitle > span:nth-child(3) {
+  transform: translateX(42px) translateY(8px);
+  animation-delay: 0.45s, 1.6s;
+}
+
+.leftTitle > span:nth-child(1)::after {
+  animation-delay: 0.1s;
+}
+
+.leftTitle > span:nth-child(2)::after {
+  animation-delay: 0.45s;
+}
+
+.leftTitle > span:nth-child(3)::after {
+  animation-delay: 0.8s;
+}
+
+.starLetter {
+  position: relative;
+  display: inline-block;
+  color: transparent;
+  background-image: linear-gradient(
+    120deg,
+    #2f4ca8 0%,
+    #8fb2ff 24%,
+    #ffffff 42%,
+    #9ec0ff 56%,
+    #3155b6 100%
+  );
+  background-size: 240% 100%;
+  background-position: -120% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 0 8px rgba(126, 170, 255, 0.75));
+  animation: shinySweep 1.1s linear 1, shinyPulse 1s ease-in-out 1, settleBlack 0.01s linear 1.2s forwards;
+}
+
+.sparkleText {
+  position: relative;
+  color: transparent;
+  background-image: linear-gradient(
+    115deg,
+    #536694 0%,
+    #d8e8ff 26%,
+    #ffffff 45%,
+    #a1b9e4 64%,
+    #455781 100%
+  );
+  background-size: 240% 100%;
+  background-position: -110% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: highlightIn 1.2s ease-out both, textShimmer 1.4s linear 1, settleBlack 0.01s linear 1.5s forwards;
+}
+
+.leftText {
+  position: relative;
+  z-index: 1;
+  max-width: 470px;
+  margin-top: 22px;
+  font-size: 20px;
+  color: #253458;
+  line-height: 1.55;
+  letter-spacing: 0.35px;
+  text-align: center;
+  animation: subtitleSlideIn 1s ease-out 0.65s both;
+}
+
+@keyframes titleSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-42px);
+    letter-spacing: 0.18em;
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    letter-spacing: 0.2px;
+  }
+}
+
+@keyframes subtitleSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes lineRunIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-180px) skewX(-14deg) scale(0.92);
+    letter-spacing: 0.2em;
+    filter: blur(3px);
+  }
+  70% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) skewX(0deg) scale(1);
+    letter-spacing: 0.2px;
+  }
+}
+
+@keyframes lineFloat {
+  0%, 100% {
+    filter: drop-shadow(0 0 0 rgba(255, 255, 255, 0));
+  }
+  50% {
+    filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.55));
+  }
+}
+
+@keyframes highlightIn {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes letterSparkle {
+  0% {
+    background-position: -120% 0;
+  }
+  100% {
+    background-position: 150% 0;
+  }
+}
+
+@keyframes shinySweep {
+  0% {
+    background-position: -120% 0;
+  }
+  100% {
+    background-position: 140% 0;
+  }
+}
+
+@keyframes shinyPulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 6px rgba(126, 170, 255, 0.45));
+  }
+  50% {
+    filter: drop-shadow(0 0 16px rgba(126, 170, 255, 1));
+  }
+}
+
+@keyframes textShimmer {
+  0% {
+    text-shadow: -14px 0 0 rgba(255, 255, 255, 0);
+  }
+  50% {
+    text-shadow: 0 0 16px rgba(255, 255, 255, 0.85);
+  }
+  100% {
+    text-shadow: 14px 0 0 rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes metallicTrack {
+  0% {
+    background-position: -120% 0;
+  }
+  100% {
+    background-position: 140% 0;
+  }
+}
+
+@keyframes letterSparkTwinkle {
+  0%, 100% {
+    opacity: 0.1;
+    transform: scale(0.6) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1) rotate(22deg);
+  }
+}
+
+@keyframes settleBlack {
+  to {
+    color: #111111;
+    background-image: none;
+    filter: none;
+    text-shadow: none;
+  }
+}
+
+@keyframes hideSparkle {
+  to {
+    opacity: 0;
+  }
+}
+
+.rightPanel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(180deg, #eef3ff 0%, #e9efff 100%);
+}
+
+@keyframes welcomeRunIn {
+  0% {
+    opacity: 0;
+    transform: translateX(120px);
+    letter-spacing: 0.12em;
+    filter: blur(2px);
+  }
+  70% {
+    opacity: 1;
+    filter: blur(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+    letter-spacing: 0.4px;
+  }
+}
+
+.loginPanel {
+  width: 100%;
+  max-width: 540px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(216, 226, 249, 0.9);
+  border-radius: 26px;
+  box-shadow: 0 24px 46px rgba(18, 48, 117, 0.14);
+  backdrop-filter: blur(3px);
+  padding: 42px 36px;
+}
+
+.rightTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  text-align: center;
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  color: #0b1655;
+  animation: welcomeRunIn 0.95s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+}
+
+.topLogo {
+  height: 58px;
+  width: auto;
+  display: block;
+  margin: 0 auto 18px;
+}
+
+.subtitle {
+  margin: 12px 0 28px;
+  text-align: center;
+  color: #516289;
+  font-size: 20px;
+  letter-spacing: 0.35px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.label {
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: #10183d;
+}
+
+.inputField {
+  width: 100%;
+  height: 58px;
+  padding: 0 18px;
+  border: 1px solid #d5ddf0;
+  border-radius: 12px;
+  font-size: 22px;
+  letter-spacing: 0.2px;
+  color: #1a2141;
+  outline: none;
+  background: rgba(250, 252, 255, 0.95);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease, background-color 0.25s ease;
+}
+
+.inputField::placeholder {
+  color: #9aa3bc;
+}
+
+.inputField:focus {
+  border-color: #2d63ef;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(45, 99, 239, 0.14);
+}
+
+.passwordWrapper {
+  position: relative;
+}
+
+.passwordWrapper .inputField {
+  padding-right: 48px;
+}
+
+.eyeButton {
+  position: absolute;
+  right: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;
+  color: #9098af;
+  cursor: pointer;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 6px;
+}
+
+.remember {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #2b345f;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+}
+
+.remember input {
+  width: 20px;
+  height: 20px;
+}
+
+.forgotPassword {
+  color: #1454eb;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+}
+
+.submitButton {
+  margin-top: 8px;
+  border: none;
+  height: 58px;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #154de4 0%, #2a6cff 100%);
+  color: #fff;
+  font-size: 30px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-shadow: 0 12px 24px rgba(30, 96, 255, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  overflow: hidden;
+  animation: loginButtonPulse 1.8s ease-in-out infinite;
+}
+
+.submitButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 28px rgba(30, 96, 255, 0.4);
+}
+
+.submitButton::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 70%;
+  height: 100%;
+  background: linear-gradient(
+    100deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.45) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: skewX(-20deg);
+  animation: loginButtonShine 2s ease-in-out infinite;
+}
+
+.divider {
+  position: relative;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.divider::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  border-top: 1px solid #d9deea;
+}
+
+.divider span {
+  position: relative;
+  padding: 0 14px;
+  background: #fff;
+  color: #7f89a5;
+  font-size: 18px;
+}
+
+.googleButton {
+  border: 1px solid #d9deea;
+  height: 58px;
+  border-radius: 12px;
+  background: #ffffff;
+  color: #17203e;
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.25px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.googleButton:hover {
+  border-color: #c5d4f6;
+  box-shadow: 0 8px 18px rgba(55, 85, 145, 0.12);
+}
+
+.signupText {
+  text-align: center;
+  margin: 18px 0 0;
+  color: #566280;
+  font-size: 17px;
+  letter-spacing: 0.2px;
+}
+
+.signupText span {
+  color: #1454eb;
+}
+
+.errorMessage {
+  color: #cc0000;
+  font-size: 15px;
+  text-align: center;
+  padding: 8px 10px;
+  background-color: #fff0f0;
+  border-radius: 6px;
+  border: 1px solid #ffcccc;
+}
+
+@keyframes loginButtonPulse {
+  0%, 100% {
+    box-shadow: 0 12px 24px rgba(30, 96, 255, 0.35);
+  }
+  50% {
+    box-shadow: 0 16px 32px rgba(30, 96, 255, 0.55);
+  }
+}
+
+@keyframes loginButtonShine {
+  0% {
+    left: -130%;
+  }
+  100% {
+    left: 160%;
+  }
+}
+
+@media (max-width: 1200px) {
+  .pageContainer {
+    grid-template-columns: 1fr;
+  }
+
+  .leftPanel {
+    min-height: 45vh;
+    justify-content: flex-end;
+  }
+
+  .rightPanel {
+    padding: 18px;
+  }
+
+  .leftTitle { font-size: 38px; }
+  .leftText { font-size: 17px; }
+  .leftBrand { font-size: 30px; }
+  .leftLogo { width: 38px; height: 38px; }
+  .rightTitle { font-size: 32px; }
+  .subtitle, .label, .remember, .forgotPassword, .divider span, .signupText { font-size: 16px; }
+  .inputField { height: 50px; font-size: 18px; }
+  .googleButton, .submitButton { height: 50px; font-size: 18px; }
+}
+
+@media (max-width: 680px) {
+  .leftPanel {
+    padding: 24px 18px;
+  }
+
+  .loginPanel {
+    padding: 24px 16px;
+    border-radius: 16px;
+  }
+
+  .leftTitle {
+    font-size: 28px;
+  }
+
+  .row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+}

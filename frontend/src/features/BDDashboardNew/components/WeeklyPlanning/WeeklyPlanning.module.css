@@ -1,0 +1,168 @@
+.container {
+    /* max-width: 800px; */
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.select {
+    padding: 8px;
+    font-size: 10px;
+}
+
+.table {
+    display: grid;
+    gap: 10px; /* Adds gap between rows */
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+   
+}
+
+.headerRow {
+    font-weight: bold;
+}
+
+.cell,.cell1 ,.cell2,.cell3,.cell4{
+    padding: 10px;
+    font-size: 10px;
+    color: #ffffff;
+    text-align: center;
+    font-weight: 500;
+}
+
+.cell{
+    border: 1px solid #e4e3e3;
+    display: flex;
+    gap: 10px;
+}
+
+.cell1{
+    width: 60px;
+
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    color: #000000;
+    font-weight: 600;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.cell2,.cell3{
+    color: black;
+    font-size: 10px;
+}
+
+.cell2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 70px;
+   
+    color: #000000;
+    font-weight: 500;
+}
+
+.cell4{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+/* Colors for each row */
+.color1 {
+    background: #97A6BD;
+}
+
+.color2 {
+    background: #C28AE7;
+}
+
+.color3 {
+    background: #A091F2;
+}
+
+.color4 {
+    background: #77A4FF;
+}
+
+.color5 {
+    background: #D8E2FC;
+}
+.lightcolor1 {
+    background: #D4E2F1;
+}
+
+.lightcolor2 {
+    background: #F2DCF6;
+}
+
+.lightcolor3 {
+    background: #DBD5F8;
+}
+
+.lightcolor4 {
+    background: #D8E2FC;
+}
+
+.lightcolor5 {
+    background: #D4E2F1;
+}
+
+.select{
+    /* width: 150px; */
+    /* height:30px; */
+    font-size: 10px;
+    border-radius: 5px;
+    border: 0.5px solid #000000;
+    font-weight: 500;
+}
+
+.set{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    font-weight: 600;
+    font-size: 10px;
+    text-align: center;
+    width: 50px;
+    border-radius: 5px;
+}
+
+.Edit{
+    background-color: #3C9AFF;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    color: white;
+    font-weight: 600;
+    font-size: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.expandlogo{
+    font-size: 20px;
+    color: #000000;
+    margin-left: 10px;
+}

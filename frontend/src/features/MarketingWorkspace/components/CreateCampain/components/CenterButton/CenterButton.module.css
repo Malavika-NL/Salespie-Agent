@@ -1,0 +1,36 @@
+/* Container to center buttons */
+.buttonContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Button styling */
+.Clearbutton,
+.savebutton {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    gap: 5px;
+}
+
+
+.Clearbutton {
+    /* width: 25%; */
+    color: white;
+    background-color: #C90000;
+
+}
+
+.savebutton {
+    background-color:#3FA749;
+    color: white;
+
+}

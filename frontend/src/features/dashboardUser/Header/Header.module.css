@@ -1,0 +1,646 @@
+/* .mainContent {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    margin-bottom: 10px;
+} */
+
+/* Common styles for all boxes */
+/* .box {
+    display: flex;
+    flex-direction: column;
+   
+    padding: 10px 20px;
+    width: 100%;
+    border-radius: 10px;
+} */
+
+/* First box styling (contains rows of two divs) */
+/* .box1 {
+    background-color: #FFFFCC; 
+   
+} */
+
+/* .row {
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;
+    margin-bottom: 5px;
+ 
+} */
+
+/* .head{
+    display: flex;
+    justify-content: center; 
+    width: 100%;
+    margin-bottom: 5px;
+} */
+
+
+/* Unique colors for other boxes */
+/* .box2 { background-color: #FFCCCC; }  
+.box3 { background-color: #CCCCFF; }  
+.box4 { background-color: #CCFFCC; }  
+
+.title {
+    font-size: 14px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+   
+}
+
+.number {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.heading {
+    font-size: 16px;
+    font-weight: 600;
+    color: rgb(0, 0, 0);
+} */
+
+
+
+/* Responsive Design */
+/* @media (max-width: 1024px) {
+    .mainContent {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .mainContent {
+        grid-template-columns: repeat(1, 1fr);
+    }
+} */
+
+/* ================================================================
+   Header.module.css  –  Sales CRM Stat Cards with Sparklines
+   ================================================================ */
+
+   /* Removed external Google Fonts import to avoid runtime css2 loading failures. */
+
+   /* ── Grid wrapper ────────────────────────────────────────────────── */
+   .mainContent {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+     gap: 16px;
+     padding: 24px 28px 0;
+     max-width: 1600px;
+     margin: 0 auto;
+   }
+
+   .mainContentFiveCols {
+     grid-template-columns: repeat(5, minmax(0, 1fr));
+     max-width: 1880px;
+   }
+   
+   /* ── Base card ───────────────────────────────────────────────────── */
+   .card {
+     background: #FFFFFF;
+     border: 1px solid #E2E8F0;
+     border-radius: 14px;
+     padding: 18px 20px 16px;
+     display: flex;
+     flex-direction: column;
+     gap: 0;
+     box-shadow: 0 1px 3px rgba(15,23,42,0.07), 0 1px 2px rgba(15,23,42,0.04);
+     transition: transform 200ms cubic-bezier(0.4,0,0.2,1),
+                 box-shadow 200ms cubic-bezier(0.4,0,0.2,1);
+     position: relative;
+     overflow: hidden;
+     cursor: default;
+   }
+   
+   /* Colour-coded top accent bar */
+   .card::before {
+     content: '';
+     position: absolute;
+     top: 0; left: 0; right: 0;
+     height: 3px;
+     border-radius: 14px 14px 0 0;
+   }
+   
+   .card:hover {
+     transform: translateY(-2px);
+     box-shadow: 0 10px 28px rgba(15,23,42,0.10), 0 3px 8px rgba(15,23,42,0.06);
+   }
+   
+   /* ── Per-card accent colors ──────────────────────────────────────── */
+   .order::before      { background: #4F46E5; }
+   .funnel::before     { background: #06B6D4; }
+   .projection::before { background: #10B981; }
+   .sales::before      { background: #F59E0B; }
+   
+   /* ── Card top row (icon + title + trend badge) ───────────────────── */
+   .cardTop {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     margin-bottom: 10px;
+   }
+   
+   .cardTopLeft {
+     display: flex;
+     align-items: center;
+     gap: 8px;
+   }
+   
+   .iconWrap {
+     width: 30px;
+     height: 30px;
+     border-radius: 8px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     flex-shrink: 0;
+   }
+   
+   /* Icon pill colors */
+   .order      .iconWrap { background: #EEF2FF; color: #4F46E5; }
+   .funnel     .iconWrap { background: #ECFEFF; color: #06B6D4; }
+   .projection .iconWrap { background: #ECFDF5; color: #10B981; }
+   .sales      .iconWrap { background: #FFFBEB; color: #F59E0B; }
+   
+   .heading {
+     font-family: 'Sora', system-ui, sans-serif;
+     font-size: 13px;
+     font-weight: 700;
+     color: #0F172A;
+     letter-spacing: -0.1px;
+   }
+   
+   /* ── Trend badge ─────────────────────────────────────────────────── */
+   .trendUp {
+     display: inline-flex;
+     align-items: center;
+     gap: 2px;
+     font-size: 10.5px;
+     font-weight: 700;
+     padding: 2px 7px;
+     border-radius: 20px;
+     background: #D1FAE5;
+     color: #065F46;
+     white-space: nowrap;
+   }
+   
+   .trendDown {
+     display: inline-flex;
+     align-items: center;
+     gap: 2px;
+     font-size: 10.5px;
+     font-weight: 700;
+     padding: 2px 7px;
+     border-radius: 20px;
+     background: #FEE2E2;
+     color: #991B1B;
+     white-space: nowrap;
+   }
+   
+   /* ── Primary metric ──────────────────────────────────────────────── */
+   .primaryValue {
+     font-family: 'Sora', system-ui, sans-serif;
+     font-size: 24px;
+     font-weight: 700;
+     line-height: 1.1;
+     letter-spacing: -0.6px;
+     color: #0F172A;
+     margin-bottom: 2px;
+   }
+   
+   /* Accent color on primary value per card */
+   .order      .primaryValue { color: #4F46E5; }
+   .funnel     .primaryValue { color: #0891B2; }
+   .projection .primaryValue { color: #059669; }
+   .sales      .primaryValue { color: #F59E0B; }
+   
+   .primaryLabel {
+     font-family: 'DM Sans', system-ui, sans-serif;
+     font-size: 11px;
+     color: #94A3B8;
+     margin-bottom: 8px;
+     font-weight: 400;
+   }
+   
+   /* ── Sparkline area ──────────────────────────────────────────────── */
+  .sparkWrap {
+    width: 100%;
+    height: 74px;
+    margin-bottom: 10px;
+  }
+
+  .sparklineSvg {
+    width: 100%;
+    height: 74px;
+    display: block;
+    overflow: visible;
+  }
+
+  .budgetBarChart {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 8px 10px 6px;
+    border-radius: 12px;
+    border: 1px solid #E2E8F0;
+    background: linear-gradient(180deg, #FFFBEB 0%, #FFFFFF 58%);
+  }
+
+  .budgetBarMeta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .budgetBarTitle {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: #94A3B8;
+    letter-spacing: 0.22px;
+    text-transform: uppercase;
+  }
+
+  .budgetBarPct {
+    font-family: 'Sora', system-ui, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: #065F46;
+    background: #D1FAE5;
+    border-radius: 999px;
+    padding: 2px 8px;
+    white-space: nowrap;
+  }
+
+  .budgetChartCanvas {
+    flex: 1;
+    min-height: 120px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .budgetChartCanvas :global(.recharts-surface) {
+    overflow: hidden;
+  }
+
+  .budgetLegend {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px 10px;
+    margin-top: 1px;
+  }
+
+  .budgetLegendItem {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: #64748B;
+    letter-spacing: 0.2px;
+  }
+
+  .budgetVarianceRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px dashed #E2E8F0;
+    padding-top: 6px;
+  }
+
+  .budgetVarianceLabel {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    color: #94A3B8;
+    text-transform: uppercase;
+    letter-spacing: 0.22px;
+  }
+
+  .budgetVarianceValue {
+    font-family: 'Sora', system-ui, sans-serif;
+    font-size: 9.5px;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 999px;
+  }
+
+  .budgetVariancePositive {
+    color: #047857;
+    background: #ECFDF5;
+  }
+
+  .budgetVarianceNegative {
+    color: #B91C1C;
+    background: #FEF2F2;
+  }
+
+  .rankBarChart {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px 10px 8px;
+    border-radius: 12px;
+    border: 1px solid #E2E8F0;
+    background: linear-gradient(180deg, #EEF2FF 0%, #FFFFFF 64%);
+  }
+
+  .rankBarMeta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .rankBarTitle {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: #6366F1;
+    text-transform: uppercase;
+    letter-spacing: 0.22px;
+  }
+
+  .rankBarTotal {
+    font-family: 'Sora', system-ui, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: #334155;
+    background: #E2E8F0;
+    border-radius: 999px;
+    padding: 2px 8px;
+    white-space: nowrap;
+  }
+
+  .rankChartCanvas {
+    flex: 1;
+    min-height: 220px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .rankChartCanvas :global(.recharts-surface) {
+    overflow: hidden;
+  }
+
+  .rankBarFooter {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: #94A3B8;
+    text-align: right;
+  }
+
+  .overallRankPieChart {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px 10px 8px;
+    border-radius: 12px;
+    border: 1px solid #E2E8F0;
+    background: linear-gradient(180deg, #ECFEFF 0%, #FFFFFF 64%);
+  }
+
+  .overallRankMeta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .overallRankTitle {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: #0F766E;
+    text-transform: uppercase;
+    letter-spacing: 0.22px;
+  }
+
+  .overallRankTotal {
+    font-family: 'Sora', system-ui, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: #334155;
+    background: #E2E8F0;
+    border-radius: 999px;
+    padding: 2px 8px;
+    white-space: nowrap;
+  }
+
+  .overallRankCanvas {
+    position: relative;
+    flex: 1;
+    min-height: 190px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .overallRankCanvas :global(.recharts-surface) {
+    overflow: hidden;
+  }
+
+  .overallRankCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    pointer-events: none;
+  }
+
+  .overallRankCenterValue {
+    font-family: 'Sora', system-ui, sans-serif;
+    font-size: 21px;
+    font-weight: 700;
+    line-height: 1;
+    color: #0F172A;
+  }
+
+  .overallRankCenterLabel {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 9px;
+    font-weight: 700;
+    color: #94A3B8;
+    text-transform: uppercase;
+    letter-spacing: 0.22px;
+    margin-top: 2px;
+  }
+
+  .overallRankLegend {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 6px 10px;
+  }
+
+  .overallRankLegendItem {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: #475569;
+    letter-spacing: 0.2px;
+  }
+
+  .overallRankLegendDot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    display: inline-block;
+    flex-shrink: 0;
+  }
+
+  .overallRankFooter {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: #94A3B8;
+    text-align: right;
+  }
+
+  .projectionModelChart {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 10px 10px 8px;
+    border-radius: 12px;
+    border: 1px solid #BBF7D0;
+    background: linear-gradient(180deg, #ECFDF5 0%, #FFFFFF 64%);
+  }
+
+  .projectionModelMeta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+  }
+
+  .projectionModelTitle {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: #047857;
+    text-transform: uppercase;
+    letter-spacing: 0.22px;
+  }
+
+  .projectionModelBadge {
+    font-family: 'Sora', system-ui, sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    color: #065F46;
+    background: #D1FAE5;
+    border-radius: 999px;
+    padding: 2px 8px;
+    white-space: nowrap;
+  }
+
+  .projectionModelCanvas {
+    flex: 1;
+    min-height: 176px;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .projectionModelCanvas :global(.recharts-surface) {
+    overflow: hidden;
+  }
+
+  .projectionModelFooter {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+    color: #94A3B8;
+    text-align: right;
+  }
+
+  .projectionModelHint {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 10px;
+    color: #64748B;
+    background: #F8FAFC;
+    border: 1px dashed #CBD5E1;
+    border-radius: 8px;
+    padding: 6px 8px;
+  }
+   
+   /* ── Divider ─────────────────────────────────────────────────────── */
+   .divider {
+     height: 1px;
+     background: #F1F5F9;
+     margin-bottom: 10px;
+   }
+   
+   /* ── Supporting stat rows ────────────────────────────────────────── */
+   .rows {
+     display: flex;
+     flex-direction: column;
+     gap: 7px;
+   }
+   
+   .row {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+   }
+   
+   .label {
+     font-family: 'DM Sans', system-ui, sans-serif;
+     font-size: 11px;
+     font-weight: 500;
+     color: #94A3B8;
+     text-transform: uppercase;
+     letter-spacing: 0.35px;
+     white-space: nowrap;
+   }
+   
+   .value {
+     font-family: 'Sora', system-ui, sans-serif;
+     font-size: 14px;
+     font-weight: 700;
+     letter-spacing: -0.2px;
+   }
+   
+   /* Value accent colors */
+   .order      .value { color: #4F46E5; }
+   .funnel     .value { color: #0891B2; }
+   .projection .value { color: #059669; }
+   .sales      .value { color: #D97706; }
+   
+   /* ── Responsive ──────────────────────────────────────────────────── */
+   @media (max-width: 1280px) {
+     .mainContent {
+       grid-template-columns: repeat(2, 1fr);
+       padding: 20px 20px 0;
+     }
+
+     .mainContentFiveCols {
+       grid-template-columns: repeat(2, 1fr);
+     }
+   }
+   
+   @media (max-width: 640px) {
+     .mainContent {
+       grid-template-columns: 1fr;
+       padding: 16px 12px 0;
+       gap: 12px;
+     }
+
+     .mainContentFiveCols {
+       grid-template-columns: 1fr;
+     }
+     .primaryValue { font-size: 20px; }
+   }

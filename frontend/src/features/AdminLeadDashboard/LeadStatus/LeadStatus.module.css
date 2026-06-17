@@ -1,0 +1,141 @@
+.leadStatus {
+    padding: 10px;
+    border: 3px solid #000000;
+    margin-top: 10px;
+
+}
+
+.heading {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* Lead Content Container */
+.leadContent {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Dynamically adjust columns */
+    gap: 2%; /* Add spacing between sections */
+    height: calc(100vh - 200px);
+    overflow-y: auto;
+}
+
+/* Container for each section */
+.leadContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* Title (Header) styles */
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #F1F1F1;
+    box-shadow: 0px 0px 10px 0px #00000080;
+    color: white;  /* White text color for all headings */
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 5px 10px;
+    
+   
+}
+
+.iconContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Specific background colors based on title */
+.leadContainer.NewLeads .title {
+    background-color: #462A8C; /* New Leads Header */
+}
+
+.leadContainer.FollowUp .title {
+    background-color: #B7A112; /* Follow Up Header */
+}
+
+.leadContainer.MktgReview .title {
+    background-color: #6D940B; /* Mktg Review Header */
+}
+
+.leadContainer.Progress .title {
+    background-color: #9A0D76; /* Progress Header */
+}
+
+.leadContainer.Negotiation .title {
+    background-color: #0933A6; /* Negotiation Header */
+}
+
+/* Card Backgrounds */
+.leadCardDetails {
+    display: flex;
+    flex-direction: column;
+    color: black; /* Black text color for all cards */
+    border-radius: 5px;
+    margin: 10px 0  ;
+    padding: 10px;
+}
+
+/* Specific card background colors */
+.leadContainer.NewLeads .leadCardDetails {
+    background-color: #D7C8FD; /* New Leads Card */
+}
+
+.leadContainer.FollowUp .leadCardDetails {
+    background-color: #F5EBAB; /* Follow Up Card */
+}
+
+.leadContainer.MktgReview .leadCardDetails {
+    background-color: #CEE594; /* Mktg Review Card */
+}
+
+.leadContainer.Progress .leadCardDetails {
+    background-color: #F7C8EB; /* Progress Card */
+}
+
+.leadContainer.Negotiation .leadCardDetails {
+    background-color: #96B2FF; /* Negotiation Card */
+}
+
+/* Row Styling */
+.leadRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3px 0;
+
+}
+
+.leadGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.leadHead {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+}
+
+.leadicon{
+    font-size: 14px;
+}
+
+.leadSubHead {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+}
+
+.leadSubHead span{
+    font-weight: 500;
+}
+
+.priorityimg {
+    height: 15px;
+    width: 15px;
+}

@@ -1,0 +1,151 @@
+/* Overall Container */
+.leadStatus {
+    padding: 10px;
+    border: 3px solid #000000;
+    margin: 10px;
+}
+
+/* Heading */
+.heading {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+/* Lead Content Container */
+.leadContent {
+    display: flex;
+    gap: 2%;
+    height: 500px;
+    overflow-y: auto;
+    
+}
+
+
+.leadContainer.NewLeads .title {
+    background-color: #462A8C; /* New Leads Header */
+}
+
+.leadContainer.FollowUp .title {
+    background-color: #B7A112; /* Follow Up Header */
+}
+
+.newLead {
+    width: 40%;
+    
+}
+
+
+
+.followUp {
+    width: 58%;
+}
+
+.followUp .cardRow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.newLead .cardRow {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+}
+
+
+/* Container for each section */
+.leadContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1;
+}
+
+/* Title (Header) styles */
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #F1F1F1;
+    box-shadow: 0px 0px 10px 0px #00000080;
+    color: white;
+    font-weight: 500;
+    border-radius: 5px;
+    padding: 5px 10px;
+   
+}
+
+.iconContainer {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Card Backgrounds */
+.leadCardDetails {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    border-radius: 5px;
+    margin: 10px 0;
+    padding: 10px;
+
+}
+
+.newLead .leadCardDetails {
+    background-color: #D7C8FD;
+}
+
+.followUp .leadCardDetails {
+    background-color: #F5EBAB;
+}
+/* Row Styling */
+.leadRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3px 0;
+
+}
+
+.leadGroup {
+    display: flex;
+    flex-direction: column;
+}
+
+.leadHead {
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+}
+
+.leadicon{
+    font-size: 14px;
+}
+
+.leadSubHead {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 0;
+    margin: 0;
+}
+
+.leadSubHead span{
+    font-weight: 500;
+}
+.priorityimg {
+    height: 15px;
+    width: 15px;
+}
+
+/* Ensure the card details are aligned properly inside the container */
+.leadCardDetails .leadRow {
+    display: flex;
+    justify-content: space-between;
+}
+
+.leadCardDetails .leadGroup {
+    display: flex;
+    flex-direction: column;
+}

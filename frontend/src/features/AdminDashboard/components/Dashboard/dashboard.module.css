@@ -1,0 +1,104 @@
+/* dashboard.module.css */
+.dashboardContainer {
+    display: flex;
+    justify-content: center;
+    /* Center the content horizontally */
+    align-items: center;
+    /* Center the content vertically */
+    /* height: 100vh;  */
+    /* Full height of the viewport */
+  
+    /* Add some padding for better spacing */
+    box-sizing: border-box;
+    /* Include padding in the element's total width and height */
+    /* overflow-y: auto;  */
+    /* Allow vertical scrolling for content */
+}
+
+.dashboard {
+    background: linear-gradient(90deg, #202942 0%, #28407E 100%);
+    color: #ffffff;
+    padding: 3%;
+    width: 600px;
+    /* Width of the dashboard */
+    height: 500px;
+    /* Height of the dashboard */
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    /* Box shadow */
+    border-radius: 10px;
+    /* Border radius */
+
+}
+
+.dashboard h2 {
+    margin-top: 5%;
+}
+
+.dashboard p {
+    line-height: 10px;
+}
+
+.infoBox {
+    margin-top: 5%;
+    background: linear-gradient(270deg, #2859BB 0%, rgba(40, 89, 187, 0) 94.81%);
+    align-items: center;
+    width: 350px;
+    padding: 5%;
+    height: 180px;
+    border-radius: 0 100em 100em 0;
+}
+
+.infoBox p {
+    line-height: 20px;
+}
+
+.come {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    background-color: #ffffff;
+    color: black;
+    outline: none;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 22px;
+    margin-top: 5%;
+}
+
+.link{
+    text-decoration: none;
+}
+
+.right {
+    position: relative;
+    border: none;
+    background: none;
+    cursor: pointer;
+    outline: none;
+    right: 0px;
+    background-color: #000000;
+    border-radius: 50%;
+    rotate: 180deg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    padding: 5px 5px 5px 5px;
+    margin: 2%;
+    margin-left: 5%;
+}
+
+.img {
+    background-image: url('../images/Group\ 152.png');
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 200px;
+    background-size: contain;
+    position: relative;
+    left: 60%;
+    bottom: 15%;
+}

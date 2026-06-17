@@ -1,0 +1,51 @@
+.topContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space between search container and profile */
+  /* padding: 10px 20px; */
+  color: white;
+  
+}
+
+.searchContainer {
+  display: flex;
+  align-items: center;
+  width: auto; /* Adjusts to content width */
+  gap: 10px; /* Space between the menu icon and search bar */
+}
+
+.menuIcon {
+  font-size: 34px; /* Size of the menu icon */
+  color: #4B93FF;
+  background: #ABDAF5;
+
+}
+
+.searchIcon {
+  color: #333;
+}
+
+.searchBar {
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  width: 150px; /* Adjusted width for the search bar */
+  height: 30px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+}
+
+.userProfile {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.profileImage {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background-color: #333;
+
+
+}

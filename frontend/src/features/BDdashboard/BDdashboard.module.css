@@ -1,0 +1,142 @@
+/* bddashboard.module.css */
+.dashboardContainer {
+  display: flex; /* Use flexbox to align children */
+  height: 100vh; /* Full height for the dashboard */
+}
+
+.sidebarContainer {
+  width: 100px; /* Fixed width for the sidebar */
+}
+
+.dashboardContent {
+  flex-grow: 1; /* Allow the main content to take the remaining space */
+  padding: 20px;
+  background-color: #f5f5f5;
+  overflow: auto; /* Allow scrolling if content overflows */
+}
+.row {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-around; /* Distribute space between children */
+  align-items: start; /* Align items to the top */
+  margin: 20px 0; /* Add margin above and below the row */
+  width: 100%;
+}
+
+
+.column {
+  display: flex; /* Enable flexbox layout */
+  flex-direction: column; /* Stack child elements vertically */
+  gap: 20px; /* Space between containers */
+}
+
+.container {
+  width: 300px; /* Set width for the container */
+  height: 56px; /* Set height for the container */
+  border: 1px solid #dad9d9; /* Border for the container */
+  border-radius: 5px; /* Rounded corners */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+  display: flex;
+  align-items: center; /* Center items vertically */
+  justify-content: space-between;
+  gap: 10px; /* Space between the two inner boxes */
+  padding-left: 10px; /* Optional padding for spacing */
+}
+
+/* Small Box */
+.smallBox1,.smallBox2,.smallBox3,.smallBox4 {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px; /* Optional rounded corners */
+  background: #FCC700;
+}
+
+.smallBox1{
+  background: #FCC700;
+}
+
+.smallBox2{
+  background: #F3426E;
+}
+
+.smallBox3{
+  background: #58BAAB;
+}
+
+.smallBox4{
+  background: #019FF8;
+}
+/* Large Box */
+.largeBox1,.largeBox2,.largeBox3,.largeBox4 {
+  width: 91px;
+  height: 21px;
+  border-radius: 5px; /* Optional rounded corners */
+  margin-right: 20px;
+}
+
+
+.largeBox1{
+  background: #FFF5D2;
+}
+.largeBox2{
+  background: #FFEAF1;
+}
+.largeBox3{
+  background: #CEF9F3;
+}
+.largeBox4{
+  background: #D3F1FF;
+}
+
+
+.circle {
+  width: 40px;
+  height: 40px;
+  background-color:  #D4F1FF;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  border-radius: 50%; /* Makes the div circular */
+}
+
+.slide{
+  width: 610px;
+  height: 150px;
+  /* background-color: #590707; */
+  padding: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+.green {
+  width: 300px; /* Set width for the containers */
+  height: 100px; /* Set height for the containers */
+  margin-right: 10px; /* Space between containers */
+  background: linear-gradient(292.84deg, #2FAD66 21.88%, #9DE686 78.12%);
+  border: 1px solid #ccc; /* Optional: border for the containers */
+  border-radius: 5px; /* Optional: rounded corners */
+}
+.red {
+  width: 300px; /* Set width for the containers */
+  height: 100px; /* Set height for the containers */
+  margin-right: 10px; /* Space between containers */
+  background: linear-gradient(116.72deg, #F15887 14.78%, #FE9B86 85.22%);
+  border: 1px solid #ccc; /* Optional: border for the containers */
+  border-radius: 5px; /* Optional: rounded corners */
+}
+
+.bottomContainer {
+  display: flex; /* Use flexbox to arrange the children side by side */
+  width: 100%; /* Full width of the container */
+  margin-top: 2%;
+}
+
+.leftContent {
+  width: 50%; /* 60% of the width */
+  height: 100%; /* 40% of the height */
+  border: 1px solid #D0D0D0;
+  border-radius: 10px;
+  margin: 0 20px;
+}
+
+.rightContent {
+  width: 50%; /* 40% of the width */
+  height: 100%; /* 40% of the height */
+  background-color:#fff;
+}

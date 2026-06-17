@@ -1,0 +1,70 @@
+.blueBox {
+  width: calc(100% - 20px); /* Initial width with 10px margin on both sides */
+  max-width: 1150px;
+  height: 100px;
+  font-size: 18px;
+  background-color: rgb(3, 3, 115);
+  padding: 20px;
+  color: white;
+  border-radius: 20px;
+  margin-top: 6%;
+  position: relative;
+  display: flex;
+  justify-content: space-between; /* Align text box to left and button to right */
+  align-items: center;
+  background-image: url('../BlueBox/blueBox.jpeg');
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;  
+}
+
+.textBox {
+  white-space: nowrap;
+  margin-right: auto; /* Align text box to left */
+}
+
+.takeButton {
+  font-weight: bold;
+  margin-left: auto; /* Align button to right */
+}
+
+@media screen and (max-width: 1500px) {
+  .blueBox {
+    width: 80%;
+    max-width: calc(80% - 20px); /* Ensure minimum width with 10px margin on both sides */
+    margin-top: 7%;
+  }
+}
+
+@media screen and (max-width: 1330px) {
+  .blueBox {
+    width: 80%;
+    max-width: calc(80% - 20px); /* Ensure minimum width with 10px margin on both sides */
+    margin-top: 7%;  
+  }
+}
+
+
+@media screen and (max-width: 770px) {
+  .blueBox {
+    flex-direction: column;
+    height: 130px;
+    font-size: 14px;
+    padding: 10px;
+    margin: 80px 10px; /* Adjust margin for smaller screens */
+    width: calc(100% - 40px); /* Adjust width to maintain 10px margin on both sides */
+    justify-content: center; /* Align items vertically centered */
+    align-items: center; /* Align items horizontally centered */
+  }
+
+  .textBox {
+    margin-bottom: 5px;
+    margin-left: auto;
+    margin-right: auto; /* Reduce margin bottom for smaller screens */
+  }
+  .takeButton{
+    margin-left: auto;
+    margin-right: auto; 
+  }
+}

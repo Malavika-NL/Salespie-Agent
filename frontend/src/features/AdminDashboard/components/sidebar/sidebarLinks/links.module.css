@@ -1,0 +1,25 @@
+
+.links{
+    height: 2.5rem;
+    width: 12.5rem;
+    background-color: #001740;
+    display: flex;
+    align-items: center;
+    margin: 1.875rem 0.625rem;
+    border-radius: 0.625rem;
+    text-decoration: none;
+                 
+  }
+  
+  .man,.material,.machine,.method{
+    color:  white;
+    margin-left: 1.25rem;
+    font-weight: var(--font-500);
+    font-size: var(--font-size-14);
+   
+  }
+
+  .navLinks{
+    text-decoration: none;
+
+  }

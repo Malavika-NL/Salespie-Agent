@@ -1,0 +1,38 @@
+
+.logout{
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  background: linear-gradient(135deg, #ffffff 0%, #eef2ff 55%, #e0f2fe 100%);
+  padding: 8px 14px;
+  border-radius: 999px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.logout:hover{
+  transform: translateY(-1px);
+  border-color: rgba(99, 102, 241, 0.55);
+  box-shadow: 0 14px 28px rgba(79, 70, 229, 0.28);
+  background: linear-gradient(135deg, #ffffff 0%, #e0e7ff 58%, #cffafe 100%);
+}
+
+.logout:active{
+  transform: translateY(0);
+  box-shadow: 0 6px 14px rgba(15, 23, 42, 0.2);
+}
+
+.signout{
+  font-size: 12px;
+  color: #0f172a;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.signouticon{
+  color: #4338ca;
+  font-size: 16px;
+}

@@ -1,0 +1,596 @@
+/* BudgetOverview.module.css
+   Design tokens are IDENTICAL to SalesAdminDashboard.module.css
+   Sora (display) + DM Sans (body), same shadows, radius, colors.
+*/
+
+/* ══════════════════════════════════════════════════════════════
+   ROOT & DESIGN TOKENS
+══════════════════════════════════════════════════════════════ */
+.dashboardRoot {
+  --bg-page:        #F8FAFC;
+  --bg-card:        #FFFFFF;
+  --bg-subtle:      #F1F5F9;
+
+  --primary:        #4F46E5;
+  --primary-light:  #EEF2FF;
+  --primary-dark:   #3730A3;
+  --secondary:      #06B6D4;
+  --secondary-light:#ECFEFF;
+  --emerald:        #10B981;
+  --emerald-light:  #d1fae5;
+  --rose:           #F43F5E;
+  --rose-light:     #FFF1F2;
+  --amber:          #F59E0B;
+  --amber-light:    #FFFBEB;
+
+  --text-heading:   #0F172A;
+  --text-body:      #1E293B;
+  --text-secondary: #64748B;
+  --text-muted:     #94A3B8;
+
+  --border:         #E2E8F0;
+  --border-strong:  #CBD5E1;
+
+  --shadow-xs:   0 1px 2px rgba(15,23,42,0.06);
+  --shadow-sm:   0 1px 3px rgba(15,23,42,0.08), 0 1px 2px rgba(15,23,42,0.04);
+  --shadow-md:   0 4px 6px -1px rgba(15,23,42,0.08), 0 2px 4px -1px rgba(15,23,42,0.04);
+  --shadow-hover:0 16px 40px -6px rgba(79,70,229,0.16), 0 6px 16px -2px rgba(79,70,229,0.08);
+
+  --radius-sm:   8px;
+  --radius-md:   12px;
+  --radius-lg:   16px;
+  --radius-full: 9999px;
+
+  --font-display: 'Sora', system-ui, sans-serif;
+  --font-body:    'DM Sans', system-ui, sans-serif;
+
+  --transition: 200ms cubic-bezier(0.4,0,0.2,1);
+  --row-gap: 20px;
+
+  font-family: var(--font-body);
+  background-color: #F1F5F9;
+  color: var(--text-body);
+  min-height: 100vh;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   LAYOUT
+══════════════════════════════════════════════════════════════ */
+.mainContent {
+  padding: 24px 28px 48px;
+  max-width: 1600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--row-gap);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   PAGE HEADER  — identical to monthHeader in SalesAdminDashboard
+══════════════════════════════════════════════════════════════ */
+.monthHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  background: linear-gradient(135deg, #EEF2FF 0%, #E0E7FF 100%);
+  border-radius: var(--radius-lg);
+  border: 1px solid #C7D2FE;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.monthHeaderLeft {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.monthInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.monthTitle {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--primary);
+  letter-spacing: -0.4px;
+}
+
+.monthSubtitle {
+  font-size: 14px;
+  color: #6366F1;
+}
+
+.monthHeaderRight {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   HEADER BUTTONS
+══════════════════════════════════════════════════════════════ */
+.headerBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 18px;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+/* Primary — indigo gradient (matches viewFullBudgetBtn) */
+.headerBtnPrimary {
+  background: linear-gradient(135deg, #4F46E5 0%, #6366F1 100%);
+  color: #fff;
+  box-shadow: 0 2px 8px rgba(79,70,229,0.30);
+}
+.headerBtnPrimary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(79,70,229,0.40);
+}
+
+/* Secondary — muted indigo (for Dashboard button) */
+.headerBtnSecondary {
+  background: white;
+  color: var(--primary);
+  border: 1px solid #C7D2FE;
+  box-shadow: var(--shadow-xs);
+}
+.headerBtnSecondary:hover {
+  background: var(--primary-light);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ERROR BANNER
+══════════════════════════════════════════════════════════════ */
+.errorBanner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--rose-light);
+  border: 1px solid #FECACA;
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+  color: var(--rose);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   TABLE CARD  — matches chartCard / tableCard from SalesAdminDashboard
+══════════════════════════════════════════════════════════════ */
+.tableCard {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--transition);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.tableCard:hover { box-shadow: var(--shadow-md); }
+
+/* Top bar inside card */
+.tableTopBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  border-bottom: 1px solid var(--bg-subtle);
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.tableTopBarLeft {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+/* Reuse cardTitle / cardBadge pattern */
+.cardTitle {
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-heading);
+  letter-spacing: -0.2px;
+}
+
+.tableTopBarCount {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  background: var(--primary-light);
+  color: var(--primary);
+  letter-spacing: 0.2px;
+}
+
+.refreshBtn {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: background var(--transition);
+}
+.refreshBtn:hover { background: var(--border); }
+
+/* ══════════════════════════════════════════════════════════════
+   TABLE
+══════════════════════════════════════════════════════════════ */
+.tableScroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  font-family: var(--font-body);
+  min-width: 600px;
+}
+
+.tableHead { background: var(--bg-subtle); }
+
+.th {
+  padding: 10px 20px;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  border-bottom: 2px solid var(--border);
+  white-space: nowrap;
+  text-align: left;
+}
+.thRight { text-align: right; }
+
+.tableRow {
+  border-bottom: 1px solid var(--bg-subtle);
+  transition: background var(--transition);
+}
+.tableRow:hover { background: #FAFBFF; }
+.tableRow:last-child td { border-bottom: none; }
+
+.td { padding: 14px 20px; color: var(--text-body); vertical-align: middle; }
+.tdRight { text-align: right; }
+.tdMuted { color: var(--text-muted); font-size: 12px; font-weight: 400; }
+
+/* Amount cell — Sora font matching SalesAdminDashboard kpiValue style */
+.amtCell {
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   NAME / PERSON CELL
+══════════════════════════════════════════════════════════════ */
+.nameCell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  border: 2px solid #C7D2FE;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.personName {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-heading);
+  font-family: var(--font-body);
+}
+
+.myTargetBadge {
+  display: inline-block;
+  margin-top: 3px;
+  padding: 2px 8px;
+  background: var(--primary-light);
+  color: var(--primary);
+  border-radius: var(--radius-full);
+  font-size: 10px;
+  font-weight: 700;
+  border: 1px solid #C7D2FE;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   ACTION BUTTONS
+══════════════════════════════════════════════════════════════ */
+.actionsCell {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+/* Base icon button */
+.iconBtn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition);
+  flex-shrink: 0;
+}
+
+/* View — indigo (matches primary brand) */
+.viewBtn {
+  composes: iconBtn;
+  color: var(--primary);
+  border-color: #C7D2FE;
+  background: var(--primary-light);
+}
+.viewBtn:hover {
+  background: #DDD6FE;
+  border-color: #A5B4FC;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(79,70,229,0.18);
+}
+
+/* Edit — slate */
+.editBtn {
+  composes: iconBtn;
+  color: var(--text-secondary);
+  border-color: var(--border);
+  background: var(--bg-subtle);
+}
+.editBtn:hover {
+  background: var(--border);
+  border-color: var(--border-strong);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-xs);
+}
+
+/* Delete — rose */
+.deleteBtn {
+  composes: iconBtn;
+  color: var(--rose);
+  border-color: #FECACA;
+  background: var(--rose-light);
+}
+.deleteBtn:hover {
+  background: #FEE2E2;
+  border-color: #FCA5A5;
+  transform: translateY(-1px);
+  box-shadow: 0 2px 6px rgba(244,63,94,0.18);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   LOADING SKELETON
+══════════════════════════════════════════════════════════════ */
+.loadingRow td { padding: 18px 20px !important; }
+
+.skeleton {
+  height: 14px;
+  background: linear-gradient(90deg, var(--bg-subtle) 25%, var(--border) 50%, var(--bg-subtle) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s infinite;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ══════════════════════════════════════════════════════════════
+   SPINNER
+══════════════════════════════════════════════════════════════ */
+.spinner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+}
+
+/* ══════════════════════════════════════════════════════════════
+   EMPTY STATE
+══════════════════════════════════════════════════════════════ */
+.emptyCell {
+  text-align: center !important;
+  padding: 56px 20px !important;
+}
+
+.emptyContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.emptyIcon {
+  width: 52px;
+  height: 52px;
+  background: var(--primary-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+}
+
+.emptyText {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.emptySubtext {
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* ══════════════════════════════════════════════════════════════
+   DELETE CONFIRMATION MODAL
+══════════════════════════════════════════════════════════════ */
+.modalOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15,23,42,0.50);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.18s ease;
+  backdrop-filter: blur(2px);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.modal {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 30px 28px 24px;
+  width: 90%;
+  max-width: 390px;
+  box-shadow: var(--shadow-hover);
+  border: 1px solid var(--border);
+  animation: slideUp 0.22s ease;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(16px); opacity: 0; }
+  to   { transform: translateY(0);    opacity: 1; }
+}
+
+.modalIconWrap {
+  width: 52px;
+  height: 52px;
+  background: var(--rose-light);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+  color: var(--rose);
+}
+
+.modalTitle {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-heading);
+  text-align: center;
+  margin: 0 0 10px;
+}
+
+.modalText {
+  font-size: 13px;
+  color: var(--text-secondary);
+  text-align: center;
+  line-height: 1.65;
+  margin: 0 0 24px;
+  font-family: var(--font-body);
+}
+
+.modalTargetName {
+  font-weight: 700;
+  color: var(--rose);
+}
+
+.modalActions {
+  display: flex;
+  gap: 10px;
+}
+
+.modalCancelBtn {
+  flex: 1;
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: background var(--transition);
+}
+.modalCancelBtn:hover:not(:disabled) { background: var(--bg-subtle); }
+.modalCancelBtn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.modalDeleteBtn {
+  flex: 1;
+  padding: 10px 16px;
+  border: none;
+  border-radius: var(--radius-sm);
+  background: var(--rose);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: background var(--transition), box-shadow var(--transition);
+  box-shadow: 0 2px 8px rgba(244,63,94,0.28);
+}
+.modalDeleteBtn:hover:not(:disabled) {
+  background: #E11D48;
+  box-shadow: 0 4px 12px rgba(244,63,94,0.38);
+}
+.modalDeleteBtn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* ══════════════════════════════════════════════════════════════
+   RESPONSIVE  — matches SalesAdminDashboard breakpoints exactly
+══════════════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .mainContent { padding: 20px 16px 40px; }
+}
+
+@media (max-width: 600px) {
+  .mainContent      { padding: 16px 12px 32px; }
+  .monthHeader      { flex-direction: column; align-items: flex-start; gap: 14px; }
+  .monthHeaderRight { flex-wrap: wrap; width: 100%; }
+  .headerBtn        { flex: 1; justify-content: center; }
+  .modalActions     { flex-direction: column; }
+  .table th,
+  .table td         { padding: 10px 14px; }
+}
+
+@media (max-width: 400px) {
+  .monthTitle { font-size: 17px; }
+}

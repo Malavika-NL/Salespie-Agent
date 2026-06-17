@@ -1,0 +1,83 @@
+.carousel {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    align-items: center;
+    width: 100%; /* Ensure full-width for the carousel */
+    gap: 10px;
+  }
+  
+  .previewTopContainer,
+  .previewBottomContainer {
+    width: 100%; /* Make sure the preview containers take up full width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .pageTopPreview, 
+  .pageBottomPreview {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .previewTopContainer {
+    background-color: #c4cec4; /* Set background color for the top preview */
+
+  }
+  
+  .previewBottomContainer {
+    background-color: #c4cec4; /* Set background color for the bottom preview */
+
+  }
+
+  .pageTopPreview,.previewTopContainer{
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+  
+  .pageBottomPreview,.previewBottomContainer{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  
+  .button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #333;
+    transition: color 0.3s ease;
+  }
+  
+  .button:hover {
+    color: #c4cec4; /* Button color on hover */
+    background-color:#c4cec4 ;
+  }
+  
+  .page {
+    font-size: 1.5rem;
+    color: #333;
+    padding-top: 10px; /* Add space between button and page number */
+  }
+  
+  .currentPage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%; /* Ensure the current page takes the full width */
+    height: 300px; /* Set a fixed height for the current page content */
+    background-color: #dce6fe; /* Background color for the current page */
+    text-align: center;
+    border: 1px solid #ddd; /* Border around the current page */
+    border-radius: 8px; /* Rounded corners */
+  }
+  
+  .currentPage > div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  

@@ -1,0 +1,110 @@
+.noteContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .noteContent {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  .note {
+    width: 220px;
+    height: 140px;
+    background: #CCCCFF;
+    border-radius: 10px;
+    /* box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px; */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    position: relative;
+  }
+  
+  .calendarContainer {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .calendar {
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 5px;
+    
+    text-align: center;
+    width: 60px;
+  }
+  
+  .month {
+    font-size: 10px;
+    color: rgb(69, 94, 172);
+    margin-bottom: 2px;
+  }
+  
+  .date {
+    font-size: 14px;
+    color: rgba(69, 89, 150, 1);
+  }
+  
+  .details {
+    margin-left: 10px;
+    text-align: left;
+  }
+  
+  .wmsText {
+    font-size: 10px;
+    color: black;
+  }
+  
+  .timeText {
+    font-size: 10px;
+    color: black;
+  }
+  
+  .noteText {
+    font-size: 14px;
+    color: black;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+  }
+  
+  .arrowButton {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 0;
+    user-select: none;
+  }
+  
+  .noteFooter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    background: #a6a6fd4f;
+    border-radius: 10px;
+  }
+  
+  .checkbox {
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .footerText {
+    font-size: 14px;
+    color: #333;
+  }
+  

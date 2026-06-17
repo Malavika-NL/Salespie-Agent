@@ -1,0 +1,116 @@
+.container {
+  display: flex;
+}
+
+.sidebar {
+  flex: 1;
+  background-color: #f8f9fa; /* Light background color for sidebar */
+}
+
+.mainContent {
+  flex: 5;
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff; /* Background color for main content */
+}
+
+.contentContainer {
+  display: flex;
+  margin-top: 2%; 
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0;
+  justify-content: space-between; /* Space between CardStack and DashboardPage */
+}
+
+.cardStackContainer {
+  flex: 1;
+  margin-right: 1.5%; /* Space between CardStack and DashboardPage */
+}
+
+.dashboardContainer {
+  flex: 1;
+  margin-left: 1.5%; /* Space between DashboardPage and CardStack */
+}
+
+.separator {
+  width: 95%;
+  height: 1px;
+  background-color: rgba(217, 217, 217, 1);
+  margin: 0 auto; /* Center the separator horizontally */
+  margin-top: 15px;
+  margin-bottom: 5px; /* Adjust spacing as needed */
+}
+
+/* RouteMap Container */
+.routeMap {
+  width: 95%;
+  height: 300px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  margin: 1%;
+  text-align: center;
+  background-color: orange;
+  border-radius: 10px;
+  margin: 0 auto; /* Center the routeMap container */
+  margin-top: 20px;
+  margin-bottom: 20px; /* Adjust spacing as needed */
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+/* New Main Container */
+.newMainContainer {
+  display: flex;
+  justify-content: space-between;
+  width: 95%;
+  margin: 20px auto; /* Center and add margin */
+  margin-bottom: 5%;
+}
+
+/* Left Container */
+.leftContainer {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 220px); /* Leave space for the right container */
+}
+
+/* Heatmap */
+.heatmap {
+  height: 300px;
+  width: 100%;
+  background-color: lightgreen;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+/* Scheduler */
+.scheduler {
+  height: 300px;
+  width: 100%;
+  background-color: lightcoral;
+  border-radius: 10px;
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+/* Right Container */
+.rightContainer {
+  width: 200px;
+  height: 620px;
+  background-color: lightblue;
+  border-radius: 10px;
+  text-align: center;
+  display: flex;
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+}
+
+.link{
+  text-decoration: none;
+  color: black;
+}

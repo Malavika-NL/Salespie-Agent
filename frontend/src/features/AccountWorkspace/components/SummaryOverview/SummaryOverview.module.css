@@ -1,0 +1,17 @@
+.separator {
+    border: none;
+    border: 1px solid #000000;
+    margin: 10px 0;
+  }
+  
+
+  .summaryOverview{
+    width: 100%;
+    height: auto;
+    padding: 10px;
+  }
+
+  .head {
+    font-size: 14px;
+    font-weight: bold;
+}

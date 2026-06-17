@@ -1,0 +1,130 @@
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.mainhead{
+    color: #000000;
+    font-weight: 600;
+    font-size: 28px;
+    margin: 0 auto;
+    padding: 0;
+}
+/* Date Section */
+.dateSection {
+    display: flex;
+    align-items: center;
+}
+
+.dateNumber {
+    width: 50px; /* Circle width */
+    height: 50px; /* Circle height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: #000000; /* Text color */
+    font-size: 18px;
+    margin-right: 20px;
+    border: 1px solid #979797;
+    border-radius: 50%; /* Makes it a circle */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+.dateDetails {
+    display: flex;
+    flex-direction: column;
+}
+
+.day {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+}
+
+.month {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Right Section */
+.rightSection {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Create Task Button */
+.createTaskButton {
+    background-color: #1a73e8;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    height: 50px;
+    width: 200px;
+}
+
+.createTaskButton:hover {
+    background-color: #155db2;
+}
+/* User Info Section */
+.userInfo {
+    display: flex;
+    align-items: center;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    padding: 5px 12px;
+    gap: 10px;
+}
+
+.avatar {
+    width: 40px; /* Circle width */
+    height: 40px; /* Circle height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    color: #000000; /* Text color */
+    font-size: 12px;
+    border: 1px solid #000000;
+    border-radius: 50%; /* Makes it a circle */
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+.userDetails {
+    display: flex;
+    flex-direction: column;
+}
+
+.userName {
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    margin-right: 10px;
+}
+
+.userRole {
+    font-size: 10px;
+    color: #000000;
+}
+
+.clockIcon {
+    font-size: 18px;
+    color: #000000;
+}
+
+
+.tasklist{
+    color:black;
+    font-weight: 600;
+    font-size: 18px;
+    border: none;
+    background-color: inherit;
+}

@@ -1,0 +1,132 @@
+/* Container for the entire component */
+.container {
+    background-color: #F4F6F6;
+    padding: 10px;
+    border-radius: 8px;
+    height: 300px;
+}
+
+/* Header styling with title and select in the same line */
+
+
+.heading {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.select {
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid #BFBFBF;
+    border-radius: 5px;
+    padding: 5px;
+    outline: none;
+    background-color: inherit;
+    color: #000000;
+    width: 100%;
+    max-width: 300px;
+}
+
+.defaultselect {
+    color: #000000c3 !important;
+    font-weight: 300 !important;
+}
+
+
+/* Dotted line below the header */
+.line {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #000000;
+    margin: 8px 0;
+  }
+
+/* Form styling */
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%; /* This makes the form take the full available height */
+}
+
+/* Form row styling */
+.formRow {
+    display: flex;
+    align-items: center;
+    margin: 2px 0;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.checkboxGroup{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+
+
+/* Label styling */
+.label {
+    font-size: 14px;
+    color: #6B8B88;
+    font-weight: 500;
+    margin: 0;
+    padding: 0;
+}
+
+/* Input field styling */
+.input {
+
+    width: 100%;
+    height: 30px;
+    max-width: 300px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid #BFBFBF;
+    border-radius: 5px;
+    padding: 5px;
+    outline: none;
+    background-color: inherit;
+    color: #000000;
+}
+
+.input::placeholder {
+    color: #000000c3;
+    font-weight: 300;
+}
+/* Button container styling */
+.buttonContainer {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px; /* Added some space above the buttons */
+}
+
+/* Edit button styling */
+.editbutton {
+    background-color: #2196F3;
+    font-size: 14px;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+/* Save button styling */
+.savebutton {
+    background-color: #3FA749;
+    font-size: 14px;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}

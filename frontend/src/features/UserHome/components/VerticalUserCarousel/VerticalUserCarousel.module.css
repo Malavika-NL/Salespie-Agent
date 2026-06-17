@@ -1,0 +1,178 @@
+/* .carousel {
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  width: 100%; 
+  height: 100%;
+  background-color: inherit;
+  padding: 0 20px;
+}
+
+.previewTopContainer,
+.previewBottomContainer {
+  width: 100%; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.pageTopPreview, 
+.pageBottomPreview {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.previewTopContainer {
+  background-color: #c4cec4; 
+
+}
+
+.previewBottomContainer {
+  background-color: #14e714; 
+
+}
+
+.pageTopPreview,.previewTopContainer{
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.pageBottomPreview,.previewBottomContainer{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+
+
+.page {
+  font-size: 1.5rem;
+  color: #333;
+  padding-top: 10px; 
+}
+
+.currentPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; 
+  align-items: center;
+  width: 100%;
+  height: calc(90vh - 160px);
+  background-color: inherit; 
+  text-align: center;
+  border-radius: 8px; 
+  padding: 10px 0;
+  gap: 20px; 
+}
+
+.currentPage > div {
+  flex: 1; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%; 
+}
+ */
+
+ /* ================================================================
+   VerticalUserCarousel.module.css
+   Right-panel project card navigator
+   ================================================================ */
+
+.carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.06);
+}
+
+/* ── Top / Bottom nav strips ── */
+.previewTopContainer,
+.previewBottomContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 38px;
+  flex-shrink: 0;
+  transition: filter 180ms ease;
+  position: relative;
+}
+
+.previewTopContainer  { border-radius: 0 0 10px 10px; }
+.previewBottomContainer { border-radius: 10px 10px 0 0; }
+
+.previewTopContainer:hover,
+.previewBottomContainer:hover {
+  filter: brightness(0.92);
+}
+
+.pageTopPreview,
+.pageBottomPreview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+/* ── Nav buttons ── */
+.button {
+  background: rgba(255,255,255,0.25);
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  border-radius: 50%;
+  transition: background-color 150ms ease, transform 150ms ease;
+  backdrop-filter: blur(4px);
+}
+
+.button:hover {
+  background: rgba(255,255,255,0.45);
+  transform: scale(1.1);
+}
+
+/* ── Cards container ── */
+.currentPage {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  flex: 1;
+  background-color: #F8FAFC;
+  padding: 10px 8px;
+  gap: 10px;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.currentPage > div {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 0;
+}

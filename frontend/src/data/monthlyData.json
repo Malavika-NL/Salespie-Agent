@@ -1,0 +1,72 @@
+{
+    "2025": {
+      "January": {
+        "Week 1": {
+          "No of Customers Approached": 12,
+          "No of Requirement Gathered": 8,
+          "No of Demo Done": 5,
+          "No of Proposal Shared": 3
+        },
+        "Week 2": {
+          "No of Customers Approached": 25,
+          "No of Requirement Gathered": 15,
+          "No of Demo Done": 5,
+          "No of Proposal Shared": 1
+        },
+        "Week 3": {
+          "No of Customers Approached": 30,
+          "No of Requirement Gathered": 20,
+          "No of Demo Done": 12,
+          "No of Proposal Shared": 8
+        },
+        "Week 4": {
+          "No of Customers Approached": 28,
+          "No of Requirement Gathered": 18,
+          "No of Demo Done": 11,
+          "No of Proposal Shared": 7
+        },
+        "Week 5": {
+          "No of Customers Approached": 22,
+          "No of Requirement Gathered": 12,
+          "No of Demo Done": 8,
+          "No of Proposal Shared": 5
+        }
+      },
+      "February": {
+        "Week 1": {
+          "No of Customers Approached": 20,
+          "No of Requirement Gathered": 14,
+          "No of Demo Done": 9,
+          "No of Proposal Shared": 5
+        },
+        "Week 2": {
+          "No of Customers Approached": 24,
+          "No of Requirement Gathered": 16,
+          "No of Demo Done": 11,
+          "No of Proposal Shared": 6
+        },
+        "Week 3": {
+          "No of Customers Approached": 26,
+          "No of Requirement Gathered": 18,
+          "No of Demo Done": 12,
+          "No of Proposal Shared": 7
+        },
+        "Week 4": {
+          "No of Customers Approached": 22,
+          "No of Requirement Gathered": 15,
+          "No of Demo Done": 10,
+          "No of Proposal Shared": 5
+        }
+      },
+      "March": {
+        "Week 1": {
+          "No of Customers Approached": 21,
+          "No of Requirement Gathered": 13,
+          "No of Demo Done": 8,
+          "No of Proposal Shared": 4
+        }
+       
+      }
+    }
+  }
+  

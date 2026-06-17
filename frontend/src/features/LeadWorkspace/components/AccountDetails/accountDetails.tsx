@@ -1,0 +1,1345 @@
+// import React, { useEffect, useRef, useState } from "react";
+// import styles from "./accountDetails.module.css";
+// import { FaRegEdit } from "react-icons/fa";
+// import { CiBookmark } from "react-icons/ci";
+// import type { IoIosArrowDropdown } from "react-icons/io";
+// import { useDispatch, useSelector } from "react-redux";
+// import { setFormData } from "../../slice/LeadWorkspace";
+// import type { RootState } from "../../../../app/store";
+// import { getUserDetails } from "../../../lead/slice/leadFormSlice";
+// import { useLocation } from "react-router-dom";
+// import type { ICity, IState } from "country-state-city";
+// import { getAllCities, getAllStates } from "../../../CommonAPI/Common";
+// import { calculateTotal } from "../../../CalculateTotalAmount/totalAmount";
+
+
+// interface Vertical {
+//     category: string;
+//     subdivisions?: Vertical[];
+// }
+
+// const verticals: Vertical[] = [
+//     {
+//         category: 'Automobile',
+//         subdivisions: [
+//             { category: 'Automotive' },
+//             { category: 'Auto Component' },
+//             { category: 'Tier 1' },
+//             { category: 'Tier 2' }
+//         ]
+//     },
+//     { category: 'Health Care' },
+//     { category: 'E-Commerce' },
+//     {
+//         category: 'E&E',
+//         subdivisions: [
+//             { category: 'Electronics' },
+//             { category: 'Electrical Components' },
+//             { category: 'Tier 1' }
+//         ]
+//     },
+//     { category: 'FMCG' },
+//     { category: 'Chemical Mfg' },
+//     { category: 'Other Mfg' },
+//     {
+//         category: 'F&B',
+//         subdivisions: [
+//             { category: 'F&B Mfg' },
+//             { category: 'Food Mfg' },
+//             { category: 'Beverages Mfg' },
+//             { category: 'Cloud Kitchen' }
+//         ]
+//     },
+//     {
+//         category: 'Pharmaceutical',
+//         subdivisions: [
+//             { category: 'Pharma/Health Care' },
+//             { category: 'Hospitals' },
+//             { category: 'Tier 1/Supplier' }
+//         ]
+//     },
+//     {
+//         category: 'Retails',
+//         subdivisions: [
+//             { category: 'E-Commerce' },
+//             { category: 'Retails' }
+//         ]
+//     },
+//     { category: 'Transport & Logistics' },
+//     { category: 'Apparel' },
+//     { category: 'Government' },
+//     { category: 'Others' }
+// ];
+
+// interface Region {
+//     name: string;
+// }
+
+// const regions: Region[] = [
+//     { name: 'North' },
+//     { name: 'South' },
+//     { name: 'East' },
+//     { name: 'West' },
+//     { name: 'INT' }
+// ];
+
+// interface Department {
+//     name: string;
+// }
+
+// const departments: Department[] = [
+//     { name: 'Purchase' },
+//     { name: 'Procurement' },
+//     { name: 'PPC Head' },
+//     { name: 'IT Head' },
+//     { name: 'Plant Head' },
+//     { name: 'Quality' },
+//     { name: 'Logistics' },
+//     { name: 'Supply Chain' },
+//     { name: 'Operations' },
+//     { name: 'Information System' },
+//     { name: 'Vendor Development' },
+//     { name: 'Commertials' },
+//     { name: 'Project Development' },
+//     { name: 'Maintenance' },
+//     { name: 'Support & Services' },
+//     { name: 'Manufacturing Head' },
+//     { name: 'Production Head' },
+//     { name: 'Warehouse Manager' },
+//     { name: 'Business Development' },
+//     { name: 'Sales Manager' },
+//     { name: 'Marketing' },
+//     { name: 'Admin/HR' }
+// ];
+
+// interface BusinessOption {
+//     type: string;
+// }
+
+// const businessOptions: BusinessOption[] = [
+//     { type: 'Direct Business' },
+//     { type: 'Business Partner' }
+// ];
+
+// interface Designation {
+//     title: string;
+//     abbreviation: string;
+// }
+
+
+
+// const designations: Designation[] = [
+//     { title: 'Assistant Manager', abbreviation: 'AM' },
+//     { title: 'Senior Manager', abbreviation: 'Sr.M' },
+//     { title: 'Assistant General Manager', abbreviation: 'AGM' },
+//     { title: 'General Manager', abbreviation: 'GM' },
+//     { title: 'Deputy Manager', abbreviation: 'DM' },
+//     { title: 'Deputy General Manager', abbreviation: 'Dy.GM' },
+//     { title: 'Vice President', abbreviation: 'VP' },
+//     { title: 'Director', abbreviation: 'Director' },
+//     { title: 'Director/Owner', abbreviation: 'Director/Owner' },
+//     { title: 'Owner', abbreviation: 'Owner' },
+//     { title: 'Senior Engineer', abbreviation: 'Sr.Engineer' },
+//     { title: 'Executive', abbreviation: 'EX' },
+//     { title: 'Senior Executive', abbreviation: 'Sr.EX' }
+// ];
+
+
+// interface Option {
+//     category: string;
+//     subdivisions?: Option[];
+// }
+// const makes: Option[] = [
+//     {
+//         category: 'Printer',
+//         subdivisions: [
+//             { category: 'Zebra' },
+//             { category: 'Sato' },
+//             { category: 'Argox' },
+//             { category: 'Godex' },
+//             { category: 'Bixolon' },
+//             { category: 'TSC' },
+//             { category: 'Printronix' },
+//             { category: 'Others' }
+//         ]
+//     },
+//     {
+//         category: 'Scanners',
+//         subdivisions: [
+//             { category: 'Zebra' },
+//             { category: 'Honey Well' },
+//             { category: 'Argox' }
+//         ]
+//     },
+//     {
+//         category: 'HHT',
+//         subdivisions: [
+//             { category: 'Zebra' },
+//             { category: 'Seuic' },
+//             { category: 'Cipherlab' }
+//         ]
+//     },
+//     {
+//         category: 'Consumables',
+//         subdivisions: [
+//             {
+//                 category: 'Label', subdivisions: [
+//                     {
+//                         category: 'Paper', subdivisions: [
+//                             { category: 'Normal Chrome' },
+//                             { category: 'AD Chrome' }
+//                         ]
+//                     },
+//                     { category: 'Polyster' },
+//                     { category: 'Tafatta' },
+//                     { category: 'PET' },
+//                     { category: 'PP' }
+//                 ]
+//             },
+//             {
+//                 category: 'Ribbon', subdivisions: [
+//                     {
+//                         category: 'Wax', subdivisions: [
+//                             { category: 'Economical' },
+//                             { category: 'Standard' },
+//                             { category: 'Premium' }
+//                         ]
+//                     },
+//                     {
+//                         category: 'Wax Resin', subdivisions: [
+//                             { category: 'Economical' },
+//                             { category: 'Standard' },
+//                             { category: 'Premium' }
+//                         ]
+//                     },
+//                     {
+//                         category: 'Resin', subdivisions: [
+//                             { category: 'Economical' },
+//                             { category: 'Standard' },
+//                             { category: 'Premium' }
+//                         ]
+//                     }
+//                 ]
+//             }
+//         ]
+//     },
+//     {
+//         category: 'Software',
+//         subdivisions: [
+//             { category: 'WMS Solution' },
+//             { category: 'WIP Solution' },
+//             { category: 'Asset Management Solution' },
+//             { category: 'Life Science Solutions' },
+//             { category: 'Printing Software' },
+//             { category: 'Scanning Software' },
+//             { category: 'RFID Truck management solutions' },
+//             { category: 'Customised software' }
+//         ]
+//     },
+//     {
+//         category: 'Automation',
+//         subdivisions: [
+//             { category: 'Line Automation' },
+//             { category: 'Visual Inspection System' },
+//             { category: 'Poka Yoke System' },
+//             { category: 'Print and Apply System' },
+//             { category: 'Conveyor Scanning' },
+//             { category: 'Direct part Marking' },
+//             { category: 'SPM' },
+//             { category: 'Vision Guided Robots' }
+//         ]
+//     }
+// ];
+
+// interface AccountDetailsProps {
+
+//     errors: { [key: string]: string };
+// }
+// interface LocationState {
+//     focusField?: string;
+// }
+
+
+// const AccountDetails: React.FC<AccountDetailsProps> = ({ errors }) => {
+
+//     const dispatch = useDispatch();
+//     const location = useLocation() as { state: LocationState };
+//     const [showDetails, setShowDetails] = useState(true);
+
+//     const { loading, data, error, formData } = useSelector(
+//         (state: RootState) => state.postLeadWorkspaceData
+//     );
+
+//     const [states, setStates] = useState<IState[]>([]);
+//     const [city, setcity] = useState<ICity[]>([]);
+//     useEffect(() => {
+
+//         setStates(getAllStates());
+//     }, []);
+//     useEffect(() => {
+//         if (formData?.state) {
+//             setcity(getAllCities(formData?.state))
+//         }
+//     }, [formData?.state]);
+
+
+//     useEffect(() => {
+//         dispatch(getUserDetails() as any);
+//     }, []);
+//     const userData = useSelector((state: RootState) => state.getUserData.userData);
+//     console.log('formData', formData)
+
+
+//     const accountNameRef = useRef<HTMLInputElement>(null);
+
+//     useEffect(() => {
+//         if (location.state?.focusField === "account_name" && accountNameRef.current) {
+//             accountNameRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+//             accountNameRef.current.focus();
+//         }
+//     }, [location]);
+
+//     //  console.log('account data', formData)
+//     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+//         const { id, value } = e.target;
+//         dispatch(setFormData({ id, value }));
+//     };
+
+
+//     useEffect(() => {
+//         const amountsToCalculate = {
+//             hardware_amount: formData?.hardware_amount ?? 0,
+//             software_amount: formData?.software_amount ?? 0,
+//             consumables_amount: formData?.consumables_amount ?? 0,
+//             automation_amount: formData?.automation_amount ?? 0,
+//             solution_amount: formData?.solution_amount ?? 0,
+//             maintenance_amount: formData?.maintenance_amount ?? 0,
+//             others_amount: formData?.others_amount ?? 0,
+//         };
+    
+//         const total = calculateTotal(amountsToCalculate);
+    
+//         // Only dispatch if total_amount actually changed
+//         if (formData?.total_amount !== total) {
+//             dispatch(setFormData({ id: "total_amount", value: total }));
+//         }
+    
+//     }, [
+//         formData?.hardware_amount,
+//         formData?.software_amount,
+//         formData?.consumables_amount,
+//         formData?.automation_amount,
+//         formData?.solution_amount,
+//         formData?.maintenance_amount,
+//         formData?.others_amount
+//     ]);
+    
+
+//     const [selectedOpportunity, setSelectedOpportunity] = useState<string>('');
+//     const [selectedMake, setSelectedMake] = useState<string>('');
+//     const [selectedSubOption, setSelectedSubOption] = useState<string>('');
+//     const [selectedSubSubOption, setSelectedSubSubOption] = useState<string>('');
+
+//     // Handle the change for Opportunity selection
+//     const handleOpportunityChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+//         setSelectedOpportunity(event.target.value);
+//         const { id, value } = event.target;
+//         dispatch(setFormData({ id, value }));
+
+//     };
+
+//     // Handle the change for Make selection
+//     const handleMakeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+//         setSelectedMake(event.target.value);
+//         const { id, value } = event.target;
+//         dispatch(setFormData({ id, value }));
+//     };
+
+//     // Handle the change for SubOption selection
+//     const handleMakeSubOptionChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+//         setSelectedSubOption(event.target.value);
+//         const { id, value } = event.target;
+//         dispatch(setFormData({ id, value }));
+//     };
+
+//     // Handle the change for SubSubOption selection
+//     const handleSubSubOptionChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+//         setSelectedSubSubOption(event.target.value);
+//         const { id, value } = event.target;
+//         dispatch(setFormData({ id, value }));
+//     };
+
+//     // Find the selected make from 'makes' data
+//     const makeCategory = makes.find(option => option.category === selectedOpportunity);
+//     const subdivisions = makeCategory?.subdivisions || [];
+//     // console.log('subdivisions', subdivisions)
+//     // Find the selected sub-make from subdivisions
+//     const subMakeCategory = subdivisions.find(sub => sub.category === selectedMake);
+//     const subMakeSubdivisions = subMakeCategory?.subdivisions || [];
+//     // console.log('subMakeSubdivisions', subMakeSubdivisions)
+//     // Find the selected sub-sub-make from subMakeSubdivisions
+//     const subSubMakeCategory = subMakeSubdivisions.find(subSub => subSub.category === selectedSubOption);
+//     const subSubMakeSubdivisions = subSubMakeCategory?.subdivisions || [];
+//     // console.log('Opportunity Group:', opportunityGroup);
+
+//     return (
+//         <>
+
+//             <div className={styles.accountDetails}>
+//                 <div className={styles.topDiv}>
+//                     {/* <div className={styles.box}>
+//                         <label htmlFor="account_holder" className={styles.texthead}>
+//                             Account Holder<span className={styles.required}>*</span>
+//                         </label>
+//                         <input
+//                             type="text"
+//                             id="account_holder"
+//                             value={formData ? formData.account_holder : ''}  // Fallback to empty string if formData is null
+//                             onChange={handleInputChange}
+//                             placeholder="Enter  Account Holder"
+//                             className={styles.additionalInput}
+//                         />
+//                         {errors.account_holder && (
+//                             <div className={styles.errorMessage}>Account Holder is required.</div> // Error message div
+//                         )}
+//                     </div> */}
+//                     <div className={styles.box}>
+//                         <label htmlFor="account_name" className={styles.texthead}>
+//                             Account Name  <span className={styles.required}>*</span>
+//                         </label>
+//                         <input
+//                             type="text"
+//                             id="account_name"
+//                             value={formData ? formData.account_name : ''}  // Fallback to empty string if formData is null
+//                             onChange={handleInputChange}
+//                             placeholder="Enter Account Name"
+//                             className={styles.additionalInput}
+//                         />
+//                         {errors.account_name && (
+//                             <div className={styles.errorMessage}>Account Name is required.</div> // Error message div
+//                         )}
+//                     </div>
+//                     <div className={styles.box}>
+//                         <label htmlFor="pic" className={styles.texthead}>
+//                             PIC
+//                         </label>
+//                         <input
+//                             type="text"
+//                             id="pic"
+//                             value={formData ? formData.pic : ''}  // Fallback to empty string if formData is null
+//                             onChange={handleInputChange}
+//                             placeholder="Enter  PIC"
+//                             className={styles.additionalInput}
+//                         />
+//                     </div>
+//                     <div className={styles.box}>
+//                         <label htmlFor="vertical" className={styles.texthead}>
+//                             Vertical
+//                         </label>
+//                         <select
+//                             id="vertical"
+//                             className={`${styles.additionalSelect} ${formData?.vertical === '' ? styles.defaultselect : ''}`}
+//                             value={formData?.vertical ?? ''}  // Fallback to empty string if formData is null
+//                             onChange={handleInputChange}
+//                         >
+//                             <option value="">Select Vertical</option>
+//                             {verticals.map((vertical, index) => (
+//                                 <option key={index} value={vertical.category}>
+//                                     {vertical.category}
+//                                 </option>
+//                             ))}
+//                         </select>
+//                     </div>
+//                     <div className={styles.box}>
+//                         <label htmlFor="assign_to" className={styles.texthead}>
+//                             Assign to  <span className={styles.required}>*</span>
+//                         </label>
+//                         <select
+//                             id="assign_to"
+//                             className={`${styles.additionalSelect} ${formData?.assign_to === '' ? styles.defaultselect : ''}`}
+//                             value={formData?.assign_to ?? ''}  // Fallback to empty string if formData is null
+//                             onChange={handleInputChange}
+//                         >
+//                             <option>Select User</option>
+//                             {userData.map((option, index) => (
+//                                 <option key={index} value={option.username}>
+//                                     {option.username}
+//                                 </option>
+//                             ))}
+//                         </select>
+//                         {errors.assign_to && (
+//                             <div className={styles.errorMessage}>Assign To is required.</div> // Error message div
+//                         )}
+//                     </div>
+//                     <div className={styles.box}>
+//                         <label htmlFor="business_type" className={styles.texthead}>
+//                             Business Type
+//                         </label>
+//                         <select
+//                             id="business_type"
+//                             className={`${styles.additionalSelect} ${formData?.business_type === '' ? styles.defaultselect : ''}`}
+//                             value={formData ? formData.business_type : ''}  // Fallback to empty string if formData is null
+//                             onChange={handleInputChange}
+//                         >
+//                             <option>Select Business</option>
+//                             {businessOptions.map((option, index) => (
+//                                 <option key={index} value={option.type}>
+//                                     {option.type}
+//                                 </option>
+//                             ))}
+//                         </select>
+//                     </div>
+
+
+
+//                     <div className={styles.box}>
+//                         <label htmlFor="department" className={styles.texthead}>
+//                             Department
+//                         </label>
+//                         <select
+//                             id="department"
+//                             className={`${styles.additionalSelect} ${formData?.department === '' ? styles.defaultselect : ''}`}
+
+//                             value={formData ? formData.department : ''}  // Fallback to empty string if formData is null
+//                             onChange={handleInputChange}
+//                         >
+//                             <option>Select Department</option>
+//                             {departments.map((dept, index) => (
+//                                 <option key={index} value={dept.name}>
+//                                     {dept.name}
+//                                 </option>
+//                             ))}
+//                         </select>
+//                     </div>
+//                     <div className={styles.box}>
+//                         <label htmlFor="designation" className={styles.texthead}>
+//                             Designation
+//                         </label>
+//                         <select
+//                             id="designation"
+//                             className={`${styles.additionalSelect} ${formData?.designation === '' ? styles.defaultselect : ''}`}
+//                             value={formData ? formData.designation : ''}  // Fallback to empty string if formData is null
+//                             onChange={handleInputChange}
+//                         >
+//                             <option>Select designation</option>
+//                             {designations.map((designation, index) => (
+//                                 <option key={index} value={designation.abbreviation}>
+//                                     {designation.title}
+//                                 </option>
+//                             ))}
+//                         </select>
+//                     </div>
+//                     {/* <div className={styles.box}>
+//                         <label htmlFor="region" className={styles.texthead}>
+//                             Region
+//                         </label>
+//                         <select
+
+//                             value={formData ? formData.region : ''}
+//                             id="region"
+//                             className={`${styles.additionalSelect} ${formData?.region === '' ? styles.defaultselect : ''}`}
+//                             onChange={handleInputChange}
+//                         >
+//                             <option>Select Region</option>
+//                             {regions.map((region, index) => (
+//                                 <option key={index} value={region.name}>
+//                                     {region.name}
+//                                 </option>
+//                             ))}
+//                         </select>
+//                     </div> */}
+//                     <div className={styles.box}>
+//                         <label htmlFor="location" className={styles.texthead}>
+//                             Location
+//                         </label>
+//                         <input
+//                             type="text"
+//                             id="location"
+//                             value={formData ? formData.location : ''}  // Fallback to empty string if formData is null
+//                             onChange={handleInputChange}
+//                             placeholder="Enter Location"
+//                             className={styles.additionalInput}
+//                         />
+//                     </div>
+//                     <div className={styles.box}>
+//                         <label htmlFor="mobile_number" className={styles.texthead}>
+//                             Mobile No.
+//                         </label>
+//                         <input
+//                             type="text"
+//                             id="mobile_number"
+//                             value={formData ? formData.mobile_number : ''}  // Fallback to empty string if formData is null
+//                             onChange={handleInputChange}
+//                             placeholder="Enter Mobile Number"
+//                             className={styles.additionalInput}
+//                         />
+//                     </div>
+
+
+//                     <div className={styles.box}>
+//                         <label htmlFor="email_id" className={styles.texthead}>
+//                             Email
+//                         </label>
+//                         <input
+//                             type="email"
+//                             id="email_id"
+//                             value={formData ? formData.email_id : ''}  // Fallback to empty string if formData is null
+//                             onChange={handleInputChange}
+//                             placeholder="Enter Email"
+//                             className={styles.additionalInput}
+//                         />
+//                     </div>
+//                     <div className={styles.box}>
+//                         <label htmlFor="lead" className={styles.texthead}>
+//                             Opportunity
+//                         </label>
+//                         <select
+//                             value={selectedOpportunity}
+//                             className={`${styles.additionalSelect} ${formData?.lead === '' ? styles.defaultselect : ''}`}
+//                             onChange={handleOpportunityChange}
+//                             id="lead"
+//                         >
+//                             <option value="">Select Lead</option>
+//                             {makes.length > 0 ? (
+//                                 makes.map((option, index) => (
+//                                     <option key={index} value={option.category}>
+//                                         {option.category}
+//                                     </option>
+//                                 ))
+//                             ) : (
+//                                 <option value="" disabled>Not Available</option>
+//                             )}
+//                         </select>
+//                     </div>
+//                     <div className={styles.box}>
+//                         <label htmlFor="make" className={styles.texthead}>
+//                             Make
+//                         </label>
+//                         {selectedOpportunity && makeCategory?.subdivisions ? (
+//                             <select
+//                                 value={selectedMake}
+//                                 className={`${styles.additionalSelect} ${formData?.make === '' ? styles.defaultselect : ''}`}
+//                                 onChange={handleMakeChange}
+//                                 id="make"
+//                             >
+//                                 <option value="">Select Make</option>
+//                                 {makeCategory.subdivisions.length > 0 ? (
+//                                     makeCategory.subdivisions.map((subOption, index) => (
+//                                         <option key={index} value={subOption.category}>
+//                                             {subOption.category}
+//                                         </option>
+//                                     ))
+//                                 ) : (
+//                                     <option value="" disabled>Not Available</option>
+//                                 )}
+//                             </select>
+//                         ) : (
+//                             <select disabled className={`${styles.additionalSelect} ${formData?.make === '' ? styles.defaultselect : ''}`}>
+//                                 <option value="">Not Available</option>
+//                             </select>
+//                         )}
+//                     </div>
+//                     <div className={styles.box}>
+//                         <label htmlFor="sub_make" className={styles.texthead}>
+//                             Sub Make
+//                         </label>
+//                         {selectedMake && subMakeCategory?.subdivisions ? (
+//                             <select
+//                                 value={selectedSubOption}
+//                                 className={`${styles.additionalSelect} ${formData?.sub_make === '' ? styles.defaultselect : ''}`}
+//                                 onChange={handleMakeSubOptionChange}
+//                                 id="sub_make"
+//                             >
+//                                 <option value="">Select a sub-make</option>
+//                                 {subMakeCategory.subdivisions.length > 0 ? (
+//                                     subMakeCategory.subdivisions.map((subSubOption, index) => (
+//                                         <option key={index} value={subSubOption.category}>
+//                                             {subSubOption.category}
+//                                         </option>
+//                                     ))
+//                                 ) : (
+//                                     <option value="" disabled >Not Available</option>
+//                                 )}
+//                             </select>
+//                         ) : (
+//                             <select disabled className={`${styles.additionalSelect} ${formData?.sub_make === '' ? styles.defaultselect : ''}`}>
+//                                 <option value="">Not Available</option>
+//                             </select>
+//                         )}
+//                     </div>
+//                     <div className={styles.box}>
+//                         <label htmlFor="sub_make_brand" className={styles.texthead}>
+//                             Sub-Make Brand
+//                         </label>
+//                         {selectedSubOption && subSubMakeCategory?.subdivisions ? (
+//                             <select
+//                                 value={selectedSubSubOption}
+//                                 className={`${styles.additionalSelect} ${formData?.sub_make_brand === '' ? styles.defaultselect : ''}`}
+//                                 onChange={handleSubSubOptionChange}
+//                                 id="sub_make_brand"
+//                             >
+//                                 <option value="">Select Sub-make brand</option>
+//                                 {subSubMakeCategory.subdivisions.length > 0 ? (
+//                                     subSubMakeCategory.subdivisions.map((subSubSubOption, index) => (
+//                                         <option key={index} value={subSubSubOption.category}>
+//                                             {subSubSubOption.category}
+//                                         </option>
+//                                     ))
+//                                 ) : (
+//                                     <option value="" disabled>Not Available</option>
+//                                 )}
+//                             </select>
+//                         ) : (
+//                             <select disabled className={`${styles.additionalSelect} ${formData?.sub_make_brand === '' ? styles.defaultselect : ''}`}>
+//                                 <option value="">Not Available</option>
+//                             </select>
+//                         )}
+//                     </div>
+//                     <div className={styles.box}>
+//                         <label htmlFor="state" className={styles.texthead}>
+//                             state
+//                         </label>
+//                         <select
+
+//                             value={formData ? formData.state : ''}
+//                             id="state"
+//                             className={`${styles.additionalSelect} ${formData?.state === '' ? styles.defaultselect : ''}`}
+//                             onChange={handleInputChange}
+//                         >
+//                             <option>Select state</option>
+//                             {states.map((state) => (
+//                                 <option key={state.name} value={state.name}>{state.name}</option>
+//                             ))}
+//                         </select>
+//                     </div>
+
+//                     <div className={styles.box}>
+//                         <label htmlFor="city" className={styles.texthead}>
+//                             city
+//                         </label>
+//                         <select
+
+//                             value={formData ? formData.city : ''}
+//                             id="city"
+//                             className={`${styles.additionalSelect} ${formData?.city === '' ? styles.defaultselect : ''}`}
+//                             onChange={handleInputChange}
+//                         >
+//                             <option>Select city</option>
+//                             {city.map((city) => (
+//                                 <option key={city.name} value={city.name}>{city.name}</option>
+//                             ))}
+//                         </select>
+//                     </div>
+
+//                     <div className={styles.box}>
+//                         <label htmlFor="description" className={styles.texthead}>
+//                             Description
+//                         </label>
+//                         <input
+//                             type="text"
+//                             id="description"
+//                             value={formData ? formData.description : ''}  // Fallback to empty string if formData is null
+//                             onChange={handleInputChange}
+//                             placeholder="Enter Description"
+//                             className={styles.additionalInput}
+//                         />
+//                     </div>
+
+//                     <div className={styles.box}>
+//                         <label htmlFor="address" className={styles.texthead}>
+//                             Address
+//                         </label>
+//                         <textarea
+//                             id="address"
+//                             className={styles.textarea}
+//                             value={formData ? formData.address : ''}  // Fallback to empty string if formData is null
+//                             onChange={handleInputChange}
+//                             placeholder="Enter Address"
+//                         />
+
+
+//                     </div>
+//                 </div>
+//                 <div className={styles.otherDetails}>
+//                     <div className={styles.smallDiv}>
+//                         <div className={styles.heading}>Details Section</div>
+//                         <hr className={styles.line} />
+//                         <div className={styles.inputContainer}>
+//                             <label htmlFor="qty" className={styles.texthead}>Quantity :</label>
+//                             <input
+//                                 type="text"
+//                                 id="qty"
+//                                 value={formData ? formData.qty : ''}  // Fallback to empty string if formData is null
+//                                 onChange={handleInputChange}
+//                                 placeholder="Enter the quantity"
+//                                 className={styles.input}
+//                             />
+//                         </div>
+//                         <div className={styles.inputContainer}>
+//                             <label htmlFor="value" className={styles.texthead}>Value :</label>
+//                             <input
+//                                 type="text"
+//                                 id="values"
+//                                 value={formData?.values ?? ''}
+//                                 onChange={handleInputChange}
+//                                 placeholder="Enter the value"
+//                                 className={styles.input}
+//                             />
+//                         </div>
+//                         <div className={styles.inputContainer}>
+//                             <label htmlFor="remarks" className={styles.texthead}>Remarks :</label>
+//                             <input
+//                                 type="text"
+//                                 id="remarks"
+//                                 value={formData?.remarks ?? ''}
+//                                 onChange={handleInputChange}
+//                                 placeholder="Enter the remarks"
+//                                 className={styles.input}
+//                             />
+//                         </div>
+//                     </div>
+//                     <div className={styles.largeDiv}>
+//                         <h3 className={styles.heading}>Additional Information</h3>
+//                         <hr className={styles.line} />
+//                         <div className={styles.innerContainer}>
+//                             <div className={styles.row}>
+//                                 <label htmlFor="hardware_amount" className={styles.texthead}>Hardware :</label>
+//                                 <input
+//                                     type="number"
+//                                     id="hardware_amount"
+//                                     value={formData?.hardware_amount ?? ''}
+//                                     onChange={handleInputChange}
+//                                     placeholder="Enter the amount"
+//                                     className={styles.input}
+//                                 />
+//                             </div>
+//                             <div className={styles.row}>
+//                                 <label htmlFor="software_amount" className={styles.texthead}>Software :</label>
+//                                 <input
+//                                     type="number"
+//                                     id="software_amount"
+//                                     value={formData?.software_amount ?? ''}
+//                                     onChange={handleInputChange}
+//                                     placeholder="Enter the amount"
+//                                     className={styles.input}
+//                                 />
+//                             </div>
+//                             <div className={styles.row}>
+//                                 <label htmlFor="consumables_amount" className={styles.texthead}>Consumables :</label>
+//                                 <input
+//                                     type="number"
+//                                     id="consumables_amount"
+//                                     value={formData?.consumables_amount ?? ''}
+//                                     onChange={handleInputChange}
+//                                     placeholder="Enter the amount"
+//                                     className={styles.input}
+//                                 />
+//                             </div>
+//                         </div>
+//                         <div className={styles.innerContainer}>
+//                             <div className={styles.row}>
+//                                 <label htmlFor="automation_amount" className={styles.texthead}>Automation :</label>
+//                                 <input
+//                                     type="number"
+//                                     id="automation_amount"
+//                                     value={formData?.automation_amount ?? ''}
+//                                     onChange={handleInputChange}
+//                                     placeholder="Enter the amount"
+//                                     className={styles.input}
+//                                 />
+//                             </div>
+//                             <div className={styles.row}>
+//                                 <label htmlFor="solution_amount" className={styles.texthead}>Solution :</label>
+//                                 <input
+//                                     type="number"
+//                                     id="solution_amount"
+//                                     value={formData?.solution_amount ?? ''}
+//                                     onChange={handleInputChange}
+//                                     placeholder="Enter the amount"
+//                                     className={styles.input}
+//                                 />
+//                             </div>
+//                             <div className={styles.row}>
+//                                 <label htmlFor="maintenance_amount" className={styles.texthead}>Maintenance :</label>
+//                                 <input
+//                                     type="number"
+//                                     id="maintenance_amount"
+//                                     value={formData?.maintenance_amount ?? ''}
+//                                     onChange={handleInputChange}
+//                                     placeholder="Enter the amount"
+//                                     className={styles.input}
+//                                 />
+//                             </div>
+//                         </div>
+//                         <div className={styles.innerContainer}>
+//                             <div className={styles.row}>
+//                                 <label htmlFor="others_amount" className={styles.texthead}>Others :</label>
+//                                 <input
+//                                     type="number"
+//                                     id="others_amount"
+//                                     value={formData?.others_amount ?? ''}
+//                                     onChange={handleInputChange}
+//                                     placeholder="Enter the amount"
+//                                     className={styles.input}
+//                                 />
+//                             </div>
+//                             <div className={styles.row}>
+//                                 <label htmlFor="total_amount" className={styles.texthead}>Total :</label>
+//                                 <input
+//                                     type="number"
+//                                     id="total_amount"
+//                                     value={formData?.total_amount ?? ''}
+//                                     onChange={handleInputChange}
+//                                     placeholder="Enter the total"
+//                                     className={styles.input}
+//                                 />
+//                             </div>
+//                         </div>
+//                     </div>
+//                 </div>
+
+//                 {/* <div className={styles.bottomDiv}>
+//             <div className={styles.box}>
+//                 <label htmlFor="address" className={styles.texthead}>
+//                     Address
+//                 </label>
+//                 <textarea
+//                     id="address"
+//                     className={styles.textarea}
+//                     value={formData ? formData.address : ''}  // Fallback to empty string if formData is null
+//                     onChange={handleInputChange}
+//                     placeholder="Enter Address"
+//                 />
+
+
+//             </div>
+//         </div> */}
+//             </div>
+//         </>
+//     );
+// };
+
+// export default AccountDetails;
+
+
+import React, { useEffect, useRef, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { setFormData } from "../../slice/LeadWorkspace";
+import type { RootState } from "../../../../app/store";
+import { getUserDetails } from "../../../lead/slice/leadFormSlice";
+import { useLocation } from "react-router-dom";
+import type { ICity, IState } from   "country-state-city";
+import { getAllCities, getAllStates } from "../../../CommonAPI/Common";
+import { calculateTotal } from "../../../CalculateTotalAmount/totalAmount";
+import { Layers, ClipboardList, DollarSign } from "lucide-react";
+import { fetchAccountFormSettings } from "../../../FormSettings/formSettingsSlice";
+
+// ─── Static Data ──────────────────────────────────────────────────────────────
+
+interface Vertical { category: string; subdivisions?: Vertical[]; }
+const verticals: Vertical[] = [
+  { category: 'Automobile', subdivisions: [{ category: 'Automotive' }, { category: 'Auto Component' }, { category: 'Tier 1' }, { category: 'Tier 2' }] },
+  { category: 'Health Care' }, { category: 'E-Commerce' },
+  { category: 'E&E', subdivisions: [{ category: 'Electronics' }, { category: 'Electrical Components' }, { category: 'Tier 1' }] },
+  { category: 'FMCG' }, { category: 'Chemical Mfg' }, { category: 'Other Mfg' },
+  { category: 'F&B', subdivisions: [{ category: 'F&B Mfg' }, { category: 'Food Mfg' }, { category: 'Beverages Mfg' }, { category: 'Cloud Kitchen' }] },
+  { category: 'Pharmaceutical', subdivisions: [{ category: 'Pharma/Health Care' }, { category: 'Hospitals' }, { category: 'Tier 1/Supplier' }] },
+  { category: 'Retails', subdivisions: [{ category: 'E-Commerce' }, { category: 'Retails' }] },
+  { category: 'Transport & Logistics' }, { category: 'Apparel' }, { category: 'Government' }, { category: 'Others' },
+];
+
+interface Region { name: string; }
+const regions: Region[] = [{ name: 'North' }, { name: 'South' }, { name: 'East' }, { name: 'West' }, { name: 'INT' }];
+
+interface Department { name: string; }
+const departments: Department[] = [
+  { name: 'Purchase' }, { name: 'Procurement' }, { name: 'PPC Head' }, { name: 'IT Head' },
+  { name: 'Plant Head' }, { name: 'Quality' }, { name: 'Logistics' }, { name: 'Supply Chain' },
+  { name: 'Operations' }, { name: 'Information System' }, { name: 'Vendor Development' },
+  { name: 'Commertials' }, { name: 'Project Development' }, { name: 'Maintenance' },
+  { name: 'Support & Services' }, { name: 'Manufacturing Head' }, { name: 'Production Head' },
+  { name: 'Warehouse Manager' }, { name: 'Business Development' }, { name: 'Sales Manager' },
+  { name: 'Marketing' }, { name: 'Admin/HR' },
+];
+
+interface BusinessOption { type: string; }
+const businessOptions: BusinessOption[] = [{ type: 'Direct Business' }, { type: 'Business Partner' }];
+
+interface Designation { title: string; abbreviation: string; }
+const designations: Designation[] = [
+  { title: 'Assistant Manager', abbreviation: 'AM' }, { title: 'Senior Manager', abbreviation: 'Sr.M' },
+  { title: 'Assistant General Manager', abbreviation: 'AGM' }, { title: 'General Manager', abbreviation: 'GM' },
+  { title: 'Deputy Manager', abbreviation: 'DM' }, { title: 'Deputy General Manager', abbreviation: 'Dy.GM' },
+  { title: 'Vice President', abbreviation: 'VP' }, { title: 'Director', abbreviation: 'Director' },
+  { title: 'Director/Owner', abbreviation: 'Director/Owner' }, { title: 'Owner', abbreviation: 'Owner' },
+  { title: 'Senior Engineer', abbreviation: 'Sr.Engineer' }, { title: 'Executive', abbreviation: 'EX' },
+  { title: 'Senior Executive', abbreviation: 'Sr.EX' },
+];
+
+interface Option { category: string; subdivisions?: Option[]; }
+const makes: Option[] = [
+  { category: 'Printer', subdivisions: [{ category: 'Zebra' }, { category: 'Sato' }, { category: 'Argox' }, { category: 'Godex' }, { category: 'Bixolon' }, { category: 'TSC' }, { category: 'Printronix' }, { category: 'Others' }] },
+  { category: 'Scanners', subdivisions: [{ category: 'Zebra' }, { category: 'Honey Well' }, { category: 'Argox' }] },
+  { category: 'HHT', subdivisions: [{ category: 'Zebra' }, { category: 'Seuic' }, { category: 'Cipherlab' }] },
+  { category: 'Consumables', subdivisions: [
+    { category: 'Label', subdivisions: [{ category: 'Paper', subdivisions: [{ category: 'Normal Chrome' }, { category: 'AD Chrome' }] }, { category: 'Polyster' }, { category: 'Tafatta' }, { category: 'PET' }, { category: 'PP' }] },
+    { category: 'Ribbon', subdivisions: [
+      { category: 'Wax', subdivisions: [{ category: 'Economical' }, { category: 'Standard' }, { category: 'Premium' }] },
+      { category: 'Wax Resin', subdivisions: [{ category: 'Economical' }, { category: 'Standard' }, { category: 'Premium' }] },
+      { category: 'Resin', subdivisions: [{ category: 'Economical' }, { category: 'Standard' }, { category: 'Premium' }] },
+    ]},
+  ]},
+  { category: 'Software', subdivisions: [{ category: 'WMS Solution' }, { category: 'WIP Solution' }, { category: 'Asset Management Solution' }, { category: 'Life Science Solutions' }, { category: 'Printing Software' }, { category: 'Scanning Software' }, { category: 'RFID Truck management solutions' }, { category: 'Customised software' }] },
+  { category: 'Automation', subdivisions: [{ category: 'Line Automation' }, { category: 'Visual Inspection System' }, { category: 'Poka Yoke System' }, { category: 'Print and Apply System' }, { category: 'Conveyor Scanning' }, { category: 'Direct part Marking' }, { category: 'SPM' }, { category: 'Vision Guided Robots' }] },
+];
+
+interface AccountDetailsProps { errors: { [key: string]: string }; }
+interface LocationState { focusField?: string; }
+
+// ─── Style helpers ────────────────────────────────────────────────────────────
+
+const inputClass = "w-full px-3 py-2 rounded-xl border-2 border-slate-200 bg-white text-sm text-slate-800 font-medium placeholder:text-slate-400 placeholder:font-normal focus:outline-none focus:ring-2 focus:ring-violet-500/10 focus:border-violet-600 transition-all duration-200";
+
+const selectClass = (value: string | null | undefined) =>
+  `w-full px-3 py-2 rounded-xl border-2 border-slate-200 bg-white text-sm font-medium focus:outline-none focus:ring-2 focus:ring-violet-500/10 focus:border-violet-600 transition-all duration-200 [&>option]:text-slate-800 [&>option]:font-medium ${!value ? 'text-slate-400 font-normal' : 'text-slate-800'}`;
+
+const disabledSelectClass = "w-full px-3 py-2 rounded-xl border-2 border-slate-100 bg-slate-50 text-sm text-slate-400 font-normal cursor-not-allowed";
+
+const amountInputClass = "w-full px-3 py-2 rounded-xl border-2 border-slate-200 bg-white text-sm text-slate-800 font-medium placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-violet-500/10 focus:border-violet-600 transition-all duration-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none";
+
+// ─── Component ────────────────────────────────────────────────────────────────
+
+const AccountDetails: React.FC<AccountDetailsProps> = ({ errors }) => {
+  const dispatch = useDispatch();
+  const location = useLocation() as { state: LocationState };
+  const [showDetails, setShowDetails] = useState(true);
+  const accountFormSettings = useSelector((state: RootState) => state.formSettings.account);
+  useEffect(() => {
+    dispatch(fetchAccountFormSettings() as any);
+  }, [dispatch]);
+
+  const { loading, data, error, formData } = useSelector((state: RootState) => state.postLeadWorkspaceData);
+
+  const [states, setStates] = useState<IState[]>([]);
+  const [city, setcity] = useState<ICity[]>([]);
+  const stateOptions = accountFormSettings.states?.length ? accountFormSettings.states : states.map((s) => s.name);
+  const mappedCities = formData?.state ? (accountFormSettings.stateCities?.[formData.state] || []) : [];
+  const cityOptions = Array.from(new Set([...(accountFormSettings.cities || []), ...mappedCities, ...city.map((c) => c.name)]));
+  useEffect(() => { setStates(getAllStates()); }, []);
+  useEffect(() => { if (formData?.state) { setcity(getAllCities(formData?.state)); } }, [formData?.state]);
+
+  useEffect(() => { dispatch(getUserDetails() as any); }, []);
+  const userData = useSelector((state: RootState) => state.getUserData.userData);
+  console.log('formData', formData);
+
+  const accountNameRef = useRef<HTMLInputElement>(null);
+  useEffect(() => {
+    if (location.state?.focusField === "account_name" && accountNameRef.current) {
+      accountNameRef.current.scrollIntoView({ behavior: "smooth", block: "center" });
+      accountNameRef.current.focus();
+    }
+  }, [location]);
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
+    const { id, value } = e.target;
+    dispatch(setFormData({ id, value }));
+  };
+
+  useEffect(() => {
+    const amountsToCalculate = {
+      hardware_amount: formData?.hardware_amount ?? 0,
+      software_amount: formData?.software_amount ?? 0,
+      consumables_amount: formData?.consumables_amount ?? 0,
+      automation_amount: formData?.automation_amount ?? 0,
+      solution_amount: formData?.solution_amount ?? 0,
+      maintenance_amount: formData?.maintenance_amount ?? 0,
+      others_amount: formData?.others_amount ?? 0,
+    };
+    const total = calculateTotal(amountsToCalculate);
+    if (formData?.total_amount !== total) { dispatch(setFormData({ id: "total_amount", value: total })); }
+  }, [formData?.hardware_amount, formData?.software_amount, formData?.consumables_amount, formData?.automation_amount, formData?.solution_amount, formData?.maintenance_amount, formData?.others_amount]);
+
+  const [selectedOpportunity, setSelectedOpportunity] = useState<string>('');
+  const [selectedMake, setSelectedMake] = useState<string>('');
+  const [selectedSubOption, setSelectedSubOption] = useState<string>('');
+  const [selectedSubSubOption, setSelectedSubSubOption] = useState<string>('');
+
+  const handleOpportunityChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const { id, value } = event.target;
+    setSelectedOpportunity(value);
+    setSelectedMake('');
+    setSelectedSubOption('');
+    setSelectedSubSubOption('');
+    dispatch(setFormData({ id, value }));
+    dispatch(setFormData({ id: 'make', value: '' }));
+    dispatch(setFormData({ id: 'sub_make', value: '' }));
+    dispatch(setFormData({ id: 'sub_make_brand', value: '' }));
+  };
+  const handleMakeChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const { id, value } = event.target;
+    setSelectedMake(value);
+    setSelectedSubOption('');
+    setSelectedSubSubOption('');
+    dispatch(setFormData({ id, value }));
+    dispatch(setFormData({ id: 'sub_make', value: '' }));
+    dispatch(setFormData({ id: 'sub_make_brand', value: '' }));
+  };
+  const handleMakeSubOptionChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const { id, value } = event.target;
+    setSelectedSubOption(value);
+    setSelectedSubSubOption('');
+    dispatch(setFormData({ id, value }));
+    dispatch(setFormData({ id: 'sub_make_brand', value: '' }));
+  };
+  const handleSubSubOptionChange = (event: React.ChangeEvent<HTMLSelectElement>) => { setSelectedSubSubOption(event.target.value); const { id, value } = event.target; dispatch(setFormData({ id, value })); };
+
+  const leadHierarchyOptions = accountFormSettings.productCategories?.length
+    ? accountFormSettings.productCategories
+    : (accountFormSettings.leadHierarchy?.length ? accountFormSettings.leadHierarchy : makes);
+  const opportunityOptions = Array.from(new Set([
+    ...(accountFormSettings.opportunities || []),
+    ...leadHierarchyOptions.map((option) => option.category),
+  ]));
+  const makeCategory = leadHierarchyOptions.find(option => option.category === selectedOpportunity);
+  const subdivisions = makeCategory?.subdivisions || [];
+  const subMakeCategory = subdivisions.find(sub => sub.category === selectedMake);
+  const subMakeSubdivisions = subMakeCategory?.subdivisions || [];
+  const subSubMakeCategory = subMakeSubdivisions.find(subSub => subSub.category === selectedSubOption);
+  const subSubMakeSubdivisions = subSubMakeCategory?.subdivisions || [];
+
+  return (
+    <div className="flex flex-col gap-5">
+
+      {/* ── Card 1: Lead Details ─────────────────────────────────────────── */}
+      <div className="rounded-2xl border-2 border-violet-100 shadow-lg">
+        <div className="bg-gradient-to-r from-violet-600 to-indigo-500 px-5 py-3 flex items-center gap-2 rounded-t-2xl">
+          <div className="w-7 h-7 bg-white/20 rounded-lg flex items-center justify-center">
+            <Layers size={15} color="white" />
+          </div>
+          <h2 className="text-sm font-bold text-white tracking-wide">Lead Details</h2>
+        </div>
+        <div className="bg-white px-5 py-4 rounded-b-2xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-x-4 gap-y-4">
+
+            {/* Account Name */}
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="account_name" className="text-sm font-semibold text-slate-700">Account Name <span className="text-red-500">*</span></label>
+              <input ref={accountNameRef} type="text" id="account_name" value={formData ? formData.account_name : ''} onChange={handleInputChange} placeholder="Enter Account Name" className={inputClass} />
+              {errors.account_name && <span className="text-red-500 text-xs">Account Name is required.</span>}
+            </div>
+
+            {/* PIC */}
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="pic" className="text-sm font-semibold text-slate-700">PIC</label>
+              <input type="text" id="pic" value={formData ? formData.pic : ''} onChange={handleInputChange} placeholder="Enter PIC" className={inputClass} />
+            </div>
+
+            {/* Vertical */}
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="vertical" className="text-sm font-semibold text-slate-700">Vertical</label>
+              <select id="vertical" className={selectClass(formData?.vertical)} value={formData?.vertical ?? ''} onChange={handleInputChange}>
+                <option value="">Select Vertical</option>
+                {verticals.map((v, i) => <option key={i} value={v.category}>{v.category}</option>)}
+              </select>
+            </div>
+
+            {/* Assign To */}
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="assign_to" className="text-sm font-semibold text-slate-700">Assign To <span className="text-red-500">*</span></label>
+              <select id="assign_to" className={selectClass(formData?.assign_to)} value={formData?.assign_to ?? ''} onChange={handleInputChange}>
+                <option>Select User</option>
+                {userData.map((o: any, i: number) => <option key={i} value={o.username}>{o.username}</option>)}
+              </select>
+              {errors.assign_to && <span className="text-red-500 text-xs">Assign To is required.</span>}
+            </div>
+
+            {/* Business Type */}
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="business_type" className="text-sm font-semibold text-slate-700">Business Type</label>
+              <select id="business_type" className={selectClass(formData?.business_type)} value={formData ? formData.business_type : ''} onChange={handleInputChange}>
+                <option>Select Business</option>
+                {businessOptions.map((o, i) => <option key={i} value={o.type}>{o.type}</option>)}
+              </select>
+            </div>
+
+            {/* Department */}
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="department" className="text-sm font-semibold text-slate-700">Department</label>
+              <select id="department" className={selectClass(formData?.department)} value={formData ? formData.department : ''} onChange={handleInputChange}>
+                <option>Select Department</option>
+                {departments.map((d, i) => <option key={i} value={d.name}>{d.name}</option>)}
+              </select>
+            </div>
+
+            {/* Designation */}
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="designation" className="text-sm font-semibold text-slate-700">Designation</label>
+              <select id="designation" className={selectClass(formData?.designation)} value={formData ? formData.designation : ''} onChange={handleInputChange}>
+                <option>Select designation</option>
+                {designations.map((d, i) => <option key={i} value={d.abbreviation}>{d.title}</option>)}
+              </select>
+            </div>
+
+            {/* Location */}
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="location" className="text-sm font-semibold text-slate-700">Location</label>
+              <input type="text" id="location" value={formData ? formData.location : ''} onChange={handleInputChange} placeholder="Enter Location" className={inputClass} />
+            </div>
+
+            {/* Mobile No */}
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="mobile_number" className="text-sm font-semibold text-slate-700">Mobile No.</label>
+              <input type="text" id="mobile_number" value={formData ? formData.mobile_number : ''} onChange={handleInputChange} placeholder="Enter Mobile Number" className={inputClass} />
+            </div>
+
+            {/* Email */}
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="email_id" className="text-sm font-semibold text-slate-700">Email</label>
+              <input type="email" id="email_id" value={formData ? formData.email_id : ''} onChange={handleInputChange} placeholder="Enter Email" className={inputClass} />
+            </div>
+
+            {/* Opportunity */}
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="lead" className="text-sm font-semibold text-slate-700">Opportunity</label>
+              <select value={selectedOpportunity} className={selectClass(selectedOpportunity)} onChange={handleOpportunityChange} id="lead">
+                <option value="">Select Lead</option>
+                {opportunityOptions.map((name, i) => <option key={i} value={name}>{name}</option>)}
+              </select>
+            </div>
+
+            {/* Product Category 1 */}
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="make" className="text-sm font-semibold text-slate-700">Product Category 1</label>
+              {selectedOpportunity && makeCategory?.subdivisions ? (
+                <select value={selectedMake} className={selectClass(selectedMake)} onChange={handleMakeChange} id="make">
+                  <option value="">Select Product Category 1</option>
+                  {makeCategory.subdivisions.map((s, i) => <option key={i} value={s.category}>{s.category}</option>)}
+                </select>
+              ) : <select disabled className={disabledSelectClass}><option value="">Not Available</option></select>}
+            </div>
+
+            {/* Product Category 2 */}
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="sub_make" className="text-sm font-semibold text-slate-700">Product Category 2</label>
+              {selectedMake && subMakeCategory?.subdivisions ? (
+                <select value={selectedSubOption} className={selectClass(selectedSubOption)} onChange={handleMakeSubOptionChange} id="sub_make">
+                  <option value="">Select Product Category 2</option>
+                  {subMakeCategory.subdivisions.map((s, i) => <option key={i} value={s.category}>{s.category}</option>)}
+                </select>
+              ) : <select disabled className={disabledSelectClass}><option value="">Not Available</option></select>}
+            </div>
+
+            {/* Product Category 3 */}
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="sub_make_brand" className="text-sm font-semibold text-slate-700">Product Category 3</label>
+              {selectedSubOption && subSubMakeCategory?.subdivisions ? (
+                <select value={selectedSubSubOption} className={selectClass(selectedSubSubOption)} onChange={handleSubSubOptionChange} id="sub_make_brand">
+                  <option value="">Select Product Category 3</option>
+                  {subSubMakeCategory.subdivisions.map((s, i) => <option key={i} value={s.category}>{s.category}</option>)}
+                </select>
+              ) : <select disabled className={disabledSelectClass}><option value="">Not Available</option></select>}
+            </div>
+
+            {/* State */}
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="state" className="text-sm font-semibold text-slate-700">State</label>
+              <select id="state" className={selectClass(formData?.state)} value={formData ? formData.state : ''} onChange={handleInputChange}>
+                <option>Select state</option>
+                {stateOptions.map((name) => <option key={name} value={name}>{name}</option>)}
+              </select>
+            </div>
+
+            {/* City */}
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="city" className="text-sm font-semibold text-slate-700">City</label>
+              <select id="city" className={selectClass(formData?.city)} value={formData ? formData.city : ''} onChange={handleInputChange}>
+                <option>Select city</option>
+                {cityOptions.map((name) => <option key={name} value={name}>{name}</option>)}
+              </select>
+            </div>
+
+            {/* Description */}
+            <div className="flex flex-col gap-1.5">
+              <label htmlFor="description" className="text-sm font-semibold text-slate-700">Description</label>
+              <input type="text" id="description" value={formData ? formData.description : ''} onChange={handleInputChange} placeholder="Enter Description" className={inputClass} />
+            </div>
+
+            {/* Address */}
+            <div className="flex flex-col gap-1.5 sm:col-span-2">
+              <label htmlFor="address" className="text-sm font-semibold text-slate-700">Address</label>
+              <textarea id="address" className="w-full px-3 py-2 rounded-xl border-2 border-slate-200 bg-white text-sm text-slate-800 font-medium placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-violet-400 focus:border-violet-400 transition-all duration-200 resize-none h-[72px]" value={formData ? formData.address : ''} onChange={handleInputChange} placeholder="Enter Address" />
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      {/* ── Row: Details Section + Additional Information ─────────────────── */}
+      <div className="flex flex-col md:flex-row gap-5">
+
+        {/* Details Section */}
+        <div className="rounded-2xl border-2 border-violet-100 shadow-lg md:w-[32%] shrink-0">
+          <div className="bg-gradient-to-r from-violet-600 to-purple-500 px-5 py-3 flex items-center gap-2 rounded-t-2xl">
+            <div className="w-7 h-7 bg-white/20 rounded-lg flex items-center justify-center">
+              <ClipboardList size={15} color="white" />
+            </div>
+            <h2 className="text-sm font-bold text-white tracking-wide">Details Section</h2>
+          </div>
+          <div className="bg-white px-5 py-4 flex flex-col gap-4 rounded-b-2xl">
+            <div className="flex items-center gap-3">
+              <label htmlFor="qty" className="text-sm font-semibold text-slate-700 whitespace-nowrap min-w-[80px]">Quantity</label>
+              <input type="text" id="qty" value={formData ? formData.qty : ''} onChange={handleInputChange} placeholder="Enter quantity" className={inputClass} />
+            </div>
+            <div className="flex items-center gap-3">
+              <label htmlFor="values" className="text-sm font-semibold text-slate-700 whitespace-nowrap min-w-[80px]">Value</label>
+              <input type="text" id="values" value={formData?.values ?? ''} onChange={handleInputChange} placeholder="Enter value" className={inputClass} />
+            </div>
+            <div className="flex items-center gap-3">
+              <label htmlFor="remarks" className="text-sm font-semibold text-slate-700 whitespace-nowrap min-w-[80px]">Remarks</label>
+              <input type="text" id="remarks" value={formData?.remarks ?? ''} onChange={handleInputChange} placeholder="Enter remarks" className={inputClass} />
+            </div>
+          </div>
+        </div>
+
+        {/* Additional Information */}
+        <div className="rounded-2xl border-2 border-emerald-100 shadow-lg flex-1">
+          <div className="bg-gradient-to-r from-emerald-600 to-teal-500 px-5 py-3 flex items-center gap-2 rounded-t-2xl">
+            <div className="w-7 h-7 bg-white/20 rounded-lg flex items-center justify-center">
+              <DollarSign size={15} color="white" />
+            </div>
+            <h2 className="text-sm font-bold text-white tracking-wide">Additional Information</h2>
+          </div>
+          <div className="bg-white px-5 py-4 rounded-b-2xl">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-4">
+              {[
+                { id: 'hardware_amount', label: 'Hardware' },
+                { id: 'software_amount', label: 'Software' },
+                { id: 'consumables_amount', label: 'Consumables' },
+                { id: 'automation_amount', label: 'Automation' },
+                { id: 'solution_amount', label: 'Solution' },
+                { id: 'maintenance_amount', label: 'Maintenance' },
+                { id: 'others_amount', label: 'Others' },
+              ].map(({ id, label }) => (
+                <div key={id} className="flex items-center gap-3">
+                  <label htmlFor={id} className="text-sm font-semibold text-slate-700 whitespace-nowrap w-28 shrink-0">{label}</label>
+                  <input type="number" id={id} value={(formData as any)?.[id] ?? ''} onChange={handleInputChange} placeholder="0" className={amountInputClass} />
+                </div>
+              ))}
+              {/* Total */}
+              <div className="flex items-center gap-3 sm:col-span-2 lg:col-span-2">
+                <label htmlFor="total_amount" className="text-sm font-bold text-emerald-700 whitespace-nowrap w-28 shrink-0">Total</label>
+                <input type="number" id="total_amount" value={formData?.total_amount ?? ''} onChange={handleInputChange} placeholder="0"
+                  className="w-full px-3 py-2 rounded-xl border-2 border-emerald-300 bg-emerald-50 text-sm text-emerald-800 font-bold placeholder:text-emerald-300 focus:outline-none focus:ring-2 focus:ring-emerald-400 focus:border-emerald-400 transition-all duration-200 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  );
+};
+
+export default AccountDetails;
+
+

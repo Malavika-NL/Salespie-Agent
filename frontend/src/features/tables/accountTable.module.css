@@ -1,0 +1,60 @@
+.tableContainer {
+  width: auto;
+  margin: 0 1rem;
+  overflow-x: auto; /* Allows horizontal scrolling for the table */
+}
+
+/* Centered Table Heading */
+.tableHeading {
+  text-align: center;
+  margin-bottom: 10px;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+/* Table Styles */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto; /* Let the columns adjust automatically */
+}
+
+.table th,
+.table td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+  vertical-align: top;
+  word-wrap: break-word; /* Break long words for better readability */
+}
+
+.table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+}
+
+/* Adjust the width of specific columns, especially for address */
+.table th:nth-child(13), /* Address Column */
+.table td:nth-child(13) {
+  width: 20%; /* Increase the width for the address column */
+}
+
+/* Scrollbar Styling */
+.tableContainer::-webkit-scrollbar {
+  width: 0;  /* Hide scrollbar */
+  background: transparent;  /* Transparent background for scrollbar */
+}
+
+/* Centering content in the table cells */
+.table th,
+.table td {
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* Ensures cells with large content do not overflow */
+.table td {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

@@ -1,0 +1,27 @@
+/* Piechart.module.css */
+.Container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .head {
+    font-family: 'Sora', system-ui, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: #0F172A;
+    margin-bottom: 8px;
+    letter-spacing: -0.2px;
+  }
+  
+  .Wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .text {
+    font-family: 'DM Sans', system-ui, sans-serif;
+    font-size: 10px;
+    font-weight: 600;
+  }

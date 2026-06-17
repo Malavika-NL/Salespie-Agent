@@ -1,0 +1,937 @@
+/* .sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 200px;
+  height: 100%;
+  background-color: white;
+  color: black;
+  padding: 20px 0;
+  border: 1px solid #00000040;
+  box-shadow: 0px 4px 4px 0px #00000040;
+  transition: width 0.3s ease-in-out; 
+  position: relative;
+}
+
+
+.collapsed {
+  width: 70px;
+  transition: width 0.3s ease-in-out;
+}
+
+.logoSection {
+  position: relative;
+  width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.3s ease-in-out;
+}
+
+.collapsedLogoSection {
+  position: relative;
+  width: 70px;
+  padding: 0;
+  border-radius: 5px;
+ 
+}
+
+.logo {
+  width: 150px;
+  height: 35px;
+  margin: 10px 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.chevronIcon {
+  position: absolute;
+  right: -8px;
+  top: 0;
+  color: #00000096;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+  background-color: white;
+  border-radius: 50%;
+}
+
+.rotated {
+  transform: rotate(180deg);
+}
+
+.nlContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  
+
+}
+
+
+.links {
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+  width: 100%;
+  padding-left: 10%;
+  margin: 0.575rem 0.625rem;
+  border-radius: 0.625rem;
+  
+  color: #100B52;
+  font-weight: 500;
+  gap: 14px;
+  max-width: 150px;
+}
+
+
+.aboutcontainer {
+  text-decoration: none;
+  margin: 0.575rem 0.625rem;
+    padding-left: 10%;
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right:10%;
+  color: #100B52;
+}
+
+.abouticons {
+  color: #100B52;
+}
+.version {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000dff;
+  margin-right:10%;
+  font-size: 12px;
+}
+
+.sublinks{
+  color: #000000;
+  font-weight: 500;
+  font-size: 12px;
+}
+.navLinks:hover .links,
+.navLinks:focus .links,
+.navLinks.active .links {
+  background-color: #100B52;
+  color: white;
+}
+
+.navLinks:hover .links .navicons,
+.navLinks:focus .links .navicons,
+.navLinks.active .links .navicons {
+  color: white;
+}
+
+
+.dropdownItems:hover .sublinks,
+.dropdownItems:focus .sublinks,
+.dropdownItems.active .sublinks {
+  background-color: #100B52;
+  color: white;
+  padding: 5px 10PX;
+  border-radius: 5px;
+}
+
+.navicons{
+  color: #000000;
+}
+
+
+.collapsed .links {
+  pointer-events: none;
+  width: 40px;
+  height: 42px;
+  display: flex;
+  justify-content: start;
+ 
+  padding-left: 15%;
+  margin: 10px auto;
+  
+}
+
+
+.navLinks {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.bottomSection {
+  margin-top: auto;
+}
+
+
+
+.dropdown {
+  width: 100%; 
+}
+
+
+.dropdownMenu {
+  background-color: transparent;
+  border-radius: 0.5rem;
+  width: 100%;
+  display: none; 
+  z-index: 100;
+  opacity: 0; 
+  transform: translateY(-10px); 
+  transition: opacity 0.3s ease, transform 0.3s ease; 
+}
+
+
+.dropdownMenu.show {
+  display: block;
+  opacity: 1;
+  
+}
+
+
+
+
+.dropdownLinks{
+  text-decoration: none;
+}
+
+.dropdownItems{
+  display: flex;
+  align-items: center;
+  height: 2.5rem;
+  width: 100%;
+  padding-left: 10%;
+  margin: 0 0.625rem;
+  border-radius: 0.625rem;
+  font-size: 11px;
+  
+  color: #00000096;
+  gap: 10px;
+}
+
+.dropdownImg{
+  height: 15px;
+  width: 15px;
+}
+
+
+.collapsed .dropdownItems {
+  pointer-events: none;
+  width: 40px;
+  height: 42px;
+  display: flex;
+  justify-content: start;
+  
+  padding-left: 15%;
+  margin: 10px auto;
+}
+
+
+
+
+
+
+.searchBar {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.5rem;
+  width: 100%;
+  margin: 0.575rem .675rem;
+  border-radius: 0.625rem;
+
+  max-width: 150px;
+  background: #F2EFFF;
+
+  
+}
+
+.searchIcon {
+  color: rgb(99, 97, 97);
+  margin-left: 18px;
+  margin-right: 5px;
+}
+
+.searchInput {
+
+  font-size: 14px;
+  border: none;
+  outline: none;
+  width: inherit;
+  background: #F2EFFF;
+}
+
+.collapsed .searchBar {
+  pointer-events: none;
+  width: 40px;
+  height: 42px;
+  display: flex;
+  justify-content: center;
+  
+  margin: 10px auto;
+  border-radius: 0;
+}
+
+.collapsed .searchIcon{
+  margin: 0;
+}
+
+ */
+
+ /* ================================================================
+   AdminSidebar.module.css  —  Animated Clean Light Sidebar
+   ================================================================ */
+
+/* Removed external Google Fonts import to avoid runtime css2 loading failures. */
+
+/* ── Shell ── */
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 230px;
+  height: 100%;
+  background-color: #FFFFFF;
+  color: #1E293B;
+  padding: 16px 0 10px;
+  border-right: 1px solid #E2E8F0;
+  box-shadow: 2px 0 16px rgba(15, 23, 42, 0.07);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  overflow: visible;
+}
+
+.collapsed { width: 76px; }
+
+
+/* ════════════════════════════════════════
+   LOGO SECTION
+   ════════════════════════════════════════ */
+.logoSection {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 16px 18px;
+  border-bottom: 1px solid #F1F5F9;
+  margin-bottom: 4px;
+  animation: logoSlideIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+.collapsedLogoSection {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0 18px;
+  border-bottom: 1px solid #F1F5F9;
+  margin-bottom: 12px;
+  animation: logoSlideIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+
+@keyframes logoSlideIn {
+  from { opacity: 0; transform: translateY(-14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+/* ════════════════════════════════════════
+   ICON ANIMATIONS
+   ════════════════════════════════════════ */
+.glowRing {
+  animation: glowPulse 3s ease-in-out 1.8s infinite;
+}
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.45; }
+  50%       { opacity: 0.8; }
+}
+
+.pieMain {
+  transform-origin: 28px 32px;
+  animation: pieGrow 0.75s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+}
+.pieLight {
+  transform-origin: 28px 32px;
+  animation: pieGrow 0.75s cubic-bezier(0.34, 1.56, 0.64, 1) 0.38s both;
+}
+@keyframes pieGrow {
+  from { opacity: 0; transform: scale(0.3) rotate(-25deg); }
+  to   { opacity: 1; transform: scale(1)   rotate(0deg); }
+}
+
+.pieDot {
+  transform-origin: 28px 32px;
+  animation: dotPop 0.45s cubic-bezier(0.34, 1.56, 0.64, 1) 0.82s both;
+}
+@keyframes dotPop {
+  from { transform: scale(0); }
+  to   { transform: scale(1); }
+}
+
+.trendLine {
+  stroke-dasharray: 70;
+  stroke-dashoffset: 70;
+  animation: drawLine 0.55s ease-out 0.95s forwards;
+}
+.trendTip {
+  stroke-dasharray: 20;
+  stroke-dashoffset: 20;
+  animation: drawLine 0.3s ease-out 1.45s forwards;
+}
+@keyframes drawLine {
+  to { stroke-dashoffset: 0; }
+}
+
+.dollarBadge {
+  animation: badgePop 0.4s cubic-bezier(0.34, 1.8, 0.64, 1) 1.65s both;
+  transform-origin: 51px 13px;
+}
+@keyframes badgePop {
+  from { opacity: 0; transform: scale(0); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+
+/* ════════════════════════════════════════
+   BRAND LOCKUP
+   ════════════════════════════════════════ */
+.brandLockup {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  min-width: 0;
+}
+
+.brandTextBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+  animation: nameReveal 0.5s cubic-bezier(0.34, 1.2, 0.64, 1) 0.4s both;
+}
+
+@keyframes nameReveal {
+  from { opacity: 0; transform: translateX(-12px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.brandName {
+  font-family: 'Sora', system-ui, sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  white-space: nowrap;
+  display: flex;
+  align-items: baseline;
+  gap: 1px;
+}
+
+.brandSales { color: #0F172A; }
+
+.brandDivider {
+  color: #C7D2FE;
+  font-weight: 200;
+  font-size: 26px;
+  margin: 0 2px;
+  line-height: 1;
+}
+
+.brandPie {
+  background: linear-gradient(135deg, #4F46E5 0%, #06B6D4 100%);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradShift 5s ease-in-out 2s infinite alternate;
+}
+@keyframes gradShift {
+  from { background-position: 0% 50%; }
+  to   { background-position: 100% 50%; }
+}
+
+.brandTagline {
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 8.5px;
+  font-weight: 600;
+  color: #94A3B8;
+  text-transform: uppercase;
+  letter-spacing: 1.3px;
+  white-space: nowrap;
+  animation: nameReveal 0.5s cubic-bezier(0.34, 1.2, 0.64, 1) 0.55s both;
+}
+
+
+/* ════════════════════════════════════════
+   CHEVRON TOGGLE
+   ════════════════════════════════════════ */
+.chevronIcon {
+  position: absolute;
+  right: -13px;
+  top: 10px;
+  color: #94A3B8;
+  cursor: pointer;
+  background-color: #FFFFFF;
+  border: 1.5px solid #E2E8F0;
+  border-radius: 50%;
+  padding: 2px;
+  z-index: 99;
+  transition: color 0.2s ease,
+              border-color 0.2s ease,
+              box-shadow 0.2s ease,
+              transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  animation: chevronFadeIn 0.4s ease 0.8s both;
+}
+@keyframes chevronFadeIn {
+  from { opacity: 0; transform: scale(0.5); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.chevronIcon:hover {
+  color: #4F46E5;
+  border-color: #C7D2FE;
+  box-shadow: 0 2px 12px rgba(79, 70, 229, 0.28);
+}
+.rotated { transform: rotate(180deg) !important; }
+
+
+/* ════════════════════════════════════════
+   NAV CONTENT
+   ════════════════════════════════════════ */
+.sidebarContent {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: visible;
+  padding: 0 8px;
+  scrollbar-width: none;
+}
+.sidebarContent::-webkit-scrollbar { display: none; }
+
+.navLinks {
+  text-decoration: none;
+  cursor: pointer;
+  display: block;
+  color: inherit;
+  margin-bottom: 18px;
+}
+
+/* Staggered entrance — 6 items for admin (New User added) */
+.navItem1 { animation: navSlideIn 0.45s cubic-bezier(0.34, 1.2, 0.64, 1) 0.30s both; }
+.navItem2 { animation: navSlideIn 0.45s cubic-bezier(0.34, 1.2, 0.64, 1) 0.42s both; }
+.navItem3 { animation: navSlideIn 0.45s cubic-bezier(0.34, 1.2, 0.64, 1) 0.54s both; }
+.navItem4 { animation: navSlideIn 0.45s cubic-bezier(0.34, 1.2, 0.64, 1) 0.66s both; }
+.navItem5 { animation: navSlideIn 0.45s cubic-bezier(0.34, 1.2, 0.64, 1) 0.78s both; }
+.navItem6 { animation: navSlideIn 0.45s cubic-bezier(0.34, 1.2, 0.64, 1) 0.90s both; }
+
+@keyframes navSlideIn {
+  from { opacity: 0; transform: translateX(-18px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  width: 100%;
+  padding: 0 10px;
+  margin: 8px 0;
+  border-radius: 9px;
+  color: #475569;
+  font-size: 15px;
+  font-weight: 500;
+  gap: 16px;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.2s ease,
+              color 0.2s ease,
+              transform 0.15s ease;
+}
+
+.links::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(79, 70, 229, 0.06) 50%,
+    transparent 100%);
+  transform: translateX(-100%);
+  transition: transform 0.4s ease;
+  border-radius: 9px;
+  pointer-events: none;
+}
+.navLinks:hover .links::before { transform: translateX(100%); }
+
+.navLinks:hover .links {
+  background-color: #EEF2FF;
+  color: #4F46E5;
+  transform: translateX(3px);
+}
+.navLinks:hover .links .navicons { color: #4F46E5; transform: scale(1.12); }
+
+.navLinks.active .links {
+  background: linear-gradient(135deg, #4F46E5, #6366F1);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.28);
+}
+.navLinks.active .links .navicons { color: #FFFFFF; }
+
+.navicons {
+  color: #64748B;
+  flex-shrink: 0;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.sidebarIcon {
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 12px;
+  color: #FFFFFF;
+  filter: drop-shadow(0 10px 16px rgba(15, 23, 42, 0.16));
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.3);
+  transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+}
+
+.iconHome { background: linear-gradient(135deg, #38BDF8, #2563EB); }
+.iconApps { background: linear-gradient(135deg, #22C55E, #0F766E); }
+.iconForm { background: linear-gradient(135deg, #F59E0B, #EA580C); }
+.iconData { background: linear-gradient(135deg, #06B6D4, #0E7490); }
+.iconDashboard { background: linear-gradient(135deg, #6366F1, #1D4ED8); }
+.iconUser { background: linear-gradient(135deg, #EC4899, #BE185D); }
+.iconScan { background: linear-gradient(135deg, #14B8A6, #2563EB); }
+.iconSettings { background: linear-gradient(135deg, #64748B, #334155); }
+.iconInfo { background: linear-gradient(135deg, #A78BFA, #7C3AED); }
+
+.navLinks:hover .links .sidebarIcon,
+.aboutcontainer:hover .about .sidebarIcon {
+  color: #FFFFFF;
+  transform: translateY(-2px) scale(1.12) rotate(-3deg);
+  filter: drop-shadow(0 14px 20px rgba(37, 99, 235, 0.24));
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.42),
+    0 0 0 3px rgba(99, 102, 241, 0.14);
+}
+
+.navActive .links .sidebarIcon,
+.navGroupActive > .links .sidebarIcon {
+  color: #FFFFFF !important;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.32);
+}
+
+.dropChevron {
+  margin-left: auto;
+  font-size: 18px;
+  line-height: 1;
+  color: #94A3B8;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s;
+  display: inline-block;
+}
+.dropChevronOpen {
+  transform: rotate(90deg);
+  color: #4F46E5;
+}
+
+
+/* ════════════════════════════════════════
+   DROPDOWNS
+   ════════════════════════════════════════ */
+.dropdown { width: 100%; }
+
+.dropdownMenu {
+  display: none;
+  padding: 4px 0;
+  background: #F8FAFC;
+  border-radius: 9px;
+  margin: 2px 0 4px;
+  border: 1px solid #F1F5F9;
+}
+
+.dropdownMenu.show {
+  display: block;
+  animation: dropIn 0.22s cubic-bezier(0.34, 1.2, 0.64, 1) both;
+}
+
+@keyframes dropIn {
+  from { opacity: 0; transform: translateY(-8px) scaleY(0.9); transform-origin: top; }
+  to   { opacity: 1; transform: translateY(0) scaleY(1); }
+}
+
+.dropdownLinks {
+  text-decoration: none;
+  display: block;
+  animation: dropItemIn 0.2s ease both;
+}
+
+@keyframes dropItemIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+.dropdownItems {
+  display: flex;
+  align-items: center;
+  height: 34px;
+  width: 100%;
+  padding: 0 10px 0 24px;
+  border-radius: 7px;
+  font-size: 12px;
+  color: #64748B;
+  font-weight: 500;
+  gap: 14px;
+  white-space: nowrap;
+  transition: background-color 0.15s ease,
+              color 0.15s ease,
+              transform 0.15s ease;
+}
+.dropdownItems:hover {
+  background-color: #EEF2FF;
+  color: #4F46E5;
+  transform: translateX(4px);
+}
+.dropdownItems:hover .sublinks { color: #4F46E5; }
+
+.sublinks {
+  color: #64748B;
+  font-weight: 500;
+  font-size: 12px;
+  transition: color 0.15s ease;
+}
+
+.dropdownImg {
+  height: 14px;
+  width: 14px;
+  object-fit: contain;
+  opacity: 0.7;
+  flex-shrink: 0;
+  transition: opacity 0.15s, transform 0.15s;
+}
+.dropdownItems:hover .dropdownImg {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.submenuIcon {
+  margin-right: 2px;
+}
+
+
+/* ════════════════════════════════════════
+   COLLAPSED OVERRIDES
+   ════════════════════════════════════════ */
+.collapsed .links {
+  justify-content: center;
+  padding: 0;
+  height: 48px;
+  width: 52px;
+  margin: 8px auto;
+}
+.collapsed .dropdownItems {
+  justify-content: center;
+  padding: 0;
+  height: 36px;
+  width: 46px;
+  margin: 2px auto;
+}
+.collapsed .dropdownMenu { background: transparent; border: none; padding: 0; }
+
+
+/* ════════════════════════════════════════
+   BOTTOM SECTION
+   ════════════════════════════════════════ */
+.bottomSection {
+  padding: 12px 10px 0;
+  border-top: 1px solid #F1F5F9;
+  margin-top: 4px;
+  animation: navSlideIn 0.45s cubic-bezier(0.34, 1.2, 0.64, 1) 1.02s both;
+}
+
+.aboutcontainer {
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 10px;
+  border-radius: 9px;
+  transition: background-color 0.15s ease;
+}
+.aboutcontainer:hover { background-color: #F8FAFC; }
+
+.about {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: #475569;
+  font-size: 14.5px;
+  font-weight: 500;
+}
+.about .navicons { color: #64748B; }
+.aboutcontainer:hover .about { color: #4F46E5; }
+.aboutcontainer:hover .about .navicons { color: #4F46E5; }
+
+.version {
+  padding-left: 30px;
+  font-size: 10.5px;
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+.navActive .links {
+  background: linear-gradient(135deg, #4F46E5, #6366F1);
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.28);
+}
+.navActive .links .navicons {
+  color: #FFFFFF !important;
+}
+
+/* Top-level dropdown parent active (Form, Dashboard) — 
+   highlights parent row when a child route is selected */
+.navGroupActive > .links {
+  background-color: #EEF2FF;
+  color: #4F46E5 !important;
+}
+.navGroupActive > .links .navicons {
+  color: #4F46E5 !important;
+}
+.navGroupActive > .links .dropChevron {
+  color: #4F46E5;
+}
+
+/* Dropdown child item active */
+.dropdownLinkActive .dropdownItems {
+  background-color: #EEF2FF;
+  color: #4F46E5 !important;
+  transform: translateX(4px);
+}
+.dropdownLinkActive .dropdownItems .sublinks {
+  color: #4F46E5 !important;
+  font-weight: 600;
+}
+.dropdownLinkActive .dropdownItems .dropdownImg {
+  opacity: 1;
+}
+
+/* ── navItem7 stagger ── */
+.navItem7 { animation: navSlideIn 0.45s cubic-bezier(0.34, 1.2, 0.64, 1) 1.02s both; }
+
+/* ── Data dropdown item layout ── */
+.dataItem {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  height: 34px;
+  padding: 0 10px 0 16px;
+}
+
+/* ── Colored icon pill for each data link ── */
+.dataIcon {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+  transition: transform 0.15s;
+}
+.dropdownItems:hover .dataIcon { transform: scale(1.15); }
+
+.dataIconAccount     { background: #EEF2FF; color: #4F46E5; }
+.dataIconOpportunity { background: #FDF2F8; color: #EC4899; }
+.dataIconTarget      { background: #F0FDFA; color: #0D9488; }
+.dataIconLead        { background: #FFF7ED; color: #F97316; }
+.dataIconTask        { background: #F0FDF4; color: #16A34A; }
+
+.formMiniIcon {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.formMiniIcon :global(svg) {
+  color: currentColor;
+}
+
+.formIconAccount     { background: #EEF2FF; color: #4F46E5; }
+.formIconOpportunity { background: #FDF2F8; color: #DB2777; }
+.formIconTarget      { background: #FFF7ED; color: #EA580C; }
+.formIconLead        { background: #ECFEFF; color: #0891B2; }
+.formIconTask        { background: #F0FDF4; color: #16A34A; }
+
+.dropdownItems:hover .formMiniIcon {
+  transform: scale(1.1);
+}
+
+.dashboardMiniIcon {
+  width: 26px;
+  height: 26px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #EEF2FF;
+  color: #4F46E5;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.45);
+  transition: transform 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+}
+
+.dashboardMiniIcon :global(svg) {
+  color: currentColor;
+}
+
+.dropdownItems:hover .dashboardMiniIcon {
+  transform: scale(1.1);
+  background: #E0E7FF;
+  color: #4338CA;
+}
+
+/* ── Active states (carried over from previous) ── */
+.navActive .links {
+  background: linear-gradient(135deg, #4F46E5, #6366F1);
+  color: #FFFFFF !important;
+  box-shadow: 0 4px 14px rgba(79, 70, 229, 0.28);
+}
+.navActive .links .navicons { color: #FFFFFF !important; }
+
+.navGroupActive > .links {
+  background-color: #EEF2FF;
+  color: #4F46E5 !important;
+}
+.navGroupActive > .links .navicons { color: #4F46E5 !important; }
+.navGroupActive > .links .dropChevron { color: #4F46E5; }
+
+.dropdownLinkActive .dropdownItems {
+  background-color: #EEF2FF;
+  color: #4F46E5 !important;
+  transform: translateX(4px);
+}
+.dropdownLinkActive .dropdownItems .sublinks {
+  color: #4F46E5 !important;
+  font-weight: 600;
+}
+.dropdownLinkActive .dropdownItems .dataIcon { transform: scale(1.1); }
+
+.navGroupActive > .links .sidebarIcon,
+.navActive .links .sidebarIcon,
+.aboutcontainer:hover .about .sidebarIcon {
+  color: #FFFFFF !important;
+}
+

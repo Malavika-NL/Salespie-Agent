@@ -1,0 +1,56 @@
+.tableContainer {
+    width: 98%;
+    margin: 0 auto;
+  }
+  
+  .tableHeading {
+    text-align: center;
+    font-size: 1.5em;
+    margin-bottom: 1em;
+    margin-top: 1em;
+  }
+  
+  .scrollableTable {
+    overflow-x: auto; /* Enable horizontal scrolling */
+  }
+  
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  .expandableCell {
+    display: inline-block; /* Allow content to dictate height */
+    width: 100%; /* Full width of the table cell */
+    min-height: 20px; /* Minimum height */
+    max-height: 100px; /* Limit max height for visual consistency */
+    padding: 8px; /* Padding for better appearance */
+    overflow: hidden; /* Hide scrollbars */
+    word-wrap: break-word; /* Allow long words to break */
+    border:none; /* Optional: add border to mimic textarea */
+    box-sizing: border-box; /* Include padding and border in width */
+    resize: none; /* Disable manual resizing */
+    text-align: center; /* Align text to the left */
+  }
+  .table th,
+  .table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+  }
+  
+  .table th.taskColumn {
+    width: 20%;
+  }
+  
+  .table th.descriptionColumn {
+    width: 35%;
+    word-wrap: break-word;
+  }
+  
+  .table th.otherColumn {
+    width: calc((100% - 55%) / 6); /* Calculate remaining width equally */
+  }
+  
+  
+

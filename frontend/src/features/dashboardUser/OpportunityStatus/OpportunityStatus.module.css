@@ -1,0 +1,348 @@
+/* .opportunitystatus {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; 
+   min-height: 500px;
+  }
+
+  
+.boxFull {
+    flex: 1;
+    background-color: #ffffff;
+    border: 1px solid #ffffff;
+    margin: 5px;
+    padding: 10px;
+    border-radius: 15px;
+    overflow: hidden; 
+    height: auto; 
+  }
+
+  .barChartContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+
+
+  .rightContainer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 100%;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+
+ 
+.searchBar,
+.select {
+    
+    width: 250px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 13px;
+    outline: none;
+    background-color: white;
+}
+
+.select{
+    width: 100%;
+    padding: 4px;
+    max-width: 200px;
+    max-width: 150px;
+}
+.searchBar:focus {
+    border-color: #2c3e50;
+}
+
+.searchBar{
+    display: flex;
+    align-items: center;
+}
+.search{
+    outline: none;
+    padding: 4px;
+    border: none;
+    width: 100%;
+}
+
+.searchicon{
+    margin-left: 2%;
+    font-size: 16px;
+    margin-right: 1%;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   
+  }
+  
+  .table th, .table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  .table th {
+    background-color: #f2f2f2;
+    font-weight: 600;
+    font-size: 13px;
+  }
+  
+  .table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  .table tr:hover {
+    background-color: #f1f1f1;
+  }
+  
+  .head  {
+    text-align: center;
+    font-weight: 600;
+    font-size: 16px;
+  } */
+
+  /* ================================================================
+   OpportunityStatus.module.css  –  Enhanced Pipeline Table
+   ================================================================ */
+/* Removed external Google Fonts import to avoid runtime css2 loading failures. */
+
+/* ── Outer wrappers ──────────────────────────────────────────────── */
+.opportunitystatus { width: 100%; }
+
+.boxFull {
+  width: 100%;
+  background: transparent;
+  border: none;
+  padding: 0;
+  overflow: visible;
+}
+
+.barChartContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* ── Section heading ─────────────────────────────────────────────── */
+.head {
+  font-family: 'Sora', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  color: #0F172A;
+  text-align: left;
+  margin: 0 0 16px 0;
+  letter-spacing: -0.2px;
+}
+
+/* ── Filter toolbar ──────────────────────────────────────────────── */
+.rightContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+/* ── Select dropdowns ────────────────────────────────────────────── */
+.select {
+  height: 36px;
+  padding: 0 30px 0 12px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  color: #334155;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 12.5px;
+  font-weight: 500;
+  outline: none;
+  cursor: pointer;
+  width: auto;
+  max-width: 150px;
+  min-width: 0;
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='11' height='11' viewBox='0 0 12 12'%3E%3Cpath fill='%2394a3b8' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+}
+
+.select:hover {
+  border-color: #C7D2FE;
+  background-color: #F5F3FF;
+}
+
+.select:focus {
+  border-color: #6366F1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.12);
+  background-color: #fff;
+}
+
+.select option { color: #1e293b; background: #fff; }
+
+/* ── Search bar ──────────────────────────────────────────────────── */
+.searchBar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 36px;
+  padding: 0 12px;
+  background: #F8FAFC;
+  border: 1px solid #E2E8F0;
+  border-radius: 8px;
+  min-width: 180px;
+  transition: border-color 0.15s, box-shadow 0.15s, background 0.15s;
+}
+
+.searchBar:focus-within {
+  border-color: #6366F1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.12);
+  background: #fff;
+}
+
+.searchicon {
+  font-size: 15px;
+  color: #94A3B8;
+  flex-shrink: 0;
+  transition: color 0.15s;
+}
+
+.searchBar:focus-within .searchicon { color: #6366F1; }
+
+.search {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #1E293B;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  font-size: 12.5px;
+  width: 100%;
+}
+
+.search::placeholder { color: #CBD5E1; }
+
+/* ── Table ───────────────────────────────────────────────────────── */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'DM Sans', system-ui, sans-serif;
+  background: transparent;
+  box-shadow: none;
+  margin-top: 0;
+}
+
+.table thead tr { border-bottom: 2px solid #F1F5F9; }
+
+.table th {
+  padding: 10px 16px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: #94A3B8;
+  background: transparent;
+  white-space: nowrap;
+  border-bottom: none;
+}
+
+.table td {
+  padding: 13px 16px;
+  font-size: 13px;
+  color: #475569;
+  border-bottom: 1px solid #F8FAFC;
+  vertical-align: middle;
+  transition: background 0.12s;
+}
+
+.table tbody tr:hover td { background: #F5F8FF; color: #1E293B; }
+.table tbody tr:last-child td { border-bottom: none; }
+
+/* Column-specific styles */
+.table td:first-child  { color: #CBD5E1; font-size: 12px; font-weight: 600; width: 48px; }
+.table td:nth-child(2) { font-size: 12px; color: #64748B; white-space: nowrap; font-family: 'Courier New', monospace; }
+.table td:nth-child(3) { font-weight: 600; color: #1E293B; }
+.table td:nth-child(4) { font-weight: 500; color: #4F46E5; }
+.table td:nth-child(6) { font-weight: 700; color: #0F172A; font-family: 'Courier New', monospace; font-size: 12.5px; }
+.table td:last-child   { white-space: nowrap; }
+
+/* ── Status badges ───────────────────────────────────────────────── */
+.statusBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 11.5px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: capitalize;
+}
+
+.badgeWon      { background: #D1FAE5; color: #065F46; }
+.badgeLost     { background: #FEE2E2; color: #991B1B; }
+.badgePending  { background: #FEF3C7; color: #92400E; }
+.badgeProgress { background: #EEF2FF; color: #3730A3; }
+.badgeDefault  { background: #F1F5F9; color: #475569; }
+
+/* ── Rank badges ─────────────────────────────────────────────────── */
+.rankBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 8px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.rankA { background: #D1FAE5; color: #065F46; }
+.rankB { background: #CFFAFE; color: #155E75; }
+.rankC { background: #FEF3C7; color: #92400E; }
+.rankD { background: #FEE2E2; color: #991B1B; }
+.rankE { background: #F3E8FF; color: #6B21A8; }
+
+/* ── Empty state ─────────────────────────────────────────────────── */
+.emptyState {
+  text-align: center;
+  padding: 48px 0;
+}
+
+.emptyIcon {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 12px;
+  opacity: 0.25;
+}
+
+.emptyText {
+  font-size: 13.5px;
+  font-weight: 500;
+  color: #CBD5E1;
+}
+
+/* ── Responsive ──────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  .rightContainer { justify-content: flex-start; }
+  .select { max-width: 130px; }
+  .searchBar { min-width: 140px; }
+  .table th, .table td { padding: 10px 12px; }
+}
+
+@media (max-width: 640px) {
+  .select { max-width: 110px; font-size: 11.5px; }
+  .table th { font-size: 10px; }
+  .table td:nth-child(2),
+  .table td:nth-child(4) { display: none; }
+}
