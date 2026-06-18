@@ -46,6 +46,7 @@ import ResumeScanningPage from '../ResumeScan/ResumeScanningPage';
 import BudgetOverview from '../Budget/BudgetOverview';
 import BudgetAdminDashboard from '../Budget/BudgetAdminDashboard';
 import ChatbotWidget from '../Chatbot/ChatbotWidget';
+import VoiceAccountAgent from '../VoiceAccountAgent/VoiceAccountAgent';
 const AdminHomePage: React.FC = () => {
   const MOBILE_BREAKPOINT = 768;
   const COLLAPSE_BREAKPOINT = 1024;
@@ -198,6 +199,7 @@ const AdminHomePage: React.FC = () => {
         </div>
       </div>
       <ChatbotWidget />
+      <VoiceAccountAgent />
     </div>
   );
 };

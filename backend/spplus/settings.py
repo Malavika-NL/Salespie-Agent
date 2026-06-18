@@ -51,6 +51,7 @@ AUTH_USER_MODEL = "sales.User"
 # Application definition
 
 INSTALLED_APPS = [
+    'ai_agent',
     'jazzmin',
     'django.contrib.admin',
     'django.contrib.auth',

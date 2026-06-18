@@ -1,0 +1,11 @@
+{"text": "create account for ABC Technologies mobile 9876543210", "intent": "create_account"}
+{"text": "add a new company called Blue Ocean Systems", "intent": "create_account"}
+{"text": "register account for Acme Pvt Ltd email sales@acme.com", "intent": "create_account"}
+{"text": "update account for ABC Technologies phone 9998887776", "intent": "update_account"}
+{"text": "change the email for Blue Ocean Systems", "intent": "update_account"}
+{"text": "modify Acme Pvt Ltd address to Industrial Area Phase 2", "intent": "update_account"}
+{"text": "search account for ABC Technologies", "intent": "search_account"}
+{"text": "find Blue Ocean Systems in crm", "intent": "search_account"}
+{"text": "show me the account for Acme Pvt Ltd", "intent": "search_account"}
+{"text": "hello there", "intent": "unknown"}
+{"text": "can you help me", "intent": "unknown"}

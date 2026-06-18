@@ -75,6 +75,8 @@ router.register(r'tasks', TaskViewSet, basename='task')
 
 
 urlpatterns = [
+    path('api/ai-agent/', include('ai_agent.urls')),
+    path('ai-agent/', include('ai_agent.urls')),
 
     path('register/',views.RegisterView.as_view(),name="register"),
     path('api/register/', views.RegisterView.as_view(), name="api-register"),

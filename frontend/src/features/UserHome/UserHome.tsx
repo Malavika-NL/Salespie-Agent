@@ -39,6 +39,7 @@ import ResumeScanningPage from '../ResumeScan/ResumeScanningPage';
 import BudgetOverview from '../Budget/BudgetOverview';
 import BudgetUserDashboard from '../Budget/BudgetUserDashboard';
 import ChatbotWidget from '../Chatbot/ChatbotWidget';
+import VoiceAccountAgent from '../VoiceAccountAgent/VoiceAccountAgent';
 
 const NewUserHome: React.FC = () => {
   const MOBILE_BREAKPOINT = 768;
@@ -167,6 +168,7 @@ const NewUserHome: React.FC = () => {
         </div>
       </div>
       <ChatbotWidget />
+      <VoiceAccountAgent />
 
     </div>
   );
